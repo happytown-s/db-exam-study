@@ -1,0 +1,962 @@
+[
+  {
+    "id": 1,
+    "category": "Normalization",
+    "question": "R(A,B,C) with FDs {A->B, B->C}. Highest normal form?",
+    "options": [
+      "1NF only",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answer": 0,
+    "explanation": "Transitive A->B->C. A is key. B->C violates 3NF. Only 1NF.",
+    "cheatsheet": "BCNF: every determinant is superkey. 3NF: determinant is superkey OR right side is prime.",
+    "steps": [
+      "Find keys: A+={A,B,C}. Only key={A}",
+      "Check 2NF: no composite key, auto 2NF",
+      "B->C: B not superkey, C not prime. Violates 3NF",
+      "Result: 1NF only"
+    ]
+  },
+  {
+    "id": 2,
+    "category": "Normalization",
+    "question": "R(A,B,C,D) with FDs {AB->C, C->D}. Candidate keys?",
+    "options": [
+      "AB only",
+      "AB and AC",
+      "AB and BC",
+      "A and B"
+    ],
+    "answer": 2,
+    "explanation": "AB+={ABCD}, BC+={BCDA}. Keys={AB,BC}.",
+    "cheatsheet": "Candidate key=minimal superkey. Compute closures.",
+    "steps": [
+      "AB+={A,B}->C->D={A,B,C,D}. Key!",
+      "BC+={B,C}->D={B,C,D}. Missing A. Not key",
+      "AC+={A,C}->D={A,C,D}. Missing B. Not key",
+      "Keys={AB,BC}. Answer: AB and BC"
+    ]
+  },
+  {
+    "id": 3,
+    "category": "Normalization",
+    "question": "R(A,B,C) with {A->B, A->C}. Which NF?",
+    "options": [
+      "1NF only",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answer": 3,
+    "explanation": "Key={A}. All FDs have A as determinant (superkey). BCNF.",
+    "cheatsheet": "Check each FD: A->B and A->C both have A as superkey.",
+    "steps": [
+      "Find key: A+={A,B,C}. Key={A}",
+      "A->B: A is superkey (BCNF OK)",
+      "A->C: A is superkey (BCNF OK)",
+      "Result: BCNF"
+    ]
+  },
+  {
+    "id": 4,
+    "category": "Normalization",
+    "question": "Decompose R(A,B,C) with {A->B, B->C} to 3NF:",
+    "options": [
+      "R1(A,B), R2(B,C)",
+      "R1(A,B), R2(A,C)",
+      "R1(A,C), R2(B,C)",
+      "Already 3NF"
+    ],
+    "answer": 0,
+    "explanation": "B->C violates 3NF. Decompose on B->C: R1(A,B) R2(B,C).",
+    "cheatsheet": "3NF decomposition: find violating FD, separate determinant+dependent.",
+    "steps": [
+      "Violating FD: B->C (B not key, C not prime)",
+      "Decompose: R1(A,B) for A->B, R2(B,C) for B->C",
+      "R1: A->B, A is key. 3NF OK",
+      "R2: B->C, B is key. 3NF OK"
+    ]
+  },
+  {
+    "id": 5,
+    "category": "Normalization",
+    "question": "R(A,B,C,D) with {A->B, BC->D}. Prime attributes?",
+    "options": [
+      "A only",
+      "A and B",
+      "A, B, C",
+      "A, B, C, D"
+    ],
+    "answer": 2,
+    "explanation": "Keys: AC+={ABCD}, BC+={BCD}. Keys={AC,BC}. Prime={A,B,C}.",
+    "cheatsheet": "Prime=in any candidate key. Compute closures.",
+    "steps": [
+      "A+={A,B}. Not superkey (no C,D)",
+      "AC+={A,B,C}->BC->D={A,B,C,D}. Key!",
+      "BC+={B,C}->D={B,C,D}. Missing A. Not key",
+      "Keys={AC,BC}. Prime={A,B,C}"
+    ]
+  },
+  {
+    "id": 6,
+    "category": "Normalization",
+    "question": "MVD A->>B in R(A,B,C). 4NF?",
+    "options": [
+      "Yes",
+      "No, violates 4NF",
+      "Depends",
+      "Cannot determine"
+    ],
+    "answer": 1,
+    "explanation": "Non-trivial MVD where A not superkey violates 4NF.",
+    "cheatsheet": "4NF: no non-trivial MVD A->>B unless A is superkey.",
+    "steps": [
+      "A->>B is non-trivial MVD",
+      "Is A superkey? A+={A}. No",
+      "Violates 4NF",
+      "Decompose: R1(A,B), R2(A,C)"
+    ]
+  },
+  {
+    "id": 7,
+    "category": "Normalization",
+    "question": "Closure of {A->B, B->C} includes A->?",
+    "options": [
+      "B only",
+      "B and C",
+      "BC",
+      "ABC"
+    ],
+    "answer": 1,
+    "explanation": "A->B (given), B->C (given), A->C (transitive). A+={A,B,C}.",
+    "cheatsheet": "Armstrong: reflexivity, augmentation, transitivity.",
+    "steps": [
+      "A->B (given)",
+      "B->C (given)",
+      "A->C (transitivity: A->B, B->C)",
+      "A+={A,B,C}. Includes B and C"
+    ]
+  },
+  {
+    "id": 8,
+    "category": "Normalization",
+    "question": "Lossless-join for R->R1(A,B),R2(B,C) with {B->C}:",
+    "options": [
+      "Lossless",
+      "Not lossless",
+      "Cannot determine",
+      "Lossless if AC key"
+    ],
+    "answer": 0,
+    "explanation": "R1 cap R2={B}. B is superkey of R2 (B->C). Lossless!",
+    "cheatsheet": "Lossless: R1 cap R2 superkey of R1 or R2?",
+    "steps": [
+      "Intersection = {B}",
+      "B superkey of R1(A,B)? B+={B} in R1. No",
+      "B superkey of R2(B,C)? B+={B,C} via B->C. Yes!",
+      "Lossless-join holds"
+    ]
+  },
+  {
+    "id": 9,
+    "category": "Normalization",
+    "question": "R(A,B,C) with {A->B, C->B}. Candidate keys?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 0,
+    "explanation": "A+={AB} no C. C+={CB} no A. AC+={ACB}=all. Only key={AC}.",
+    "cheatsheet": "Candidate key=minimal superkey.",
+    "steps": [
+      "A+={A,B}. No C. Not superkey",
+      "C+={C,B}. No A. Not superkey",
+      "AC+={A,C}+B={A,B,C}. Superkey and minimal",
+      "Keys={AC}. Count=1"
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Normalization",
+    "question": "Dependency preserving decomposition of R(A,B,C) {A->B,B->C}:",
+    "options": [
+      "R1(A,B),R2(B,C) preserves",
+      "R1(A,C),R2(B,C) does not",
+      "R1(A,B),R2(A,C) preserves",
+      "None preserves"
+    ],
+    "answer": 0,
+    "explanation": "R1 has A->B, R2 has B->C. Union covers all. Preserved!",
+    "cheatsheet": "Preserved: union of FDs on decomposed covers originals.",
+    "steps": [
+      "Original: A->B, B->C",
+      "R1(A,B): A->B holds",
+      "R2(B,C): B->C holds",
+      "Union covers all. Preserved!"
+    ]
+  },
+  {
+    "id": 11,
+    "category": "SQL Execution Cost",
+    "question": "Table: 10000 rows, 100 pages. Full scan cost:",
+    "options": [
+      "10000",
+      "100",
+      "50",
+      "1000"
+    ],
+    "answer": 1,
+    "explanation": "Full scan reads every page. Cost=100.",
+    "cheatsheet": "Full scan = number of data pages.",
+    "steps": [
+      "Total pages = 100",
+      "Full scan reads all pages",
+      "Cost = 100 page I/Os",
+      "Compare with index for selectivity"
+    ]
+  },
+  {
+    "id": 12,
+    "category": "SQL Execution Cost",
+    "question": "Nested-loop: R(100 rows), S(1000 rows, B-tree h=3). Cost:",
+    "options": [
+      "100300",
+      "400",
+      "100000",
+      "1100"
+    ],
+    "answer": 1,
+    "explanation": "Per R row: 3(index)+1(data)=4. Total=100*4=400.",
+    "cheatsheet": "Nested-loop with index: cost=outer_rows*(index_height+1).",
+    "steps": [
+      "B-tree height=3",
+      "Per R row: 3 index+1 data=4",
+      "Total=100*4=400",
+      "Much better than 100*1000=100000"
+    ]
+  },
+  {
+    "id": 13,
+    "category": "SQL Execution Cost",
+    "question": "Hash join: R(500r/10p), S(5000r/100p), mem=120p. Cost:",
+    "options": [
+      "11000",
+      "110",
+      "2500000",
+      "5500"
+    ],
+    "answer": 1,
+    "explanation": "Build(10p)+Probe(100p)=110. Fits in memory, no partitioning.",
+    "cheatsheet": "Hash join: build smaller, probe larger. Cost=read both if fits in memory.",
+    "steps": [
+      "Build: R=10 pages fits in 120p memory",
+      "Build phase: read 10 pages",
+      "Probe phase: read 100 pages",
+      "Total: 10+100=110 page reads"
+    ]
+  },
+  {
+    "id": 14,
+    "category": "SQL Execution Cost",
+    "question": "Merge join: R(50p sorted), S(80p sorted). Cost:",
+    "options": [
+      "130",
+      "1000*2000",
+      "50*80",
+      "1000+2000"
+    ],
+    "answer": 0,
+    "explanation": "Both sorted. One pass: 50+80=130.",
+    "cheatsheet": "Merge join: cost=read(R)+read(S).",
+    "steps": [
+      "R: 50 pages sorted",
+      "S: 80 pages sorted",
+      "Merge scan: one pass each",
+      "Cost=50+80=130"
+    ]
+  },
+  {
+    "id": 15,
+    "category": "SQL Execution Cost",
+    "question": "B-tree h=4, 100 matching rows (100 pages). Index scan:",
+    "options": [
+      "4",
+      "104",
+      "400",
+      "100"
+    ],
+    "answer": 1,
+    "explanation": "4(index)+100(data)=104.",
+    "cheatsheet": "Index scan=height+matching_data_pages.",
+    "steps": [
+      "B-tree height=4",
+      "4 index pages to find first match",
+      "100 data pages for results",
+      "Total=4+100=104"
+    ]
+  },
+  {
+    "id": 16,
+    "category": "SQL Execution Cost",
+    "question": "50000r/500p, selectivity=0.02 (1000r/10p). Index vs scan?",
+    "options": [
+      "Full scan(500) better",
+      "Index(13) better",
+      "Equal",
+      "Cannot compare"
+    ],
+    "answer": 1,
+    "explanation": "Index: h(3)+10=13 << full scan 500.",
+    "cheatsheet": "Low selectivity favors index.",
+    "steps": [
+      "Full scan=500 pages",
+      "Index: 3(height)+10(matching)=13",
+      "13 << 500",
+      "Index wins by 38x"
+    ]
+  },
+  {
+    "id": 17,
+    "category": "SQL Execution Cost",
+    "question": "Block nested-loop: R(20p), S(50p), mem=5p. Cost:",
+    "options": [
+      "1000",
+      "270",
+      "100",
+      "2000"
+    ],
+    "answer": 1,
+    "explanation": "Passes=ceil(20/4)=5. Cost=5*50+20=270.",
+    "cheatsheet": "BNLJ: passes=ceil(R/(B-1)). Cost=passes*S+R.",
+    "steps": [
+      "Memory=5, 1 output, 4 for R",
+      "Passes=ceil(20/4)=5",
+      "Cost=5*50+20=270",
+      "More efficient than naive 20*50=1000"
+    ]
+  },
+  {
+    "id": 18,
+    "category": "SQL Execution Cost",
+    "question": "Merge join unsorted: R(50p), S(80p), mem=20p. Cost?",
+    "options": [
+      "130",
+      "~582",
+      "4000",
+      "1000"
+    ],
+    "answer": 1,
+    "explanation": "Sort R+Sort S+Merge: 2*50*log2(50/20)+2*80*log2(80/20)+130~582.",
+    "cheatsheet": "Unsorted: cost=sort(R)+sort(S)+merge(R,S).",
+    "steps": [
+      "Sort R: ~2*50*log2(2.5)~132 pages",
+      "Sort S: ~2*80*log2(4)~320 pages",
+      "Merge: 50+80=130",
+      "Total~582"
+    ]
+  },
+  {
+    "id": 19,
+    "category": "SQL Execution Cost",
+    "question": "Bitmap OR: 2 conditions, 5% each of 1M rows (10000p). Cost?",
+    "options": [
+      "10000",
+      "1000",
+      "500",
+      "50000"
+    ],
+    "answer": 1,
+    "explanation": "OR result~10%=100K rows~1000 pages.",
+    "cheatsheet": "Bitmap: small bitmap reads, bitwise OR, read matching pages.",
+    "steps": [
+      "Each condition: 5% of 1M=50K rows",
+      "OR result: ~10%=100K rows",
+      "~1000 data pages",
+      "Bitmap pages negligible"
+    ]
+  },
+  {
+    "id": 20,
+    "category": "SQL Execution Cost",
+    "question": "Covering index: table 1000p, index 50p, match 5p. Cost?",
+    "options": [
+      "1000",
+      "55",
+      "50",
+      "5"
+    ],
+    "answer": 2,
+    "explanation": "No table access. Cost=index traversal only~50p or less.",
+    "cheatsheet": "Covering index: no table access/bookmark lookup.",
+    "steps": [
+      "All query columns in index",
+      "No table access needed",
+      "Cost=index pages only",
+      "~50 pages (or just 5 if B-tree selective)"
+    ]
+  },
+  {
+    "id": 21,
+    "category": "Transaction Isolation",
+    "question": "W1(A),W2(A),W1(B),W2(B). Conflict serializable?",
+    "options": [
+      "Yes (1->2)",
+      "Yes (2->1)",
+      "No",
+      "Cannot determine"
+    ],
+    "answer": 0,
+    "explanation": "Edges: W1(A)->W2(A), W1(B)->W2(B). All 1->2. Serial T1,T2.",
+    "cheatsheet": "Draw conflict precedence graph. No cycle=serializable.",
+    "steps": [
+      "W1(A)->W2(A): edge 1->2",
+      "W1(B)->W2(B): edge 1->2",
+      "Graph: 1->2 (no cycle)",
+      "Serializable as T1,T2"
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Transaction Isolation",
+    "question": "R1(A),W2(A),R1(A). Anomaly?",
+    "options": [
+      "Dirty read",
+      "Non-repeatable read",
+      "Phantom",
+      "No anomaly"
+    ],
+    "answer": 1,
+    "explanation": "T1 reads A, T2 writes A, T1 re-reads different value.",
+    "cheatsheet": "Non-repeatable: same row different values on re-read.",
+    "steps": [
+      "T1 reads A (value v1)",
+      "T2 writes A (v2), commits",
+      "T1 re-reads A (value v2)",
+      "Non-repeatable read"
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Transaction Isolation",
+    "question": "W1(A),R2(A),W2(A),C2,C1. Anomaly?",
+    "options": [
+      "Dirty read",
+      "Non-repeatable read",
+      "Lost update",
+      "Phantom"
+    ],
+    "answer": 2,
+    "explanation": "T2 overwrites T1's write. Lost update.",
+    "cheatsheet": "Lost update: one tx overwrites another's uncommitted write.",
+    "steps": [
+      "T1 writes A",
+      "T2 reads A, writes A (overwrites)",
+      "T1 commits",
+      "T1's update effectively lost"
+    ]
+  },
+  {
+    "id": 24,
+    "category": "Transaction Isolation",
+    "question": "W1(A),R2(A),ROLLBACK1. Anomaly in T2?",
+    "options": [
+      "Dirty read",
+      "Non-repeatable read",
+      "Phantom",
+      "No anomaly"
+    ],
+    "answer": 0,
+    "explanation": "T2 reads uncommitted data that gets rolled back.",
+    "cheatsheet": "Dirty read: reading uncommitted rolled-back data.",
+    "steps": [
+      "T1 writes A (uncommitted)",
+      "T2 reads A (sees uncommitted)",
+      "T1 rolls back",
+      "T2 read was dirty"
+    ]
+  },
+  {
+    "id": 25,
+    "category": "Transaction Isolation",
+    "question": "R1(A>5),W2(insert A=7),R1(A>5). Anomaly?",
+    "options": [
+      "Dirty read",
+      "Non-repeatable read",
+      "Phantom read",
+      "No anomaly"
+    ],
+    "answer": 2,
+    "explanation": "Range query sees new rows on re-execution.",
+    "cheatsheet": "Phantom: range query sees different row set.",
+    "steps": [
+      "T1: SELECT WHERE A>5 (rows 6,8,9)",
+      "T2: INSERT A=7, commit",
+      "T1: SELECT WHERE A>5 (rows 6,7,8,9)",
+      "New row 7=phantom"
+    ]
+  },
+  {
+    "id": 26,
+    "category": "Transaction Isolation",
+    "question": "W1(A),R2(A),C1,W2(A),C2. Serializable?",
+    "options": [
+      "T1 then T2",
+      "T2 then T1",
+      "Either",
+      "Not serializable"
+    ],
+    "answer": 0,
+    "explanation": "W1(A)->R2(A), W1(A)->W2(A). All edges 1->2.",
+    "cheatsheet": "Build conflict graph. No cycle=serializable.",
+    "steps": [
+      "W1(A)->R2(A): edge 1->2",
+      "W1(A)->W2(A): edge 1->2",
+      "W2(A) after C1: no backward edge",
+      "Serial as T1,T2"
+    ]
+  },
+  {
+    "id": 27,
+    "category": "Transaction Isolation",
+    "question": "Prevents dirty+non-repeatable read?",
+    "options": [
+      "READ COMMITTED",
+      "REPEATABLE READ",
+      "SERIALIZABLE",
+      "READ UNCOMMITTED"
+    ],
+    "answer": 1,
+    "explanation": "REPEATABLE READ prevents both. RC allows non-repeatable.",
+    "cheatsheet": "RU: all anomalies. RC: dirty. RR: dirty+non-repeatable. SER: all.",
+    "steps": [
+      "READ UNCOMMITTED: all possible",
+      "READ COMMITTED: dirty prevented",
+      "REPEATABLE READ: dirty+non-repeatable prevented",
+      "SERIALIZABLE: all three prevented"
+    ]
+  },
+  {
+    "id": 28,
+    "category": "Transaction Isolation",
+    "question": "W1(A),W2(B),W2(A),W1(B). Serializable?",
+    "options": [
+      "Yes",
+      "No (cycle)",
+      "Depends",
+      "Only with locks"
+    ],
+    "answer": 1,
+    "explanation": "W1(A)->W2(A) edge 1->2, W2(B)->W1(B) edge 2->1. Cycle!",
+    "cheatsheet": "Cycle in precedence graph=NOT serializable.",
+    "steps": [
+      "W1(A)->W2(A): edge 1->2",
+      "W2(B)->W1(B): edge 2->1",
+      "Cycle: 1->2->1",
+      "NOT conflict serializable"
+    ]
+  },
+  {
+    "id": 29,
+    "category": "Transaction Isolation",
+    "question": "T1 lock(A),T2 lock(B),T1 needs B,T2 needs A. This is:",
+    "options": [
+      "Starvation",
+      "Deadlock",
+      "Livelock",
+      "Race condition"
+    ],
+    "answer": 1,
+    "explanation": "Circular wait=deadlock.",
+    "cheatsheet": "Deadlock: mutual exclusion, hold&wait, no preemption, circular wait.",
+    "steps": [
+      "T1 holds A, wants B",
+      "T2 holds B, wants A",
+      "Circular wait",
+      "Deadlock"
+    ]
+  },
+  {
+    "id": 30,
+    "category": "Transaction Isolation",
+    "question": "REPEATABLE READ: index range lock prevents phantoms?",
+    "options": [
+      "No",
+      "Yes (most implementations)",
+      "Only table lock",
+      "Only explicit LOCK"
+    ],
+    "answer": 1,
+    "explanation": "SQL Server uses key-range locks, PostgreSQL uses predicate locking.",
+    "cheatsheet": "Most modern DBs prevent phantoms in RR.",
+    "steps": [
+      "SQL Server: key-range locks",
+      "PostgreSQL: predicate locks",
+      "MySQL/InnoDB: next-key locks",
+      "Most prevent phantoms in RR"
+    ]
+  },
+  {
+    "id": 31,
+    "category": "Index Selectivity",
+    "question": "10000 distinct in 100000 rows. Equality selectivity:",
+    "options": [
+      "0.01",
+      "0.1",
+      "0.001",
+      "1.0"
+    ],
+    "answer": 1,
+    "explanation": "10000/100000=0.1 (10%).",
+    "cheatsheet": "Selectivity=distinct_values/total_rows.",
+    "steps": [
+      "Distinct=10000, Total=100000",
+      "10000/100000=0.1",
+      "10% match",
+      "Moderate selectivity"
+    ]
+  },
+  {
+    "id": 32,
+    "category": "Index Selectivity",
+    "question": "Gender(M/F) in 1M rows. Best index?",
+    "options": [
+      "Bitmap",
+      "B-tree",
+      "No index",
+      "Hash"
+    ],
+    "answer": 0,
+    "explanation": "2 values=very low cardinality. Bitmap ideal.",
+    "cheatsheet": "Low cardinality(<100)=bitmap. High=B-tree.",
+    "steps": [
+      "Distinct values: 2",
+      "~500K rows per value",
+      "Very low cardinality",
+      "Bitmap index ideal"
+    ]
+  },
+  {
+    "id": 33,
+    "category": "Index Selectivity",
+    "question": "Composite(last_name,first_name). WHERE first_name='John'. Usable?",
+    "options": [
+      "Yes",
+      "Skip scan possible",
+      "Not directly",
+      "Depends on DBMS"
+    ],
+    "answer": 2,
+    "explanation": "Missing leading column. Left-prefix rule violated.",
+    "cheatsheet": "Left-prefix: (A,B) usable for (A) or (A,B), NOT (B).",
+    "steps": [
+      "Index: (last_name,first_name)",
+      "Query: WHERE first_name='John'",
+      "Does not start with last_name",
+      "Not usable for this query"
+    ]
+  },
+  {
+    "id": 34,
+    "category": "Index Selectivity",
+    "question": "100K rows,50p,h=3,selectivity=0.001(100r,~1p). Cost:",
+    "options": [
+      "50",
+      "4",
+      "100",
+      "100000"
+    ],
+    "answer": 1,
+    "explanation": "3(index)+1(data)=4.",
+    "cheatsheet": "Index scan=height+matching_data_pages.",
+    "steps": [
+      "Height=3",
+      "Matching pages=1",
+      "Total=3+1=4",
+      "vs full scan=50"
+    ]
+  },
+  {
+    "id": 35,
+    "category": "Index Selectivity",
+    "question": "95% fill factor, 1000 inserts. Approx splits?",
+    "options": [
+      "0-50",
+      "500",
+      "1000",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "5% free space. ~50 splits depending on distribution.",
+    "cheatsheet": "Fill factor=free space per page. Lower=fewer splits.",
+    "steps": [
+      "95% fill=5% free per page",
+      "~5% of 1000=50 potential splits",
+      "Depends on data distribution",
+      "Higher free space=fewer splits"
+    ]
+  },
+  {
+    "id": 36,
+    "category": "Backup Planning",
+    "question": "100GB, 50GB/hr, 2hr window. Feasible?",
+    "options": [
+      "Yes (2hr exactly)",
+      "No (needs 4hr)",
+      "Yes with compression",
+      "Depends"
+    ],
+    "answer": 0,
+    "explanation": "100/50=2hr=within window.",
+    "cheatsheet": "Backup time=size/speed. Must be <=window.",
+    "steps": [
+      "Size=100GB, Speed=50GB/hr",
+      "Time=100/50=2hr",
+      "Window=2hr",
+      "Exactly feasible (no margin)"
+    ]
+  },
+  {
+    "id": 37,
+    "category": "Backup Planning",
+    "question": "Full 100GB weekly, daily incr 5GB. Monthly storage?",
+    "options": [
+      "250GB",
+      "100GB",
+      "150GB",
+      "550GB"
+    ],
+    "answer": 0,
+    "explanation": "1 full(100)+30 incr(150)=250GB.",
+    "cheatsheet": "Storage=full+(incrementals*days).",
+    "steps": [
+      "Full=100GB",
+      "30 daily incrementals*5GB=150GB",
+      "Total=250GB",
+      "Assuming weekly+daily retention"
+    ]
+  },
+  {
+    "id": 38,
+    "category": "Backup Planning",
+    "question": "RPO=1hr, RTO=4hr. Strategy?",
+    "options": [
+      "Daily full",
+      "Hourly log+daily full",
+      "Weekly only",
+      "Monthly"
+    ],
+    "answer": 1,
+    "explanation": "RPO 1hr requires hourly log backups.",
+    "cheatsheet": "RPO=backup frequency. RTO=restore readiness.",
+    "steps": [
+      "RPO=1hr: hourly log backup",
+      "RTO=4hr: tested restore procedure",
+      "Daily full backup as baseline",
+      "Strategy: daily full+hourly logs"
+    ]
+  },
+  {
+    "id": 39,
+    "category": "Backup Planning",
+    "question": "Full 200GB(4hr)+diff 50GB(1hr). Restore time?",
+    "options": [
+      "5hr",
+      "250hr",
+      "4hr",
+      "1hr"
+    ],
+    "answer": 0,
+    "explanation": "Full(4hr)+diff(1hr)=5hr.",
+    "cheatsheet": "Differential restore=full+latest diff.",
+    "steps": [
+      "Full restore: 4hr",
+      "Diff restore: 1hr",
+      "Total: 5hr",
+      "Incremental would be longer"
+    ]
+  },
+  {
+    "id": 40,
+    "category": "Backup Planning",
+    "question": "3-2-1: 500GB DB. Min storage?",
+    "options": [
+      "1.5TB",
+      "500GB",
+      "1TB",
+      "2TB"
+    ],
+    "answer": 1,
+    "explanation": "3 copies*500GB=1.5TB.",
+    "cheatsheet": "3 copies(1prod+2backup)*size.",
+    "steps": [
+      "3 copies of 500GB",
+      "1 production+2 backup",
+      "3*500=1500GB=1.5TB",
+      "On 2 media types, 1 offsite"
+    ]
+  },
+  {
+    "id": 41,
+    "category": "Partitioning",
+    "question": "1000 employees, 5 years range partition. Rows per partition?",
+    "options": [
+      "200",
+      "1000",
+      "500",
+      "100"
+    ],
+    "answer": 0,
+    "explanation": "1000/5=200 average per year.",
+    "cheatsheet": "Range: data by value ranges. Distribution depends on data.",
+    "steps": [
+      "Total=1000, Years=5",
+      "Average=1000/5=200",
+      "Actual may vary",
+      "Uniform distribution assumed"
+    ]
+  },
+  {
+    "id": 42,
+    "category": "Partitioning",
+    "question": "Hash partition 4 ways, id=157. Which partition?",
+    "options": [
+      "157%4=1",
+      "157/4",
+      "Partition 157",
+      "Cannot determine"
+    ],
+    "answer": 0,
+    "explanation": "157 mod 4 = 1.",
+    "cheatsheet": "Hash: partition=hash(key)%num_partitions.",
+    "steps": [
+      "4 partitions",
+      "id=157",
+      "157 mod 4 = 1",
+      "Partition 1"
+    ]
+  },
+  {
+    "id": 43,
+    "category": "Partitioning",
+    "question": "List by region(AMER,EMEA,APAC). WHERE region='EMEA'. Scanned?",
+    "options": [
+      "1 of 3",
+      "All 3",
+      "2",
+      "0"
+    ],
+    "answer": 0,
+    "explanation": "Partition pruning: only EMEA scanned.",
+    "cheatsheet": "Pruning eliminates irrelevant partitions.",
+    "steps": [
+      "3 partitions",
+      "WHERE region='EMEA'",
+      "Only EMEA partition matches",
+      "1/3 scanned=67% reduction"
+    ]
+  },
+  {
+    "id": 44,
+    "category": "Replication & Consistency",
+    "question": "N=5, W=3, R=3. Strong consistency?",
+    "options": [
+      "Yes (6>5)",
+      "No",
+      "Sometimes",
+      "Depends"
+    ],
+    "answer": 0,
+    "explanation": "W+R=6>N=5. Every read sees latest write.",
+    "cheatsheet": "W+R>N guarantees strong consistency.",
+    "steps": [
+      "N=5, W=3, R=3",
+      "W+R=6 > N=5",
+      "Strong consistency guaranteed",
+      "Overlap: at least 1 node in both W and R sets"
+    ]
+  },
+  {
+    "id": 45,
+    "category": "Replication & Consistency",
+    "question": "N=5, W=2, R=2. Consistency?",
+    "options": [
+      "Strong",
+      "Eventual only",
+      "Sometimes",
+      "Strong with latency"
+    ],
+    "answer": 1,
+    "explanation": "W+R=4<=N=5. Eventual consistency only.",
+    "cheatsheet": "W+R must exceed N for strong consistency.",
+    "steps": [
+      "N=5, W=2, R=2",
+      "W+R=4 <= 5",
+      "Read may miss latest write",
+      "Eventual consistency"
+    ]
+  },
+  {
+    "id": 46,
+    "category": "Replication & Consistency",
+    "question": "Async: 1000 ops/sec, 50ms lag. Max stale?",
+    "options": [
+      "0",
+      "~50/sec",
+      "1000/sec",
+      "50000"
+    ],
+    "answer": 1,
+    "explanation": "1000*0.05=50 ops may not have replicated.",
+    "cheatsheet": "Stale=write_rate*replication_lag.",
+    "steps": [
+      "Rate=1000/sec",
+      "Lag=50ms=0.05sec",
+      "Stale=1000*0.05=50",
+      "Up to 50 operations behind"
+    ]
+  },
+  {
+    "id": 47,
+    "category": "Replication & Consistency",
+    "question": "CAP: partition occurs, choose CP. Result?",
+    "options": [
+      "Available with stale data",
+      "Errors/unavailable for consistency",
+      "Split in two",
+      "Data loss"
+    ],
+    "answer": 1,
+    "explanation": "CP: refuse operations rather than serve stale data.",
+    "cheatsheet": "CP: consistent but unavailable during partition.",
+    "steps": [
+      "Network partition detected",
+      "CP: prioritize consistency",
+      "Return errors/timeouts",
+      "Unavailable until partition resolves"
+    ]
+  },
+  {
+    "id": 48,
+    "category": "Replication & Consistency",
+    "question": "3 nodes consistent hashing, add 1. Data movement?",
+    "options": [
+      "0%",
+      "~25%",
+      "~33%",
+      "~50%"
+    ],
+    "answer": 1,
+    "explanation": "Each gives ~1/4 to new node. ~25% moves.",
+    "cheatsheet": "Consistent hash: adding 1 to N moves ~1/(N+1).",
+    "steps": [
+      "Current=3, adding 1 (total 4)",
+      "Each gives ~1/4 keys to new",
+      "~25% data moves",
+      "Minimal disruption"
+    ]
+  }
+]

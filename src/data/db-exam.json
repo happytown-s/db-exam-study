@@ -1,0 +1,3252 @@
+[
+  {
+    "id": 1,
+    "category": "Relational Database Theory",
+    "question": "Which relational algebra operation combines tuples from two relations satisfying a predicate?",
+    "options": [
+      "Selection",
+      "Projection",
+      "Join",
+      "Division"
+    ],
+    "answer": 2,
+    "explanation": "Join combines tuples where they satisfy a predicate. Selection filters rows, projection selects columns, division answers for-all queries."
+  },
+  {
+    "id": 2,
+    "category": "Relational Database Theory",
+    "question": "Cartesian product of relations with m and n tuples produces:",
+    "options": [
+      "m+n tuples",
+      "m*n tuples",
+      "max(m,n)",
+      "min(m,n)"
+    ],
+    "answer": 1,
+    "explanation": "Cartesian product produces m*n tuples by pairing every tuple from first with every tuple from second."
+  },
+  {
+    "id": 3,
+    "category": "Relational Database Theory",
+    "question": "DIVISION operation answers which query type?",
+    "options": [
+      "OR conditions",
+      "EXISTS queries",
+      "For-all queries",
+      "Aggregations"
+    ],
+    "answer": 2,
+    "explanation": "Division answers for-all queries: find students who took ALL courses = R/S."
+  },
+  {
+    "id": 4,
+    "category": "Relational Database Theory",
+    "question": "FD A->B is trivial if:",
+    "options": [
+      "A is a candidate key",
+      "B is subset of A",
+      "A is subset of B",
+      "A and B disjoint"
+    ],
+    "answer": 1,
+    "explanation": "Trivial if B is subset of A. Always holds, no meaningful constraint."
+  },
+  {
+    "id": 5,
+    "category": "Relational Database Theory",
+    "question": "Which NF eliminates transitive dependencies?",
+    "options": [
+      "1NF",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answer": 2,
+    "explanation": "3NF eliminates transitive deps where non-key attribute depends on another non-key attribute."
+  },
+  {
+    "id": 6,
+    "category": "Relational Database Theory",
+    "question": "BCNF is stricter than 3NF because it requires:",
+    "options": [
+      "All attrs must be prime",
+      "Every determinant to be a superkey",
+      "No MVDs allowed",
+      "Single-valued only"
+    ],
+    "answer": 1,
+    "explanation": "BCNF: every non-trivial FD A->B requires A be superkey. 3NF allows B to be prime even if A is not superkey."
+  },
+  {
+    "id": 7,
+    "category": "Relational Database Theory",
+    "question": "Which NF addresses multi-valued dependencies?",
+    "options": [
+      "3NF",
+      "BCNF",
+      "4NF",
+      "5NF"
+    ],
+    "answer": 2,
+    "explanation": "4NF addresses MVDs. Relation in 4NF is in BCNF with no non-trivial multi-valued dependencies."
+  },
+  {
+    "id": 8,
+    "category": "Relational Database Theory",
+    "question": "5NF (Project-Join NF) concerns:",
+    "options": [
+      "MVDs",
+      "FDs",
+      "Join dependencies",
+      "Transitive deps"
+    ],
+    "answer": 2,
+    "explanation": "5NF deals with join dependencies - cannot decompose into smaller relations without information loss."
+  },
+  {
+    "id": 9,
+    "category": "Relational Database Theory",
+    "question": "Closure F+ of FDs is:",
+    "options": [
+      "Minimal set equivalent to F",
+      "All FDs derivable via Armstrong axioms",
+      "FDs in current DB state",
+      "Subset of F in BCNF"
+    ],
+    "answer": 1,
+    "explanation": "F+ includes all FDs derivable using reflexivity, augmentation, and transitivity."
+  },
+  {
+    "id": 10,
+    "category": "Relational Database Theory",
+    "question": "Armstrong transitivity: A->B, B->C then:",
+    "options": [
+      "A->C",
+      "C->A",
+      "A->B and A->C",
+      "B->A and C->B"
+    ],
+    "answer": 0,
+    "explanation": "Transitivity is fundamental for computing attribute closures."
+  },
+  {
+    "id": 11,
+    "category": "Relational Database Theory",
+    "question": "R(A,B,C) with FDs A->B, B->C violates which NF?",
+    "options": [
+      "1NF only",
+      "2NF",
+      "3NF",
+      "BCNF"
+    ],
+    "answer": 2,
+    "explanation": "Transitive dep A->B->C. A is only key; B->C where B not superkey = 3NF violation."
+  },
+  {
+    "id": 12,
+    "category": "Relational Database Theory",
+    "question": "EXISTS in tuple relational calculus is:",
+    "options": [
+      "Universal quantification",
+      "Existential quantification",
+      "Negation",
+      "Aggregation"
+    ],
+    "answer": 1,
+    "explanation": "EXISTS retrieves tuples where a matching tuple exists in the specified relation."
+  },
+  {
+    "id": 13,
+    "category": "Relational Database Theory",
+    "question": "A prime attribute is:",
+    "options": [
+      "Part of any candidate key",
+      "First attr of primary key",
+      "Always unique",
+      "Cannot be NULL"
+    ],
+    "answer": 0,
+    "explanation": "Prime attributes are in at least one candidate key. Crucial for 2NF and 3NF."
+  },
+  {
+    "id": 14,
+    "category": "Relational Database Theory",
+    "question": "Lossless-join ensures:",
+    "options": [
+      "Dependency preservation",
+      "Original recoverable by join",
+      "Minimal redundancy",
+      "Attribute preservation"
+    ],
+    "answer": 1,
+    "explanation": "Joining decomposed relations recovers original exactly. Intersection must be superkey of one part."
+  },
+  {
+    "id": 15,
+    "category": "Relational Database Theory",
+    "question": "Natural join eliminates:",
+    "options": [
+      "Left duplicates",
+      "Duplicate join column",
+      "All NULLs",
+      "Non-matching tuples"
+    ],
+    "answer": 1,
+    "explanation": "Merges join columns into one, returns only matching tuples on common attributes."
+  },
+  {
+    "id": 16,
+    "category": "Relational Database Theory",
+    "question": "Candidate key is minimal because:",
+    "options": [
+      "Fewest attributes",
+      "No proper subset is superkey",
+      "Only non-nulls",
+      "Chosen primary key"
+    ],
+    "answer": 1,
+    "explanation": "No proper subset uniquely identifies tuples - minimal superkey."
+  },
+  {
+    "id": 17,
+    "category": "Relational Database Theory",
+    "question": "Outer join includes:",
+    "options": [
+      "Nothing extra",
+      "Unmatched tuples with NULLs",
+      "No duplicates",
+      "Sorted results"
+    ],
+    "answer": 1,
+    "explanation": "Includes unmatched tuples from one or both relations, padding with NULLs."
+  },
+  {
+    "id": 18,
+    "category": "Relational Database Theory",
+    "question": "R(A,B,C,D) with FDs {AB->C,C->D,D->A}: candidate keys?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "answer": 2,
+    "explanation": "AB+={ABCD}, BC+={BCDA}, BD+={BDAC}. Three candidate keys: AB, BC, BD."
+  },
+  {
+    "id": 19,
+    "category": "Relational Database Theory",
+    "question": "Armstrong augmentation: A->B implies:",
+    "options": [
+      "A->BC",
+      "AC->BC",
+      "AB->C",
+      "B->A"
+    ],
+    "answer": 1,
+    "explanation": "If A->B, then AC->BC for any C. Both sides augmented equally."
+  },
+  {
+    "id": 20,
+    "category": "Relational Database Theory",
+    "question": "2NF requires:",
+    "options": [
+      "Atomic values",
+      "No partial dependency on candidate keys",
+      "No transitive deps",
+      "Every determinant superkey"
+    ],
+    "answer": 1,
+    "explanation": "No non-prime attribute partially depends on composite candidate key."
+  },
+  {
+    "id": 21,
+    "category": "Relational Database Theory",
+    "question": "Semi-join returns:",
+    "options": [
+      "All R tuples",
+      "R tuples matching S",
+      "S tuples matching R",
+      "R intersect S"
+    ],
+    "answer": 1,
+    "explanation": "Only R tuples with matches in S, keeping only R attributes."
+  },
+  {
+    "id": 22,
+    "category": "Relational Database Theory",
+    "question": "1NF requires:",
+    "options": [
+      "Unique values",
+      "Atomic values",
+      "Dependence on entire key",
+      "Primary key"
+    ],
+    "answer": 1,
+    "explanation": "All attribute values must be atomic (indivisible)."
+  },
+  {
+    "id": 23,
+    "category": "Relational Database Theory",
+    "question": "Attribute closure A+ is:",
+    "options": [
+      "All attrs dependent on A",
+      "All FDs A determines",
+      "Superkey containing A",
+      "Candidate keys with A"
+    ],
+    "answer": 0,
+    "explanation": "All attributes functionally determined by A via Armstrong axioms."
+  },
+  {
+    "id": 24,
+    "category": "Relational Database Theory",
+    "question": "BCNF requires for non-trivial FD X->Y:",
+    "options": [
+      "Y is prime",
+      "X is superkey",
+      "Y not subset X",
+      "X is candidate key"
+    ],
+    "answer": 1,
+    "explanation": "X must be superkey. Stricter than 3NF which allows Y to be prime."
+  },
+  {
+    "id": 25,
+    "category": "Relational Database Theory",
+    "question": "Dependency preservation means:",
+    "options": [
+      "All FDs checkable on decomposed relations",
+      "All data preserved",
+      "No redundancy",
+      "Faster queries"
+    ],
+    "answer": 0,
+    "explanation": "Every original FD derivable from FDs on decomposed relations."
+  },
+  {
+    "id": 26,
+    "category": "Relational Database Theory",
+    "question": "MVD A->>B means:",
+    "options": [
+      "B functionally determined by A",
+      "B values independent of C per A",
+      "A determines B and C",
+      "B,C same cardinality per A"
+    ],
+    "answer": 1,
+    "explanation": "For each A, B values are independent of C values. B and C are independent facts."
+  },
+  {
+    "id": 27,
+    "category": "Relational Database Theory",
+    "question": "Correct NF hierarchy:",
+    "options": [
+      "BCNF=>4NF=>3NF",
+      "5NF=>4NF=>BCNF=>3NF",
+      "3NF=>BCNF=>4NF",
+      "4NF=>5NF=>BCNF"
+    ],
+    "answer": 1,
+    "explanation": "5NF=>4NF=>BCNF=>3NF=>2NF=>1NF. Each higher implies all lower."
+  },
+  {
+    "id": 28,
+    "category": "Relational Database Theory",
+    "question": "Rename operation resolves:",
+    "options": [
+      "Performance issues",
+      "Naming conflicts",
+      "Sorting problems",
+      "Duplicate rows"
+    ],
+    "answer": 1,
+    "explanation": "Essential for self-joins and combining relations with same-named attributes."
+  },
+  {
+    "id": 29,
+    "category": "Relational Database Theory",
+    "question": "Domain calculus {<x,y>|R(x) AND S(y)} produces:",
+    "options": [
+      "Intersection",
+      "Cartesian product",
+      "Natural join",
+      "Union"
+    ],
+    "answer": 1,
+    "explanation": "Independent variables without linking constraint = Cartesian product."
+  },
+  {
+    "id": 30,
+    "category": "Relational Database Theory",
+    "question": "Armstrong reflexivity: B subset of A implies:",
+    "options": [
+      "A->B",
+      "B->A",
+      "A+B->A",
+      "A->A union B"
+    ],
+    "answer": 0,
+    "explanation": "If B is subset of A, then A->B always holds (trivial dependency)."
+  },
+  {
+    "id": 31,
+    "category": "SQL Advanced",
+    "question": "CUBE in GROUP BY generates:",
+    "options": [
+      "All column combinations",
+      "Hierarchical subtotals",
+      "Grand total only",
+      "Specified levels"
+    ],
+    "answer": 0,
+    "explanation": "CUBE generates 2^n groupings including all subtotals and grand total."
+  },
+  {
+    "id": 32,
+    "category": "SQL Advanced",
+    "question": "ROW_NUMBER() vs RANK() difference:",
+    "options": [
+      "Identical",
+      "RANK gives ties same rank and skips numbers",
+      "ROW_NUMBER not window function",
+      "RANK cannot ORDER BY"
+    ],
+    "answer": 1,
+    "explanation": "RANK: 1,2,2,4. ROW_NUMBER: 1,2,3,4. DENSE_RANK: 1,2,2,3."
+  },
+  {
+    "id": 33,
+    "category": "SQL Advanced",
+    "question": "In recursive CTE, anchor and recursive combined by:",
+    "options": [
+      "UNION",
+      "UNION ALL",
+      "JOIN",
+      "INTERSECT"
+    ],
+    "answer": 1,
+    "explanation": "UNION ALL required. UNION would remove duplicates and could cause infinite loops."
+  },
+  {
+    "id": 34,
+    "category": "SQL Advanced",
+    "question": "LAG() returns:",
+    "options": [
+      "Next row value",
+      "Previous row value",
+      "Difference from previous",
+      "Current row position"
+    ],
+    "answer": 1,
+    "explanation": "LAG() returns value from previous row (default offset 1). LEAD() returns from subsequent row."
+  },
+  {
+    "id": 35,
+    "category": "SQL Advanced",
+    "question": "EXISTS returns TRUE when:",
+    "options": [
+      "Subquery returns count",
+      "Subquery returns at least one row",
+      "All rows match",
+      "Column exists"
+    ],
+    "answer": 1,
+    "explanation": "EXISTS returns TRUE if subquery returns any rows. More efficient than IN for existence checks."
+  },
+  {
+    "id": 36,
+    "category": "SQL Advanced",
+    "question": "Which set operation removes duplicates?",
+    "options": [
+      "UNION ALL",
+      "INTERSECT ALL",
+      "UNION",
+      "EXCEPT ALL"
+    ],
+    "answer": 2,
+    "explanation": "UNION removes duplicates. UNION ALL is faster, skips deduplication."
+  },
+  {
+    "id": 37,
+    "category": "SQL Advanced",
+    "question": "Correlated subquery re-evaluates:",
+    "options": [
+      "Once only",
+      "For each outer query row",
+      "After outer completes",
+      "When optimizer decides"
+    ],
+    "answer": 1,
+    "explanation": "References outer columns, re-evaluated per row. Potentially slower."
+  },
+  {
+    "id": 38,
+    "category": "SQL Advanced",
+    "question": "(rank-1)/(N-1) is calculated by:",
+    "options": [
+      "ROW_NUMBER",
+      "RANK",
+      "PERCENT_RANK",
+      "CUME_DIST"
+    ],
+    "answer": 2,
+    "explanation": "PERCENT_RANK = (rank-1)/(N-1). CUME_DIST = rank/N."
+  },
+  {
+    "id": 39,
+    "category": "SQL Advanced",
+    "question": "FILTER clause in aggregates:",
+    "options": [
+      "Sorts input",
+      "Conditionally includes rows",
+      "Filters final result",
+      "Removes NULLs"
+    ],
+    "answer": 1,
+    "explanation": "FILTER(WHERE cond) includes only matching rows in aggregate."
+  },
+  {
+    "id": 40,
+    "category": "SQL Advanced",
+    "question": "MERGE statement can:",
+    "options": [
+      "Only INSERT",
+      "Only UPDATE",
+      "INSERT, UPDATE, DELETE based on match",
+      "SELECT and INSERT only"
+    ],
+    "answer": 2,
+    "explanation": "MERGE (UPSERT) can INSERT new, UPDATE existing, DELETE rows based on match conditions."
+  },
+  {
+    "id": 41,
+    "category": "SQL Advanced",
+    "question": "OVER() clause specifies:",
+    "options": [
+      "Table to query",
+      "Partitioning and ordering for window",
+      "Filter condition",
+      "Join condition"
+    ],
+    "answer": 1,
+    "explanation": "PARTITION BY divides, ORDER BY sorts within partition, frame defines range."
+  },
+  {
+    "id": 42,
+    "category": "SQL Advanced",
+    "question": "Which clause filters BEFORE GROUP BY?",
+    "options": [
+      "HAVING",
+      "WHERE",
+      "QUALIFY",
+      "FILTER"
+    ],
+    "answer": 1,
+    "explanation": "WHERE filters before grouping. HAVING filters after aggregation."
+  },
+  {
+    "id": 43,
+    "category": "SQL Advanced",
+    "question": "Materialized view vs regular view:",
+    "options": [
+      "Cannot be queried",
+      "Result stored on disk",
+      "No joins supported",
+      "Always current"
+    ],
+    "answer": 1,
+    "explanation": "Stores result physically, improving reads but requiring refresh."
+  },
+  {
+    "id": 44,
+    "category": "SQL Advanced",
+    "question": "ROLLUP produces:",
+    "options": [
+      "All combinations",
+      "Hierarchical subtotals and grand total",
+      "Grand total only",
+      "Cross-tabulation"
+    ],
+    "answer": 1,
+    "explanation": "ROLLUP(a,b,c) produces (a,b,c),(a,b),(a),() groups - hierarchical subtotals."
+  },
+  {
+    "id": 45,
+    "category": "SQL Advanced",
+    "question": "NTILE(n) divides rows into:",
+    "options": [
+      "n equal parts",
+      "n columns",
+      "n subqueries",
+      "n tables"
+    ],
+    "answer": 0,
+    "explanation": "Divides result into n approximately equal groups, assigning numbers 1 to n."
+  },
+  {
+    "id": 46,
+    "category": "SQL Advanced",
+    "question": "Rows in first query NOT in second:",
+    "options": [
+      "INTERSECT",
+      "UNION",
+      "EXCEPT (MINUS)",
+      "DIFFERENCE"
+    ],
+    "answer": 2,
+    "explanation": "EXCEPT/MINUS returns rows from first SELECT not in second."
+  },
+  {
+    "id": 47,
+    "category": "SQL Advanced",
+    "question": "LATERAL join allows:",
+    "options": [
+      "Cross-DB queries",
+      "Subquery to reference preceding FROM columns",
+      "Recursive queries",
+      "Parallel execution"
+    ],
+    "answer": 1,
+    "explanation": "Enables subqueries in FROM to reference preceding tables in same FROM clause."
+  },
+  {
+    "id": 48,
+    "category": "SQL Advanced",
+    "question": "Default frame with ORDER BY:",
+    "options": [
+      "ROWS UNBOUNDED to CURRENT ROW",
+      "RANGE UNBOUNDED to CURRENT ROW",
+      "ROWS UNBOUNDED both",
+      "RANGE UNBOUNDED both"
+    ],
+    "answer": 1,
+    "explanation": "Default is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW."
+  },
+  {
+    "id": 49,
+    "category": "SQL Advanced",
+    "question": "Removes all rows, resets identity with minimal logging?",
+    "options": [
+      "DELETE FROM",
+      "DROP TABLE",
+      "TRUNCATE TABLE",
+      "REMOVE TABLE"
+    ],
+    "answer": 2,
+    "explanation": "TRUNCATE removes all rows fast with minimal logging, resets identity."
+  },
+  {
+    "id": 50,
+    "category": "SQL Advanced",
+    "question": "WITH CHECK OPTION enforces:",
+    "options": [
+      "Performance",
+      "Inserts/updates satisfy view WHERE clause",
+      "View updatable",
+      "Referential integrity"
+    ],
+    "answer": 1,
+    "explanation": "Ensures all INSERT/UPDATE through view satisfy its WHERE condition."
+  },
+  {
+    "id": 51,
+    "category": "SQL Advanced",
+    "question": "WITH clause (CTE) provides:",
+    "options": [
+      "Transaction boundary",
+      "Named temporary result set",
+      "Security context",
+      "Connection pooling"
+    ],
+    "answer": 1,
+    "explanation": "CTE creates named temporary result set for SELECT/INSERT/UPDATE/DELETE."
+  },
+  {
+    "id": 52,
+    "category": "SQL Advanced",
+    "question": "FIRST_VALUE() returns:",
+    "options": [
+      "First column",
+      "Value from first row of window frame",
+      "First row number",
+      "Minimum value"
+    ],
+    "answer": 1,
+    "explanation": "Returns expression value from the first row of current window frame."
+  },
+  {
+    "id": 53,
+    "category": "SQL Advanced",
+    "question": "Prevents phantoms, allows non-repeatable reads:",
+    "options": [
+      "READ UNCOMMITTED",
+      "READ COMMITTED",
+      "REPEATABLE READ",
+      "SERIALIZABLE"
+    ],
+    "answer": 2,
+    "explanation": "REPEATABLE READ prevents non-repeatable reads. Phantom prevention varies by DBMS."
+  },
+  {
+    "id": 54,
+    "category": "SQL Advanced",
+    "question": "Deterministic SQL function:",
+    "options": [
+      "Always returns NULL",
+      "Same result for same input",
+      "Modifies data",
+      "Used in triggers"
+    ],
+    "answer": 1,
+    "explanation": "Always returns same result for same inputs. Important for indexing."
+  },
+  {
+    "id": 55,
+    "category": "SQL Advanced",
+    "question": "Window frame boundary defined by:",
+    "options": [
+      "PARTITION BY",
+      "ORDER BY",
+      "ROWS/RANGE BETWEEN...AND...",
+      "GROUP BY"
+    ],
+    "answer": 2,
+    "explanation": "ROWS/RANGE BETWEEN...AND... defines which rows are in the window."
+  },
+  {
+    "id": 56,
+    "category": "SQL Advanced",
+    "question": "GRANT WITH GRANT OPTION allows:",
+    "options": [
+      "Creating tables",
+      "Grantee to grant privileges to others",
+      "Revoking privileges",
+      "System access"
+    ],
+    "answer": 1,
+    "explanation": "Permits grantee to further grant received privileges to other users."
+  },
+  {
+    "id": 57,
+    "category": "SQL Advanced",
+    "question": "SQL trigger is:",
+    "options": [
+      "Manual stored procedure",
+      "Auto-executed on table event",
+      "Constraint",
+      "Index type"
+    ],
+    "answer": 1,
+    "explanation": "Fired automatically when INSERT/UPDATE/DELETE occurs on table/view."
+  },
+  {
+    "id": 58,
+    "category": "SQL Advanced",
+    "question": "= ANY tests:",
+    "options": [
+      "No values",
+      "Any value in subquery result",
+      "All values",
+      "First value"
+    ],
+    "answer": 1,
+    "explanation": "= ANY (equivalent to IN) returns TRUE if value equals any subquery result."
+  },
+  {
+    "id": 59,
+    "category": "SQL Advanced",
+    "question": "Recursive CTE must include:",
+    "options": [
+      "Two anchors",
+      "UNION ALL between anchor and recursive",
+      "LIMIT",
+      "ORDER BY"
+    ],
+    "answer": 1,
+    "explanation": "Requires anchor, recursive member referencing CTE, and UNION ALL."
+  },
+  {
+    "id": 60,
+    "category": "SQL Advanced",
+    "question": "GROUPING SETS allows:",
+    "options": [
+      "All CUBE combos",
+      "Multiple GROUP BY groupings in one query",
+      "Creating grouping columns",
+      "Rollup hierarchies"
+    ],
+    "answer": 1,
+    "explanation": "Multiple groupings in one query, equivalent to multiple GROUP BYs + UNION ALL."
+  },
+  {
+    "id": 61,
+    "category": "SQL Advanced",
+    "question": "COALESCE() returns:",
+    "options": [
+      "First non-NULL argument",
+      "Last non-NULL",
+      "NULL if any NULL",
+      "Average of non-NULLs"
+    ],
+    "answer": 0,
+    "explanation": "Returns first non-NULL from argument list. Useful for default values."
+  },
+  {
+    "id": 62,
+    "category": "SQL Advanced",
+    "question": "Covering index includes:",
+    "options": [
+      "Only primary key",
+      "All columns needed by query",
+      "All table columns",
+      "Only foreign keys"
+    ],
+    "answer": 1,
+    "explanation": "All query-referenced columns, query satisfied from index alone."
+  },
+  {
+    "id": 63,
+    "category": "SQL Advanced",
+    "question": "SELECT FOR UPDATE prevents:",
+    "options": [
+      "Reads",
+      "Concurrent modification of selected rows",
+      "All queries",
+      "FK checks"
+    ],
+    "answer": 1,
+    "explanation": "Locks selected rows until transaction completes."
+  },
+  {
+    "id": 64,
+    "category": "SQL Advanced",
+    "question": "DENSE_RANK vs RANK:",
+    "options": [
+      "Different sorting",
+      "DENSE_RANK does not skip ranks after ties",
+      "Numeric only",
+      "Requires partition"
+    ],
+    "answer": 1,
+    "explanation": "DENSE_RANK: 2,2,3. RANK: 2,2,4. Both assign ties same rank."
+  },
+  {
+    "id": 65,
+    "category": "SQL Advanced",
+    "question": "RETURNING clause returns:",
+    "options": [
+      "Affected row count",
+      "The modified data",
+      "Status code",
+      "Transaction ID"
+    ],
+    "answer": 1,
+    "explanation": "Returns inserted/updated/deleted data without separate SELECT."
+  },
+  {
+    "id": 66,
+    "category": "SQL Advanced",
+    "question": "Stored procedure vs function:",
+    "options": [
+      "Must return value",
+      "Cannot contain SQL",
+      "Can return multiple result sets",
+      "No parameters"
+    ],
+    "answer": 2,
+    "explanation": "Procedures can return multiple result sets and output parameters."
+  },
+  {
+    "id": 67,
+    "category": "SQL Advanced",
+    "question": "SNAPSHOT isolation provides:",
+    "options": [
+      "Blocked reads",
+      "Consistent view from transaction start",
+      "Dirty reads",
+      "Phantom reads"
+    ],
+    "answer": 1,
+    "explanation": "Row versioning prevents dirty/non-repeatable/phantom reads. Allows write skew."
+  },
+  {
+    "id": 68,
+    "category": "SQL Advanced",
+    "question": "FULL OUTER JOIN returns:",
+    "options": [
+      "Only matching rows",
+      "All left rows",
+      "All rows from both with NULLs",
+      "All right rows"
+    ],
+    "answer": 2,
+    "explanation": "All rows from both tables, non-matching sides padded with NULLs."
+  },
+  {
+    "id": 69,
+    "category": "SQL Advanced",
+    "question": "GROUPING() function used with:",
+    "options": [
+      "Regular GROUP BY",
+      "CUBE/ROLLUP/GROUPING SETS",
+      "Window functions",
+      "Subqueries"
+    ],
+    "answer": 1,
+    "explanation": "Distinguishes regular from superaggregate rows. Returns 1 for superaggregate."
+  },
+  {
+    "id": 70,
+    "category": "SQL Advanced",
+    "question": "FOREIGN KEY ensures:",
+    "options": [
+      "Uniqueness",
+      "Referential integrity",
+      "Non-null",
+      "Default values"
+    ],
+    "answer": 1,
+    "explanation": "Requires referencing values exist in referenced table."
+  },
+  {
+    "id": 71,
+    "category": "Database Design",
+    "question": "Weak entity type:",
+    "options": [
+      "Has no attributes",
+      "Depends on strong entity for identification",
+      "Has composite key",
+      "Is optional"
+    ],
+    "answer": 1,
+    "explanation": "Weak entity lacks sufficient attributes for primary key, depends on identifying owner."
+  },
+  {
+    "id": 72,
+    "category": "Database Design",
+    "question": "Ternary relationship involves:",
+    "options": [
+      "Three attributes",
+      "Three entity types",
+      "Three weak entities",
+      "Three primary keys"
+    ],
+    "answer": 1,
+    "explanation": "Three entity types. Cannot always decompose into binary relationships."
+  },
+  {
+    "id": 73,
+    "category": "Database Design",
+    "question": "Cardinality constraints specify:",
+    "options": [
+      "Max attribute count",
+      "Entity participation count in relationships",
+      "Database size",
+      "Table count"
+    ],
+    "answer": 1,
+    "explanation": "1:1, 1:N, M:N specify participation counts in relationships."
+  },
+  {
+    "id": 74,
+    "category": "Database Design",
+    "question": "Denormalization improves:",
+    "options": [
+      "NF compliance",
+      "Read performance at cost of redundancy",
+      "Storage efficiency",
+      "Dependency elimination"
+    ],
+    "answer": 1,
+    "explanation": "Introduces redundancy to reduce joins and improve reads."
+  },
+  {
+    "id": 75,
+    "category": "Database Design",
+    "question": "Identifying relationship:",
+    "options": [
+      "Both weak entities",
+      "Weak entity key includes strong entity key",
+      "Only foreign keys",
+      "Surrogate key"
+    ],
+    "answer": 1,
+    "explanation": "Weak entity PK includes identifying owner PK, creating composite key."
+  },
+  {
+    "id": 76,
+    "category": "Database Design",
+    "question": "Surrogate key is:",
+    "options": [
+      "Foreign key",
+      "Artificially generated unique identifier",
+      "Composite PK",
+      "Secondary index"
+    ],
+    "answer": 1,
+    "explanation": "System-generated unique ID (auto-increment) with no business meaning."
+  },
+  {
+    "id": 77,
+    "category": "Database Design",
+    "question": "Horizontal partitioning splits by:",
+    "options": [
+      "Columns",
+      "Rows based on partition key",
+      "Tables",
+      "Data types"
+    ],
+    "answer": 1,
+    "explanation": "Sharding splits rows by key. Each partition: same columns, different rows."
+  },
+  {
+    "id": 78,
+    "category": "Database Design",
+    "question": "Vertical partitioning advantage:",
+    "options": [
+      "Easier joins",
+      "Faster full scans",
+      "Reduced I/O accessing only needed columns",
+      "Simplified schema"
+    ],
+    "answer": 2,
+    "explanation": "Allows queries to access only needed columns, reducing I/O."
+  },
+  {
+    "id": 79,
+    "category": "Database Design",
+    "question": "ER diagram diamond represents:",
+    "options": [
+      "Entity",
+      "Attribute",
+      "Relationship",
+      "Primary key"
+    ],
+    "answer": 2,
+    "explanation": "Chen notation: diamonds=relationships, rectangles=entities, ovals=attributes."
+  },
+  {
+    "id": 80,
+    "category": "Database Design",
+    "question": "Supertype/subtype models:",
+    "options": [
+      "One-to-many",
+      "Specialization/generalization hierarchies",
+      "Self-referencing",
+      "Cross-table joins"
+    ],
+    "answer": 1,
+    "explanation": "Common in supertype, specific in subtypes (Employee->Manager/Developer)."
+  },
+  {
+    "id": 81,
+    "category": "Database Design",
+    "question": "Single table inheritance stores:",
+    "options": [
+      "Separate tables",
+      "All types in one table with discriminator",
+      "No subtypes",
+      "Only common attrs"
+    ],
+    "answer": 1,
+    "explanation": "One table with type discriminator and nullable subtype-specific columns."
+  },
+  {
+    "id": 82,
+    "category": "Database Design",
+    "question": "Recursive relationship connects:",
+    "options": [
+      "Two entities",
+      "Entity to itself",
+      "Three entities",
+      "Weak to strong"
+    ],
+    "answer": 1,
+    "explanation": "Self-referencing: employee-manager within Employee table."
+  },
+  {
+    "id": 83,
+    "category": "Database Design",
+    "question": "Conceptual design produces:",
+    "options": [
+      "SQL statements",
+      "DBMS-independent ER model",
+      "Physical specs",
+      "Index definitions"
+    ],
+    "answer": 1,
+    "explanation": "ER model without implementation details."
+  },
+  {
+    "id": 84,
+    "category": "Database Design",
+    "question": "Physical design includes:",
+    "options": [
+      "Entity definitions",
+      "Data types, indexes, storage",
+      "Normalization",
+      "ER diagrams"
+    ],
+    "answer": 1,
+    "explanation": "Implementation: data types, indexing, file organization, storage."
+  },
+  {
+    "id": 85,
+    "category": "Database Design",
+    "question": "Composite attribute:",
+    "options": [
+      "Multiple values",
+      "Composed of sub-attributes",
+      "Foreign key",
+      "Derived attr"
+    ],
+    "answer": 1,
+    "explanation": "E.g., Address = Street+City+Zip. Sub-attrs become columns."
+  },
+  {
+    "id": 86,
+    "category": "Database Design",
+    "question": "Range partitioning suits:",
+    "options": [
+      "Uniform distribution",
+      "Range-based query filters",
+      "Equality conditions",
+      "Small tables"
+    ],
+    "answer": 1,
+    "explanation": "Ideal for date ranges, ID ranges, sequential value queries."
+  },
+  {
+    "id": 87,
+    "category": "Database Design",
+    "question": "Derived attribute:",
+    "options": [
+      "From another table",
+      "Computed from other attrs",
+      "PK component",
+      "Always unique"
+    ],
+    "answer": 1,
+    "explanation": "E.g., age from birthdate. Not stored to avoid redundancy."
+  },
+  {
+    "id": 88,
+    "category": "Database Design",
+    "question": "Total participation means:",
+    "options": [
+      "Every entity must participate",
+      "Max one per relationship",
+      "Optional",
+      "Unlimited"
+    ],
+    "answer": 0,
+    "explanation": "Every instance must participate in at least one relationship."
+  },
+  {
+    "id": 89,
+    "category": "Database Design",
+    "question": "Hash partitioning distributes by:",
+    "options": [
+      "Ranges",
+      "Hash function on partition key",
+      "Manual",
+      "Date"
+    ],
+    "answer": 1,
+    "explanation": "Hash function distributes evenly. Prevents skew, hurts range queries."
+  },
+  {
+    "id": 90,
+    "category": "Database Design",
+    "question": "Multivalued attribute requires:",
+    "options": [
+      "Composite key",
+      "Separate table",
+      "CHECK constraint",
+      "DEFAULT"
+    ],
+    "answer": 1,
+    "explanation": "Cannot be single column in 1NF. Requires separate linked table."
+  },
+  {
+    "id": 91,
+    "category": "Database Design",
+    "question": "N:M relationship requires:",
+    "options": [
+      "Foreign key",
+      "Associative entity (junction table)",
+      "UNIQUE constraint",
+      "Composite attr"
+    ],
+    "answer": 1,
+    "explanation": "Requires junction table with foreign keys to both entities."
+  },
+  {
+    "id": 92,
+    "category": "Database Design",
+    "question": "Logical design transforms into:",
+    "options": [
+      "Physical layout",
+      "Relational schema",
+      "Application code",
+      "Network protocol"
+    ],
+    "answer": 1,
+    "explanation": "Entities become tables, relationships become foreign keys."
+  },
+  {
+    "id": 93,
+    "category": "Database Design",
+    "question": "Fan-out trap occurs when:",
+    "options": [
+      "Too many joins",
+      "Paths between entities lose information",
+      "Too many FKs",
+      "Index too large"
+    ],
+    "answer": 1,
+    "explanation": "Independent 1:N paths may lose information when queried."
+  },
+  {
+    "id": 94,
+    "category": "Database Design",
+    "question": "Pre-aggregation stores:",
+    "options": [
+      "Merged tables",
+      "Pre-computed aggregations",
+      "Duplicate columns",
+      "Reference tables"
+    ],
+    "answer": 1,
+    "explanation": "Totals/counts in dedicated tables to avoid GROUP BY queries."
+  },
+  {
+    "id": 95,
+    "category": "Database Design",
+    "question": "Choosing primary keys: which phase?",
+    "options": [
+      "Requirements",
+      "Conceptual",
+      "Logical",
+      "Physical"
+    ],
+    "answer": 2,
+    "explanation": "Part of converting ER model to relational tables."
+  },
+  {
+    "id": 96,
+    "category": "Database Design",
+    "question": "List partitioning assigns by:",
+    "options": [
+      "Hash",
+      "Explicit value list",
+      "Ranges",
+      "Random"
+    ],
+    "answer": 1,
+    "explanation": "Assigns rows by predefined value list. Good for categorical data."
+  },
+  {
+    "id": 97,
+    "category": "Database Design",
+    "question": "Chasm trap:",
+    "options": [
+      "Too many NULLs",
+      "Optional relationships hide missing paths",
+      "Duplicate rows",
+      "Missing FKs"
+    ],
+    "answer": 1,
+    "explanation": "Optional relationships mean some entities have no path between them."
+  },
+  {
+    "id": 98,
+    "category": "Database Design",
+    "question": "Data dictionary stores:",
+    "options": [
+      "Encrypted data",
+      "Metadata about DB structure",
+      "Backup data",
+      "Optimization"
+    ],
+    "answer": 1,
+    "explanation": "Table definitions, column types, constraints, indexes."
+  },
+  {
+    "id": 99,
+    "category": "Database Design",
+    "question": "Temporal data uses:",
+    "options": [
+      "Timestamp only",
+      "SCD patterns",
+      "5NF",
+      "Denormalization"
+    ],
+    "answer": 1,
+    "explanation": "SCD Type 1: overwrite, Type 2: new row version, Type 3: add columns."
+  },
+  {
+    "id": 100,
+    "category": "Database Design",
+    "question": "Bridge table resolves:",
+    "options": [
+      "Facts",
+      "M:N between facts and dimensions",
+      "Indexes",
+      "Partitions"
+    ],
+    "answer": 1,
+    "explanation": "Resolves many-to-many in dimensions (multi-valued dimensions)."
+  },
+  {
+    "id": 101,
+    "category": "Transaction Management",
+    "question": "ACID Atomicity ensures:",
+    "options": [
+      "Simultaneous transactions",
+      "All-or-nothing transactions",
+      "Consistency",
+      "Isolation"
+    ],
+    "answer": 1,
+    "explanation": "All operations complete or none do. Any failure rolls back entire transaction."
+  },
+  {
+    "id": 102,
+    "category": "Transaction Management",
+    "question": "Dirty read occurs when:",
+    "options": [
+      "Reading own uncommitted",
+      "Reading uncommitted from another tx",
+      "Reading deleted data",
+      "Reading corrupted blocks"
+    ],
+    "answer": 1,
+    "explanation": "Transaction reads uncommitted data from another transaction that may roll back."
+  },
+  {
+    "id": 103,
+    "category": "Transaction Management",
+    "question": "Prevents dirty reads, allows non-repeatable:",
+    "options": [
+      "READ UNCOMMITTED",
+      "READ COMMITTED",
+      "REPEATABLE READ",
+      "SERIALIZABLE"
+    ],
+    "answer": 1,
+    "explanation": "READ COMMITTED reads only committed data but allows modifications between reads."
+  },
+  {
+    "id": 104,
+    "category": "Transaction Management",
+    "question": "Deadlock occurs when:",
+    "options": [
+      "Tx runs forever",
+      "Txs wait for each other's locks",
+      "Log full",
+      "Tx aborted"
+    ],
+    "answer": 1,
+    "explanation": "Cycle: each holds lock needed by another, all waiting indefinitely."
+  },
+  {
+    "id": 105,
+    "category": "Transaction Management",
+    "question": "MVCC improves concurrency by:",
+    "options": [
+      "Locking all rows",
+      "Multiple row versions",
+      "Serializing txs",
+      "Preventing concurrent access"
+    ],
+    "answer": 1,
+    "explanation": "Multiple versions let readers not block writers. Each tx sees consistent snapshot."
+  },
+  {
+    "id": 106,
+    "category": "Transaction Management",
+    "question": "Phantom read:",
+    "options": [
+      "Read row disappears",
+      "Re-executed query sees new committed rows",
+      "Data duplicated",
+      "Unexpected NULL"
+    ],
+    "answer": 1,
+    "explanation": "Range query returns different rows because another tx inserted new rows."
+  },
+  {
+    "id": 107,
+    "category": "Transaction Management",
+    "question": "WAL requires:",
+    "options": [
+      "Data before log",
+      "Log to stable storage before DB modification",
+      "Logging all queries",
+      "Remote logs"
+    ],
+    "answer": 1,
+    "explanation": "Log records to stable storage first, guaranteeing crash recoverability."
+  },
+  {
+    "id": 108,
+    "category": "Transaction Management",
+    "question": "Shared lock allows:",
+    "options": [
+      "No concurrent access",
+      "Multiple readers no writers",
+      "Only one reader",
+      "Lock holder only"
+    ],
+    "answer": 1,
+    "explanation": "S lock allows multiple readers but blocks exclusive locks."
+  },
+  {
+    "id": 109,
+    "category": "Transaction Management",
+    "question": "Two-phase locking ensures:",
+    "options": [
+      "Two-step completion",
+      "Conflict serializability",
+      "No deadlocks",
+      "Maximum parallelism"
+    ],
+    "answer": 1,
+    "explanation": "Growing phase (acquire) then shrinking (release). Guarantees conflict serializability."
+  },
+  {
+    "id": 110,
+    "category": "Transaction Management",
+    "question": "Non-repeatable read:",
+    "options": [
+      "Different row count",
+      "Same row different values on re-read",
+      "Query fails",
+      "Wrong table"
+    ],
+    "answer": 1,
+    "explanation": "Tx A reads row, B modifies and commits, A re-reads sees different data."
+  },
+  {
+    "id": 111,
+    "category": "Transaction Management",
+    "question": "Wait-die scheme:",
+    "options": [
+      "Aborts older",
+      "Older wait, younger die",
+      "Optimistic",
+      "Timeout"
+    ],
+    "answer": 1,
+    "explanation": "Older txs wait for younger. Younger txs abort when requesting older-held locks."
+  },
+  {
+    "id": 112,
+    "category": "Transaction Management",
+    "question": "SERIALIZABLE prevents:",
+    "options": [
+      "Dirty reads",
+      "Dirty + non-repeatable",
+      "All three: dirty + non-repeatable + phantom",
+      "All including deadlocks"
+    ],
+    "answer": 2,
+    "explanation": "Strictest level. Serializes execution preventing all anomaly types."
+  },
+  {
+    "id": 113,
+    "category": "Transaction Management",
+    "question": "Intent lock signals:",
+    "options": [
+      "Commit intention",
+      "Intention to lock lower-level items",
+      "DB-level lock",
+      "Row shared lock"
+    ],
+    "answer": 1,
+    "explanation": "IS/IX signal intent to lock at lower hierarchy levels."
+  },
+  {
+    "id": 114,
+    "category": "Transaction Management",
+    "question": "Optimistic concurrency assumes:",
+    "options": [
+      "Conflicts always",
+      "Conflicts rare, validate at commit",
+      "No concurrent access",
+      "Read-only"
+    ],
+    "answer": 1,
+    "explanation": "No locking during execution. Validate at commit, abort if conflicts."
+  },
+  {
+    "id": 115,
+    "category": "Transaction Management",
+    "question": "SAVEPOINT allows:",
+    "options": [
+      "New tx",
+      "Rollback to point within tx",
+      "Permanent save",
+      "Partial commit"
+    ],
+    "answer": 1,
+    "explanation": "ROLLBACK TO SAVEPOINT undoes changes after that point."
+  },
+  {
+    "id": 116,
+    "category": "Transaction Management",
+    "question": "Strict 2PL requires:",
+    "options": [
+      "All locks simultaneous",
+      "Exclusive locks held until commit/abort",
+      "Only shared locks",
+      "Per-statement release"
+    ],
+    "answer": 1,
+    "explanation": "Holds all exclusive locks until commit. Prevents cascading rollbacks."
+  },
+  {
+    "id": 117,
+    "category": "Transaction Management",
+    "question": "Cascading rollback:",
+    "options": [
+      "Single rollback",
+      "Aborting one forces dependent txs to rollback",
+      "DB restore",
+      "Deadlock resolution"
+    ],
+    "answer": 1,
+    "explanation": "Uncommitted data read by others forces them to rollback too."
+  },
+  {
+    "id": 118,
+    "category": "Transaction Management",
+    "question": "Checkpoint reduces:",
+    "options": [
+      "Backup size",
+      "Recovery time",
+      "Deadlocks",
+      "Query time"
+    ],
+    "answer": 1,
+    "explanation": "Records consistent state. Only post-checkpoint logs need processing."
+  },
+  {
+    "id": 119,
+    "category": "Transaction Management",
+    "question": "Wound-wait scheme:",
+    "options": [
+      "Aborts older",
+      "Older preempts younger",
+      "Waits for all",
+      "Timeout"
+    ],
+    "answer": 1,
+    "explanation": "Older wounds (aborts) younger competing for same locks."
+  },
+  {
+    "id": 120,
+    "category": "Transaction Management",
+    "question": "Undo/redo recovery uses:",
+    "options": [
+      "Undo only",
+      "Both before-image and after-image",
+      "Physical logging",
+      "Checkpoint only"
+    ],
+    "answer": 1,
+    "explanation": "Before-images undo uncommitted, after-images redo committed changes."
+  },
+  {
+    "id": 121,
+    "category": "Transaction Management",
+    "question": "Non-repeatable vs phantom:",
+    "options": [
+      "Same thing",
+      "Non-repeatable: existing row changes; phantom: new rows",
+      "Phantoms need indexes",
+      "Non-repeatable more serious"
+    ],
+    "answer": 1,
+    "explanation": "Non-repeatable: same row different data. Phantom: different row set."
+  },
+  {
+    "id": 122,
+    "category": "Transaction Management",
+    "question": "ARIES algorithm uses:",
+    "options": [
+      "Undo only",
+      "Redo only",
+      "Three passes: analysis, redo, undo",
+      "Shadow paging"
+    ],
+    "answer": 2,
+    "explanation": "Analysis (find active txs), redo (reapply committed), undo (rollback uncommitted)."
+  },
+  {
+    "id": 123,
+    "category": "Transaction Management",
+    "question": "Update lock prevents:",
+    "options": [
+      "Row locking",
+      "Conversion deadlock S<->X",
+      "Table locking",
+      "Index locking"
+    ],
+    "answer": 1,
+    "explanation": "U lock compatible with S, upgradeable to X. Prevents S->X deadlock."
+  },
+  {
+    "id": 124,
+    "category": "Transaction Management",
+    "question": "ACID Durability ensures:",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Changes survive failures"
+    ],
+    "answer": 3,
+    "explanation": "Committed changes permanent via WAL and force-write to stable storage."
+  },
+  {
+    "id": 125,
+    "category": "Transaction Management",
+    "question": "Snapshot isolation allows:",
+    "options": [
+      "All anomalies",
+      "Dirty/non-repeatable/phantom prevented, write skew possible",
+      "Only dirty reads",
+      "All including deadlocks"
+    ],
+    "answer": 1,
+    "explanation": "Prevents read anomalies but write skew with non-conflicting updates possible."
+  },
+  {
+    "id": 126,
+    "category": "Query Optimization",
+    "question": "Query plan generated by:",
+    "options": [
+      "Storage engine",
+      "Query optimizer",
+      "Tx manager",
+      "Log manager"
+    ],
+    "answer": 1,
+    "explanation": "Optimizer evaluates alternatives and chooses lowest cost."
+  },
+  {
+    "id": 127,
+    "category": "Query Optimization",
+    "question": "Cost-based optimization uses:",
+    "options": [
+      "SQL syntax",
+      "I/O, CPU, memory costs",
+      "Table names",
+      "Column count"
+    ],
+    "answer": 1,
+    "explanation": "Statistics-based estimation of I/O, CPU, and memory costs."
+  },
+  {
+    "id": 128,
+    "category": "Query Optimization",
+    "question": "Hash join best when:",
+    "options": [
+      "Both small",
+      "Smaller input fits in memory",
+      "Both sorted",
+      "One indexed"
+    ],
+    "answer": 1,
+    "explanation": "Builds hash table of smaller input in memory, probes with larger."
+  },
+  {
+    "id": 129,
+    "category": "Query Optimization",
+    "question": "Nested-loop join complexity:",
+    "options": [
+      "O(N+M)",
+      "O(N*M)",
+      "O(N log N)",
+      "O(N+M log M)"
+    ],
+    "answer": 1,
+    "explanation": "For each outer (N), scan inner (M). O(N*M)."
+  },
+  {
+    "id": 130,
+    "category": "Query Optimization",
+    "question": "Merge join requires:",
+    "options": [
+      "No prerequisites",
+      "Both inputs sorted on join key",
+      "Hash table",
+      "One indexed"
+    ],
+    "answer": 1,
+    "explanation": "Both sorted on join key. Scans simultaneously. O(N+M)."
+  },
+  {
+    "id": 131,
+    "category": "Query Optimization",
+    "question": "Predicate pushdown:",
+    "options": [
+      "Adds tables",
+      "Moves filters closer to data sources",
+      "Changes isolation",
+      "Modifies types"
+    ],
+    "answer": 1,
+    "explanation": "Reduces rows processed early in execution pipeline."
+  },
+  {
+    "id": 132,
+    "category": "Query Optimization",
+    "question": "Most important optimizer stats:",
+    "options": [
+      "Table names",
+      "Row counts and distribution",
+      "Data types",
+      "Access patterns"
+    ],
+    "answer": 1,
+    "explanation": "Cardinality and histograms enable accurate estimation."
+  },
+  {
+    "id": 133,
+    "category": "Query Optimization",
+    "question": "Index scan preferred when:",
+    "options": [
+      "Table small",
+      "Small fraction of rows, index selective",
+      "All columns needed",
+      "Index large"
+    ],
+    "answer": 1,
+    "explanation": "High selectivity (few rows) favors index. Large % favors table scan."
+  },
+  {
+    "id": 134,
+    "category": "Query Optimization",
+    "question": "Covering index eliminates:",
+    "options": [
+      "Sorting",
+      "Table access/bookmark lookups",
+      "Joining",
+      "Filtering"
+    ],
+    "answer": 1,
+    "explanation": "All query columns in index, no table access needed."
+  },
+  {
+    "id": 135,
+    "category": "Query Optimization",
+    "question": "Which join produces sorted output?",
+    "options": [
+      "Nested-loop",
+      "Hash",
+      "Merge",
+      "Cross"
+    ],
+    "answer": 2,
+    "explanation": "Merge join outputs sorted on join key."
+  },
+  {
+    "id": 136,
+    "category": "Query Optimization",
+    "question": "Selectivity = ",
+    "options": [
+      "Query speed",
+      "Matching rows / total rows",
+      "Columns selected",
+      "Accuracy"
+    ],
+    "answer": 1,
+    "explanation": "Low favors index, high favors table scan."
+  },
+  {
+    "id": 137,
+    "category": "Query Optimization",
+    "question": "Left-deep tree:",
+    "options": [
+      "All at once",
+      "Largest on left",
+      "Join new table to existing result",
+      "All indexed"
+    ],
+    "answer": 2,
+    "explanation": "One new table per step. Enables pipelining."
+  },
+  {
+    "id": 138,
+    "category": "Query Optimization",
+    "question": "Histograms estimate:",
+    "options": [
+      "Execution time",
+      "Data distribution and selectivity",
+      "Memory",
+      "Network"
+    ],
+    "answer": 1,
+    "explanation": "Value ranges with frequencies improve selectivity estimation."
+  },
+  {
+    "id": 139,
+    "category": "Query Optimization",
+    "question": "Subquery unnesting:",
+    "options": [
+      "Predicate pushdown",
+      "Correlated subquery into join",
+      "Index selection",
+      "Join reorder"
+    ],
+    "answer": 1,
+    "explanation": "Enables more efficient join strategies for correlated subqueries."
+  },
+  {
+    "id": 140,
+    "category": "Query Optimization",
+    "question": "Full scan preferred when:",
+    "options": [
+      "Few rows needed",
+      "Table small or most rows needed",
+      "Many indexes",
+      "GROUP BY"
+    ],
+    "answer": 1,
+    "explanation": "Small tables, large %, sequential I/O make full scan efficient."
+  },
+  {
+    "id": 141,
+    "category": "Query Optimization",
+    "question": "EXPLAIN shows:",
+    "options": [
+      "Results",
+      "Execution plan",
+      "Definitions",
+      "Errors"
+    ],
+    "answer": 1,
+    "explanation": "Join methods, access paths, estimated costs without executing."
+  },
+  {
+    "id": 142,
+    "category": "Query Optimization",
+    "question": "Parallel query divides by:",
+    "options": [
+      "Data partitioning across cores",
+      "Sequential",
+      "Connections",
+      "Caching"
+    ],
+    "answer": 0,
+    "explanation": "Splits scans, joins, aggregations across cores/nodes."
+  },
+  {
+    "id": 143,
+    "category": "Query Optimization",
+    "question": "Selinger optimizer uses:",
+    "options": [
+      "Rules",
+      "Dynamic programming for join ordering",
+      "Random",
+      "Fixed orders"
+    ],
+    "answer": 1,
+    "explanation": "Explores join orderings, keeping cheapest per interesting order."
+  },
+  {
+    "id": 144,
+    "category": "Query Optimization",
+    "question": "Bitmap index best for:",
+    "options": [
+      "High-cardinality",
+      "Low-cardinality concurrent queries",
+      "Primary keys",
+      "Foreign keys"
+    ],
+    "answer": 1,
+    "explanation": "Bit per value, bit per row. Efficient bitwise AND/OR."
+  },
+  {
+    "id": 145,
+    "category": "Query Optimization",
+    "question": "View merging:",
+    "options": [
+      "Combines views",
+      "Expands view into query",
+      "Materializes",
+      "Removes"
+    ],
+    "answer": 1,
+    "explanation": "Replaces view reference with definition for holistic optimization."
+  },
+  {
+    "id": 146,
+    "category": "Query Optimization",
+    "question": "Bloom filter in hash join:",
+    "options": [
+      "Nested-loop variant",
+      "Filters non-matching probe rows",
+      "Merge variant",
+      "Cross join"
+    ],
+    "answer": 1,
+    "explanation": "Quickly eliminates probe rows with no hash table match."
+  },
+  {
+    "id": 147,
+    "category": "Query Optimization",
+    "question": "Index-only scan requires:",
+    "options": [
+      "No index",
+      "Index with all query columns",
+      "Single index",
+      "Clustered"
+    ],
+    "answer": 1,
+    "explanation": "All SELECT/WHERE/JOIN/ORDER BY columns in index."
+  },
+  {
+    "id": 148,
+    "category": "Query Optimization",
+    "question": "Rule-based uses:",
+    "options": [
+      "Statistics",
+      "Fixed heuristics",
+      "Cost estimation",
+      "Machine learning"
+    ],
+    "answer": 1,
+    "explanation": "Fixed rules without statistical cost estimation."
+  },
+  {
+    "id": 149,
+    "category": "Query Optimization",
+    "question": "Cardinality estimator predicts:",
+    "options": [
+      "Bandwidth",
+      "Row count per operator",
+      "Memory",
+      "CPU cycles"
+    ],
+    "answer": 1,
+    "explanation": "Uses statistics for row count prediction per operator."
+  },
+  {
+    "id": 150,
+    "category": "Query Optimization",
+    "question": "OR expansion transforms to:",
+    "options": [
+      "UNION branches",
+      "Subquery",
+      "Index elimination",
+      "Table elimination"
+    ],
+    "answer": 0,
+    "explanation": "OR->UNION ALL lets each branch use its optimal index."
+  },
+  {
+    "id": 151,
+    "category": "Indexing",
+    "question": "B-tree O(log N) for:",
+    "options": [
+      "Only search",
+      "Search, insert, delete",
+      "Only insert",
+      "Only scan"
+    ],
+    "answer": 1,
+    "explanation": "Balanced via splitting/merging, consistent logarithmic performance."
+  },
+  {
+    "id": 152,
+    "category": "Indexing",
+    "question": "B+tree main feature:",
+    "options": [
+      "Slower",
+      "Data only in linked leaf nodes",
+      "Less data",
+      "No deletes"
+    ],
+    "answer": 1,
+    "explanation": "Leaves linked, internal nodes navigation only. Efficient range scans."
+  },
+  {
+    "id": 153,
+    "category": "Indexing",
+    "question": "Fill factor determines:",
+    "options": [
+      "Max key length",
+      "Initial page fill level",
+      "Index levels",
+      "Sort order"
+    ],
+    "answer": 1,
+    "explanation": "% full per page. Lower = more free space = fewer splits."
+  },
+  {
+    "id": 154,
+    "category": "Indexing",
+    "question": "Composite (A,B,C) searches on:",
+    "options": [
+      "Only A",
+      "A, A+B, or A+B+C",
+      "Only C",
+      "B,A any order"
+    ],
+    "answer": 1,
+    "explanation": "Left-prefix rule. (A), (A,B), (A,B,C) efficient."
+  },
+  {
+    "id": 155,
+    "category": "Indexing",
+    "question": "Hash index best for:",
+    "options": [
+      "Range queries",
+      "Equality only",
+      "Sorting",
+      "Full-text"
+    ],
+    "answer": 1,
+    "explanation": "Hash maps keys to buckets. Optimal for exact match only."
+  },
+  {
+    "id": 156,
+    "category": "Indexing",
+    "question": "Clustered index determines:",
+    "options": [
+      "Query usage",
+      "Physical data order",
+      "Max size",
+      "Index count"
+    ],
+    "answer": 1,
+    "explanation": "Physical sort by key. One per table (data = leaf level)."
+  },
+  {
+    "id": 157,
+    "category": "Indexing",
+    "question": "Bitmap index uses:",
+    "options": [
+      "B-tree variant",
+      "Bitmaps per value, each bit = row",
+      "Hash",
+      "Composite"
+    ],
+    "answer": 1,
+    "explanation": "Ideal for low-cardinality. Efficient bitwise AND/OR."
+  },
+  {
+    "id": 158,
+    "category": "Indexing",
+    "question": "Index rebuild:",
+    "options": [
+      "Deletes table",
+      "Recreates reducing fragmentation",
+      "Updates stats",
+      "Adds columns"
+    ],
+    "answer": 1,
+    "explanation": "Drops and recreates, removing fragmentation."
+  },
+  {
+    "id": 159,
+    "category": "Indexing",
+    "question": "Left-prefix for (city,last_name,first_name):",
+    "options": [
+      "last_name",
+      "city, city+last_name, all three",
+      "first_name",
+      "last_name+first_name"
+    ],
+    "answer": 1,
+    "explanation": "Leading columns in order only."
+  },
+  {
+    "id": 160,
+    "category": "Indexing",
+    "question": "Non-clustered stores:",
+    "options": [
+      "Actual data",
+      "Keys + row locators",
+      "Sorted copy",
+      "FK refs"
+    ],
+    "answer": 1,
+    "explanation": "Pointers to actual data. Multiple allowed per table."
+  },
+  {
+    "id": 161,
+    "category": "Indexing",
+    "question": "Index selectivity = ",
+    "options": [
+      "Speed",
+      "Distinct values / total rows",
+      "Levels",
+      "Size"
+    ],
+    "answer": 1,
+    "explanation": "Higher = more effective. Unique = 1.0 (max)."
+  },
+  {
+    "id": 162,
+    "category": "Indexing",
+    "question": "Auto-maintained indexes:",
+    "options": [
+      "Manual",
+      "PK and unique constraint",
+      "Temporary",
+      "Archive"
+    ],
+    "answer": 1,
+    "explanation": "Auto-created and updated on DML operations."
+  },
+  {
+    "id": 163,
+    "category": "Indexing",
+    "question": "Functional index indexes:",
+    "options": [
+      "Table function",
+      "Expression result",
+      "Stored procedure",
+      "View"
+    ],
+    "answer": 1,
+    "explanation": "E.g., LOWER(name). Enables efficient expression queries."
+  },
+  {
+    "id": 164,
+    "category": "Indexing",
+    "question": "Fragmentation caused by:",
+    "options": [
+      "Reads",
+      "Page splits in nearly full pages",
+      "Optimization",
+      "Rollbacks"
+    ],
+    "answer": 1,
+    "explanation": "Creates gaps and non-sequential page ordering."
+  },
+  {
+    "id": 165,
+    "category": "Indexing",
+    "question": "Partial index includes:",
+    "options": [
+      "First N rows",
+      "Rows matching WHERE condition",
+      "Indexed columns",
+      "PK values"
+    ],
+    "answer": 1,
+    "explanation": "Only matching rows indexed. Reduces size and maintenance."
+  },
+  {
+    "id": 166,
+    "category": "Indexing",
+    "question": "Best for ORDER BY LIMIT:",
+    "options": [
+      "Hash",
+      "B+tree on ORDER BY columns",
+      "Bitmap",
+      "Full-text"
+    ],
+    "answer": 1,
+    "explanation": "Sorted leaves enable direct sorted retrieval."
+  },
+  {
+    "id": 167,
+    "category": "Indexing",
+    "question": "Covering index avoids:",
+    "options": [
+      "Buffer pool",
+      "Table access",
+      "Joins",
+      "Transactions"
+    ],
+    "answer": 1,
+    "explanation": "All query columns in index = no table access needed."
+  },
+  {
+    "id": 168,
+    "category": "Indexing",
+    "question": "Too many indexes degrade:",
+    "options": [
+      "Reads",
+      "Writes (DML)",
+      "Planning",
+      "Backup"
+    ],
+    "answer": 1,
+    "explanation": "Each index updated on INSERT/UPDATE/DELETE."
+  },
+  {
+    "id": 169,
+    "category": "Indexing",
+    "question": "GiST is:",
+    "options": [
+      "B-tree variant",
+      "Generalized index infrastructure",
+      "Graph index",
+      "Geographic only"
+    ],
+    "answer": 1,
+    "explanation": "Balanced tree for various types and custom access methods."
+  },
+  {
+    "id": 170,
+    "category": "Indexing",
+    "question": "B+tree logarithmic depth due to:",
+    "options": [
+      "Fan-out 2",
+      "All leaves at same depth",
+      "Internal data",
+      "Sequential keys"
+    ],
+    "answer": 1,
+    "explanation": "Self-balancing guarantees O(log N) regardless of order."
+  },
+  {
+    "id": 171,
+    "category": "Distributed Database",
+    "question": "CAP theorem: at most:",
+    "options": [
+      "All three",
+      "Two of: C, A, P",
+      "One",
+      "C and A"
+    ],
+    "answer": 1,
+    "explanation": "With partitions, must choose C or A. P mandatory for distributed."
+  },
+  {
+    "id": 172,
+    "category": "Distributed Database",
+    "question": "Two-phase commit phases:",
+    "options": [
+      "Prepare and Execute",
+      "Voting and Commit",
+      "Lock and Unlock",
+      "Read and Write"
+    ],
+    "answer": 1,
+    "explanation": "Phase 1: all vote yes? Phase 2: commit or abort."
+  },
+  {
+    "id": 173,
+    "category": "Distributed Database",
+    "question": "Eventual consistency:",
+    "options": [
+      "Immediately consistent",
+      "Replicas converge when updates stop",
+      "Never consistent",
+      "Primary only"
+    ],
+    "answer": 1,
+    "explanation": "Temporary divergence during updates, convergence when updates stop."
+  },
+  {
+    "id": 174,
+    "category": "Distributed Database",
+    "question": "Sharding distributes:",
+    "options": [
+      "Duplicates",
+      "Rows across DB instances",
+      "Backups",
+      "Compression"
+    ],
+    "answer": 1,
+    "explanation": "Rows by shard key across instances. Horizontal scaling."
+  },
+  {
+    "id": 175,
+    "category": "Distributed Database",
+    "question": "Synchronous replication acknowledges:",
+    "options": [
+      "Primary done",
+      "All replicas confirm",
+      "One replica",
+      "Client confirms"
+    ],
+    "answer": 1,
+    "explanation": "Strong consistency but higher write latency."
+  },
+  {
+    "id": 176,
+    "category": "Distributed Database",
+    "question": "Split-brain:",
+    "options": [
+      "Partitioning",
+      "Network partition with two primaries",
+      "Optimization",
+      "Compression"
+    ],
+    "answer": 1,
+    "explanation": "Both sides act as primary, creating conflicts."
+  },
+  {
+    "id": 177,
+    "category": "Distributed Database",
+    "question": "Quorum requires:",
+    "options": [
+      "Timeout",
+      "Majority agreement",
+      "Backup",
+      "Optimization"
+    ],
+    "answer": 1,
+    "explanation": "More than half must agree. W+R>N ensures consistency."
+  },
+  {
+    "id": 178,
+    "category": "Distributed Database",
+    "question": "Paxos/Raft ensure:",
+    "options": [
+      "Performance",
+      "Agreement despite failures",
+      "Compression",
+      "Optimization"
+    ],
+    "answer": 1,
+    "explanation": "Safety (same value) and liveness (termination) despite failures."
+  },
+  {
+    "id": 179,
+    "category": "Distributed Database",
+    "question": "Strongest consistency:",
+    "options": [
+      "Eventual",
+      "Causal",
+      "Linearizability",
+      "Read-your-writes"
+    ],
+    "answer": 2,
+    "explanation": "Operations appear atomic in real-time order."
+  },
+  {
+    "id": 180,
+    "category": "Distributed Database",
+    "question": "Distributed deadlock involves:",
+    "options": [
+      "Easier detection",
+      "Txs at different sites",
+      "Cannot happen",
+      "Read locks"
+    ],
+    "answer": 1,
+    "explanation": "No central coordinator. Requires global info exchange."
+  },
+  {
+    "id": 181,
+    "category": "Distributed Database",
+    "question": "Async replication primary acks:",
+    "options": [
+      "After sync",
+      "Immediately",
+      "After quorum",
+      "Never"
+    ],
+    "answer": 1,
+    "explanation": "Low latency, high availability, data loss risk."
+  },
+  {
+    "id": 182,
+    "category": "Distributed Database",
+    "question": "Consistent hashing advantage:",
+    "options": [
+      "Central lookup",
+      "Minimal remapping on node change",
+      "Even only",
+      "No failures"
+    ],
+    "answer": 1,
+    "explanation": "Hash ring: adding node affects only immediate keys."
+  },
+  {
+    "id": 183,
+    "category": "Distributed Database",
+    "question": "Vector clocks track:",
+    "options": [
+      "Performance",
+      "Causality between events",
+      "Time sync",
+      "Compression"
+    ],
+    "answer": 1,
+    "explanation": "Timestamp vectors determine causal ordering."
+  },
+  {
+    "id": 184,
+    "category": "Distributed Database",
+    "question": "Distributed tx needs:",
+    "options": [
+      "Single commit",
+      "2PL + 2PC",
+      "No protocol",
+      "Three-phase"
+    ],
+    "answer": 1,
+    "explanation": "Local 2PL + global 2PC for all-sites-commit-or-abort."
+  },
+  {
+    "id": 185,
+    "category": "Distributed Database",
+    "question": "Read-your-writes:",
+    "options": [
+      "One writer",
+      "Client sees own writes",
+      "All same data",
+      "Writes invisible"
+    ],
+    "answer": 1,
+    "explanation": "After writing, subsequent reads by same client see that write."
+  },
+  {
+    "id": 186,
+    "category": "Distributed Database",
+    "question": "Multi-master allows:",
+    "options": [
+      "Primary only",
+      "All nodes accept writes",
+      "No replication",
+      "Reads only"
+    ],
+    "answer": 1,
+    "explanation": "Active-active with conflict resolution for concurrent writes."
+  },
+  {
+    "id": 187,
+    "category": "Distributed Database",
+    "question": "W+R>N ensures:",
+    "options": [
+      "Availability",
+      "Read sees latest write",
+      "Throughput",
+      "Encryption"
+    ],
+    "answer": 1,
+    "explanation": "At least one read node has latest write."
+  },
+  {
+    "id": 188,
+    "category": "Distributed Database",
+    "question": "Distributed query handles:",
+    "options": [
+      "Local only",
+      "Decomposition, transfer, assembly",
+      "Security",
+      "Indexing"
+    ],
+    "answer": 1,
+    "explanation": "Query decomposition, localization, optimization, assembly."
+  },
+  {
+    "id": 189,
+    "category": "Distributed Database",
+    "question": "Vertical fragmentation:",
+    "options": [
+      "Rows",
+      "Columns across sites",
+      "Tables",
+      "Backups"
+    ],
+    "answer": 1,
+    "explanation": "Different sites get different column subsets."
+  },
+  {
+    "id": 190,
+    "category": "Distributed Database",
+    "question": "Three-phase commit adds:",
+    "options": [
+      "Nothing",
+      "Pre-commit to reduce blocking",
+      "Extra logging",
+      "Participants"
+    ],
+    "answer": 1,
+    "explanation": "Pre-commit between prepare and commit. Reduces blocking."
+  },
+  {
+    "id": 191,
+    "category": "NoSQL & NewSQL",
+    "question": "Document store best for:",
+    "options": [
+      "Strict data",
+      "Semi-structured varying schemas",
+      "Relational queries",
+      "OLAP"
+    ],
+    "answer": 1,
+    "explanation": "JSON/BSON documents. Flexible, no fixed structure."
+  },
+  {
+    "id": 192,
+    "category": "NoSQL & NewSQL",
+    "question": "BASE stands for:",
+    "options": [
+      "Basic Available, Soft state, Eventual consistency",
+      "Broad Access, Secure, Encrypted",
+      "Binary, Standard, Efficient",
+      "Backup, Archive, Storage"
+    ],
+    "answer": 0,
+    "explanation": "Opposite of ACID. Prioritizes availability over consistency."
+  },
+  {
+    "id": 193,
+    "category": "NoSQL & NewSQL",
+    "question": "Key-value optimized for:",
+    "options": [
+      "Complex joins",
+      "Simple get/put by key",
+      "Full-text",
+      "Graph"
+    ],
+    "answer": 1,
+    "explanation": "O(1) access. Redis, DynamoDB. High throughput."
+  },
+  {
+    "id": 194,
+    "category": "NoSQL & NewSQL",
+    "question": "Graph DBs excel at:",
+    "options": [
+      "Batch",
+      "Complex relationship traversals",
+      "CRUD",
+      "Time-series"
+    ],
+    "answer": 1,
+    "explanation": "Nodes, edges, properties. Social networks, fraud detection."
+  },
+  {
+    "id": 195,
+    "category": "NoSQL & NewSQL",
+    "question": "Column-family optimized for:",
+    "options": [
+      "Transactions",
+      "High write throughput, time-series",
+      "Joins",
+      "ACID"
+    ],
+    "answer": 1,
+    "explanation": "Cassandra, HBase. Efficient writes and column-range reads."
+  },
+  {
+    "id": 196,
+    "category": "NoSQL & NewSQL",
+    "question": "NewSQL provides:",
+    "options": [
+      "NoSQL with SQL",
+      "SQL+ACID with horizontal scaling",
+      "Read scale",
+      "No tx"
+    ],
+    "answer": 1,
+    "explanation": "CockroachDB, Spanner. Distributed consensus for scale+ACID."
+  },
+  {
+    "id": 197,
+    "category": "NoSQL & NewSQL",
+    "question": "Many NoSQL favor CAP:",
+    "options": [
+      "C over A",
+      "A+P during partitions",
+      "P+C",
+      "C+A (CA)"
+    ],
+    "answer": 1,
+    "explanation": "AP: continued operation, temporary inconsistency accepted."
+  },
+  {
+    "id": 198,
+    "category": "NoSQL & NewSQL",
+    "question": "Polyglot persistence:",
+    "options": [
+      "Multiple languages",
+      "Different DB tech for different uses",
+      "Countries",
+      "Charsets"
+    ],
+    "answer": 1,
+    "explanation": "Best-fit DB per use case within one application."
+  },
+  {
+    "id": 199,
+    "category": "NoSQL & NewSQL",
+    "question": "Cassandra tunes consistency via:",
+    "options": [
+      "TCP",
+      "Consistency level (ONE, QUORUM, ALL)",
+      "SQL isolation",
+      "Config"
+    ],
+    "answer": 1,
+    "explanation": "Per-operation: ONE, QUORUM, ALL for different trade-offs."
+  },
+  {
+    "id": 200,
+    "category": "NoSQL & NewSQL",
+    "question": "Causal consistency ensures:",
+    "options": [
+      "Eventual",
+      "Causal ops in order",
+      "Linearizable",
+      "Read-your-writes"
+    ],
+    "answer": 1,
+    "explanation": "If A before B, all see A before B. Stronger than eventual."
+  },
+  {
+    "id": 201,
+    "category": "NoSQL & NewSQL",
+    "question": "NewSQL uses:",
+    "options": [
+      "2PL",
+      "Consensus (Raft/Paxos) with deterministic clocks",
+      "No support",
+      "Simple locks"
+    ],
+    "answer": 1,
+    "explanation": "Spanner: TrueTime+Paxos. CockroachDB: HLC+Raft."
+  },
+  {
+    "id": 202,
+    "category": "NoSQL & NewSQL",
+    "question": "Time-series DB optimized for:",
+    "options": [
+      "Joins",
+      "High-volume timestamped data",
+      "Graph",
+      "Documents"
+    ],
+    "answer": 1,
+    "explanation": "InfluxDB, TimescaleDB. Columnar, compression, range queries."
+  },
+  {
+    "id": 203,
+    "category": "NoSQL & NewSQL",
+    "question": "NoSQL disadvantage:",
+    "options": [
+      "Slower",
+      "Limited query, no standard language",
+      "Cannot scale",
+      "No indexing"
+    ],
+    "answer": 1,
+    "explanation": "Less query flexibility, no SQL standard, weaker ACID."
+  },
+  {
+    "id": 204,
+    "category": "NoSQL & NewSQL",
+    "question": "MapReduce:",
+    "options": [
+      "Transaction mgmt",
+      "Distributed batch processing",
+      "Index creation",
+      "Schema design"
+    ],
+    "answer": 1,
+    "explanation": "Map (parallel) + Reduce (aggregate). Hadoop framework."
+  },
+  {
+    "id": 205,
+    "category": "NoSQL & NewSQL",
+    "question": "Column-family stores by:",
+    "options": [
+      "Rows",
+      "Column groups (column-oriented)",
+      "B-tree",
+      "Hash"
+    ],
+    "answer": 1,
+    "explanation": "Columns grouped, stored column-by-column. Efficient compression."
+  },
+  {
+    "id": 206,
+    "category": "Data Governance & Security",
+    "question": "Data classification by:",
+    "options": [
+      "File size",
+      "Sensitivity level",
+      "Creation date",
+      "DB type"
+    ],
+    "answer": 1,
+    "explanation": "Public, Internal, Confidential, Restricted. Determines controls."
+  },
+  {
+    "id": 207,
+    "category": "Data Governance & Security",
+    "question": "Encryption at rest protects:",
+    "options": [
+      "Network",
+      "Stored data",
+      "Memory",
+      "Backup only"
+    ],
+    "answer": 1,
+    "explanation": "AES-256 on disk. Protects against media theft."
+  },
+  {
+    "id": 208,
+    "category": "Data Governance & Security",
+    "question": "GDPR data minimization:",
+    "options": [
+      "Store everything",
+      "Collect only necessary data",
+      "Delete daily",
+      "Encrypt all"
+    ],
+    "answer": 1,
+    "explanation": "Only data absolutely necessary for specified purpose."
+  },
+  {
+    "id": 209,
+    "category": "Data Governance & Security",
+    "question": "Row-Level Security:",
+    "options": [
+      "Admin only",
+      "Different rows visible per user",
+      "One per table",
+      "All visible"
+    ],
+    "answer": 1,
+    "explanation": "Security predicates restrict row access per role."
+  },
+  {
+    "id": 210,
+    "category": "Data Governance & Security",
+    "question": "Audit trail records:",
+    "options": [
+      "Failed queries",
+      "All access and modifications",
+      "Schema only",
+      "Logins only"
+    ],
+    "answer": 1,
+    "explanation": "Who, what, when, where. Essential for compliance."
+  },
+  {
+    "id": 211,
+    "category": "Data Governance & Security",
+    "question": "TLS/SSL protects:",
+    "options": [
+      "Disk",
+      "Network transmission",
+      "Memory",
+      "Backup"
+    ],
+    "answer": 1,
+    "explanation": "Client-server encryption preventing eavesdropping."
+  },
+  {
+    "id": 212,
+    "category": "Data Governance & Security",
+    "question": "GDPR right to erasure:",
+    "options": [
+      "Keep forever",
+      "Delete on request when no legal basis",
+      "Encrypt only",
+      "Anonymize"
+    ],
+    "answer": 1,
+    "explanation": "Individuals request deletion when no legal retention obligation."
+  },
+  {
+    "id": 213,
+    "category": "Data Governance & Security",
+    "question": "Dynamic data masking:",
+    "options": [
+      "Alters storage",
+      "Obscures results without changing storage",
+      "Removes data",
+      "Encrypts"
+    ],
+    "answer": 1,
+    "explanation": "Real-time masking. Stored data unchanged."
+  },
+  {
+    "id": 214,
+    "category": "Data Governance & Security",
+    "question": "RBAC assigns to:",
+    "options": [
+      "Individuals",
+      "Roles then assigned to users",
+      "Tables",
+      "IPs"
+    ],
+    "answer": 1,
+    "explanation": "Users inherit via role membership. Simplifies management."
+  },
+  {
+    "id": 215,
+    "category": "Data Governance & Security",
+    "question": "Data retention defines:",
+    "options": [
+      "Speed",
+      "How long to keep data",
+      "Access",
+      "Backup"
+    ],
+    "answer": 1,
+    "explanation": "Balances regulatory requirements with privacy and storage costs."
+  },
+  {
+    "id": 216,
+    "category": "Data Governance & Security",
+    "question": "SQL injection prevention:",
+    "options": [
+      "Passwords",
+      "Parameterized queries",
+      "Encryption",
+      "Hardware"
+    ],
+    "answer": 1,
+    "explanation": "Prepared statements separate code from data."
+  },
+  {
+    "id": 217,
+    "category": "Data Governance & Security",
+    "question": "Tokenization replaces with:",
+    "options": [
+      "Encrypted",
+      "Non-sensitive surrogate tokens",
+      "Random numbers",
+      "Deleted values"
+    ],
+    "answer": 1,
+    "explanation": "Token vault maps tokens. No mathematical relation to original."
+  },
+  {
+    "id": 218,
+    "category": "Data Governance & Security",
+    "question": "Least privilege:",
+    "options": [
+      "Admin access",
+      "Minimum permissions for task",
+      "Same for all",
+      "DBA only"
+    ],
+    "answer": 1,
+    "explanation": "Reduces attack surface and potential damage."
+  },
+  {
+    "id": 219,
+    "category": "Data Governance & Security",
+    "question": "Non-production masking:",
+    "options": [
+      "Not needed",
+      "Realistic fake data for testing",
+      "Delete all",
+      "Prod encryption"
+    ],
+    "answer": 1,
+    "explanation": "Fictitious but realistic data for dev/test environments."
+  },
+  {
+    "id": 220,
+    "category": "Data Governance & Security",
+    "question": "TDE encrypts:",
+    "options": [
+      "Backups",
+      "Database files/pages automatically",
+      "Network",
+      "Application"
+    ],
+    "answer": 1,
+    "explanation": "Auto page/file-level. Transparent to apps. OS-level protection."
+  },
+  {
+    "id": 221,
+    "category": "Backup & Recovery",
+    "question": "Full backup copies:",
+    "options": [
+      "Changed only",
+      "Entire database",
+      "Metadata",
+      "Log only"
+    ],
+    "answer": 1,
+    "explanation": "Complete database copy. Backup strategy foundation."
+  },
+  {
+    "id": 222,
+    "category": "Backup & Recovery",
+    "question": "Incremental copies:",
+    "options": [
+      "Since last full",
+      "Since last backup (any)",
+      "All from beginning",
+      "Schema"
+    ],
+    "answer": 1,
+    "explanation": "Only changes since last backup. Fast/small, needs full+all incrementals."
+  },
+  {
+    "id": 223,
+    "category": "Backup & Recovery",
+    "question": "Differential copies:",
+    "options": [
+      "Since last full",
+      "All data",
+      "Since last differential",
+      "Log only"
+    ],
+    "answer": 0,
+    "explanation": "Since last full. Grows over time but needs full+latest only."
+  },
+  {
+    "id": 224,
+    "category": "Backup & Recovery",
+    "question": "RPO defines:",
+    "options": [
+      "Max downtime",
+      "Max data loss in time",
+      "Backup schedule",
+      "HW replacement"
+    ],
+    "answer": 1,
+    "explanation": "Max acceptable data loss. Determines backup frequency."
+  },
+  {
+    "id": 225,
+    "category": "Backup & Recovery",
+    "question": "RTO defines:",
+    "options": [
+      "Max data loss",
+      "Max restore time",
+      "Backup type",
+      "Frequency"
+    ],
+    "answer": 1,
+    "explanation": "System back online within RTO after failure."
+  },
+  {
+    "id": 226,
+    "category": "Backup & Recovery",
+    "question": "Point-in-time recovery uses:",
+    "options": [
+      "Current time",
+      "Transaction logs for any moment",
+      "Backup times",
+      "Random state"
+    ],
+    "answer": 1,
+    "explanation": "Log backups enable restore to any moment between full backups."
+  },
+  {
+    "id": 227,
+    "category": "Backup & Recovery",
+    "question": "Hot backup:",
+    "options": [
+      "DB offline",
+      "DB online and active",
+      "Peak hours",
+      "Auto by OS"
+    ],
+    "answer": 1,
+    "explanation": "During operations. Requires consistent view via logs/snapshots."
+  },
+  {
+    "id": 228,
+    "category": "Backup & Recovery",
+    "question": "Cold backup:",
+    "options": [
+      "During operations",
+      "DB offline/shutdown",
+      "NoSQL only",
+      "Auto hourly"
+    ],
+    "answer": 1,
+    "explanation": "Offline. Consistent (no changes). Requires downtime."
+  },
+  {
+    "id": 229,
+    "category": "Backup & Recovery",
+    "question": "Transaction log backups enable:",
+    "options": [
+      "Storage reduction",
+      "PITR between full backups",
+      "Query speed",
+      "Schema migration"
+    ],
+    "answer": 1,
+    "explanation": "Capture changes for restore to any moment."
+  },
+  {
+    "id": 230,
+    "category": "Backup & Recovery",
+    "question": "Restore order (full+diff+logs):",
+    "options": [
+      "Log,diff,full",
+      "Full, latest diff, logs after diff",
+      "Diff,full,log",
+      "Full,log,diff"
+    ],
+    "answer": 1,
+    "explanation": "Full first, then latest differential, then transaction logs."
+  },
+  {
+    "id": 231,
+    "category": "Backup & Recovery",
+    "question": "Snapshot backup uses:",
+    "options": [
+      "Traditional copy",
+      "Storage instant copy-on-write",
+      "Compression",
+      "Network"
+    ],
+    "answer": 1,
+    "explanation": "Instant via storage system. Minimal performance impact."
+  },
+  {
+    "id": 232,
+    "category": "Backup & Recovery",
+    "question": "Checksum verification ensures:",
+    "options": [
+      "Speed",
+      "Backup not corrupted",
+      "Encryption",
+      "Less storage"
+    ],
+    "answer": 1,
+    "explanation": "Detects corruption. Unverified backup unreliable."
+  },
+  {
+    "id": 233,
+    "category": "Backup & Recovery",
+    "question": "3-2-1 rule:",
+    "options": [
+      "3 copies, 2 media, 1 offsite",
+      "3 full, 2 types, 1 weekly",
+      "3 encryptions, 2 servers",
+      "3 DBs, 2 backups"
+    ],
+    "answer": 0,
+    "explanation": "3 copies, 2 media types, 1 offsite/cloud."
+  },
+  {
+    "id": 234,
+    "category": "Backup & Recovery",
+    "question": "Log shipping:",
+    "options": [
+      "Physical movement",
+      "Auto send logs to standby",
+      "Manual export",
+      "Old deletion"
+    ],
+    "answer": 1,
+    "explanation": "Keep standby nearly synchronized for failover."
+  },
+  {
+    "id": 235,
+    "category": "Backup & Recovery",
+    "question": "SIMPLE recovery model:",
+    "options": [
+      "Supports PITR",
+      "Auto-truncates log after checkpoint",
+      "Keeps all logs",
+      "Supports shipping"
+    ],
+    "answer": 1,
+    "explanation": "No PITR or log shipping. Only full/differential."
+  },
+  {
+    "id": 236,
+    "category": "Backup & Recovery",
+    "question": "Standby in HA:",
+    "options": [
+      "Read-only queries",
+      "Synchronized, can failover",
+      "Development",
+      "Always offline"
+    ],
+    "answer": 1,
+    "explanation": "Continuously synced replica. Quick failover."
+  },
+  {
+    "id": 237,
+    "category": "Backup & Recovery",
+    "question": "Backup verification:",
+    "options": [
+      "Secure storage",
+      "Testing restores successfully",
+      "Compression",
+      "Scheduling"
+    ],
+    "answer": 1,
+    "explanation": "Regular restore testing ensures backups work when needed."
+  },
+  {
+    "id": 238,
+    "category": "Backup & Recovery",
+    "question": "WAL recovery:",
+    "options": [
+      "Redo only",
+      "Redo committed + undo uncommitted",
+      "Undo only",
+      "Full restore"
+    ],
+    "answer": 1,
+    "explanation": "Redo committed changes, undo uncommitted for consistency."
+  },
+  {
+    "id": 239,
+    "category": "Backup & Recovery",
+    "question": "RPO 15 min = max backup interval:",
+    "options": [
+      "1 hour",
+      "15 min or less",
+      "5 min",
+      "30 min"
+    ],
+    "answer": 1,
+    "explanation": "Interval must be <= RPO."
+  },
+  {
+    "id": 240,
+    "category": "Backup & Recovery",
+    "question": "Corrupted unrestoreable backup:",
+    "options": [
+      "Normal",
+      "Need for verification",
+      "Inevitable",
+      "Security"
+    ],
+    "answer": 1,
+    "explanation": "Unverified backup may be useless when needed."
+  },
+  {
+    "id": 241,
+    "category": "Backup & Recovery",
+    "question": "Best RTO minimization:",
+    "options": [
+      "Full backup",
+      "Auto failover (replication)",
+      "Incremental",
+      "Cold standby"
+    ],
+    "answer": 1,
+    "explanation": "Hot standby with sync replication = near-zero RTO."
+  },
+  {
+    "id": 242,
+    "category": "Backup & Recovery",
+    "question": "Recovery plan includes:",
+    "options": [
+      "Backup only",
+      "Roles, procedures, communication",
+      "Hardware only",
+      "Data only"
+    ],
+    "answer": 1,
+    "explanation": "Comprehensive: roles, procedures, communication, testing."
+  },
+  {
+    "id": 243,
+    "category": "Backup & Recovery",
+    "question": "GFS rotation manages:",
+    "options": [
+      "CPU",
+      "Daily/weekly/monthly cycles",
+      "Encryption",
+      "Bandwidth"
+    ],
+    "answer": 1,
+    "explanation": "Daily (son), weekly (father), monthly (grandfather)."
+  },
+  {
+    "id": 244,
+    "category": "Backup & Recovery",
+    "question": "Crash recovery after power failure:",
+    "options": [
+      "Full restore",
+      "Transaction log redo/undo",
+      "Cold backup",
+      "Manual"
+    ],
+    "answer": 1,
+    "explanation": "Redo committed, undo uncommitted via log."
+  },
+  {
+    "id": 245,
+    "category": "Backup & Recovery",
+    "question": "Online vs archived redo log:",
+    "options": [
+      "Identical",
+      "Online=active, archived=saved copies",
+      "Archived larger",
+      "Online optional"
+    ],
+    "answer": 1,
+    "explanation": "Online records current. Archived = saved for recovery."
+  },
+  {
+    "id": 246,
+    "category": "Backup & Recovery",
+    "question": "Incremental vs differential restore:",
+    "options": [
+      "Incremental faster",
+      "Incremental slower (needs all)",
+      "Always faster",
+      "Always slower"
+    ],
+    "answer": 1,
+    "explanation": "Incremental needs full+ALL incrementals. Differential needs full+latest only."
+  },
+  {
+    "id": 247,
+    "category": "Backup & Recovery",
+    "question": "Database mirroring:",
+    "options": [
+      "Archiving",
+      "Real-time redundancy with failover",
+      "Optimization",
+      "Compression"
+    ],
+    "answer": 1,
+    "explanation": "Real-time copy. Auto (high-safety) or manual (high-performance) failover."
+  },
+  {
+    "id": 248,
+    "category": "Backup & Recovery",
+    "question": "GFS scheme manages:",
+    "options": [
+      "Access",
+      "Daily/weekly/monthly backup cycles",
+      "Three copies",
+      "NoSQL"
+    ],
+    "answer": 1,
+    "explanation": "Systematic rotation across time horizons."
+  },
+  {
+    "id": 249,
+    "category": "Backup & Recovery",
+    "question": "Recover from accidental DROP TABLE:",
+    "options": [
+      "Recreate",
+      "PITR before deletion",
+      "Full restore",
+      "No recovery"
+    ],
+    "answer": 1,
+    "explanation": "Most efficient human error recovery method."
+  },
+  {
+    "id": 250,
+    "category": "Backup & Recovery",
+    "question": "Backup window is:",
+    "options": [
+      "Software",
+      "Time for backups without impact",
+      "Encryption",
+      "Retention"
+    ],
+    "answer": 1,
+    "explanation": "Scheduled time. Determines feasible backup types."
+  }
+]
