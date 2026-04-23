@@ -2,11 +2,11 @@
   {
     "id": 1,
     "category": "Schema Design",
-    "question": "Design schema for library: books (ISBN, title, author), members, loans (book, member, dates). Best approach?",
+    "question": "図書館のスキーマ設計：books (ISBN, title, author), members, loans (book, member, dates)。最適なアプローチは？",
     "options": [
-      "Single table with all data",
-      "Three tables: Books, Members, Loans (FK to Books and Members)",
-      "Two tables: Books, Members",
+      "全データを1つのテーブルに",
+      "3テーブル: Books, Members, Loans (BooksとMembersへのFK)",
+      "2テーブル: Books, Members",
       "Books, Authors, Members, Loans, BookAuthors"
     ],
     "answer": 1,
@@ -16,11 +16,11 @@
   {
     "id": 2,
     "category": "Schema Design",
-    "question": "E-commerce: products, categories (many-to-many), orders, order items. Best schema?",
+    "question": "Eコマース: products, categories (多対多), orders, order items。最適なスキーマは？",
     "options": [
-      "One flat table",
+      "1つのフラットテーブル",
       "Products, Categories, ProductCategories, Orders, OrderItems",
-      "Products with category array, Orders",
+      "カテゴリ配列を持つProducts、Orders",
       "Products, Orders, Categories"
     ],
     "answer": 1,
