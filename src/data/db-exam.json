@@ -10,7 +10,7 @@
       "Division"
     ],
     "answer": 2,
-    "explanation": "Join combines tuples where they satisfy a predicate. Selection filters rows, projection selects columns, division answers for-all queries."
+    "explanation": "結合は述語を満たすタプルを結合する。選択は行を絞り込み、射影は列を選択し、除算は全称クエリに応答する。"
   },
   {
     "id": 2,
@@ -23,7 +23,7 @@
       "min(m,n)"
     ],
     "answer": 1,
-    "explanation": "Cartesian product produces m*n tuples by pairing every tuple from first with every tuple from second."
+    "explanation": "直積は1つ目のリレーションのすべてのタプルと2つ目のリレーションのすべてのタプルの組合わせでm*n個のタプルを生成する。"
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
       "Aggregations"
     ],
     "answer": 2,
-    "explanation": "Division answers for-all queries: find students who took ALL courses = R/S."
+    "explanation": "除算は全称クエリに応答する：全科目を受講した学生を検索する＝R/S。"
   },
   {
     "id": 4,
@@ -49,7 +49,7 @@
       "A and B disjoint"
     ],
     "answer": 1,
-    "explanation": "Trivial if B is subset of A. Always holds, no meaningful constraint."
+    "explanation": "BがAの部分集合の場合に自明。常に成り立ち、意味のある制約ではない。"
   },
   {
     "id": 5,
@@ -62,7 +62,7 @@
       "BCNF"
     ],
     "answer": 2,
-    "explanation": "3NF eliminates transitive deps where non-key attribute depends on another non-key attribute."
+    "explanation": "第3正規形は非キー属性が別の非キー属性に従属する推移的従属を排除する。"
   },
   {
     "id": 6,
@@ -75,7 +75,7 @@
       "Single-valued only"
     ],
     "answer": 1,
-    "explanation": "BCNF: every non-trivial FD A->B requires A be superkey. 3NF allows B to be prime even if A is not superkey."
+    "explanation": "BCNF: すべての非自明な関数従属A→Bにおいて、Aはスーパーキーでなければならない。3NFはBが素属性であればAがスーパーキーでなくても許容する。"
   },
   {
     "id": 7,
@@ -88,7 +88,7 @@
       "5NF"
     ],
     "answer": 2,
-    "explanation": "4NF addresses MVDs. Relation in 4NF is in BCNF with no non-trivial multi-valued dependencies."
+    "explanation": "第4正規形は多値従属性に対処する。4NFのリレーションはBCNFであり、非自明な多値従属性を持たない。"
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
       "Transitive deps"
     ],
     "answer": 2,
-    "explanation": "5NF deals with join dependencies - cannot decompose into smaller relations without information loss."
+    "explanation": "第5正規形は結合従属性を扱う。情報の損失なしにより小さなリレーションに分解できない場合に適合する。"
   },
   {
     "id": 9,
@@ -114,7 +114,7 @@
       "Subset of F in BCNF"
     ],
     "answer": 1,
-    "explanation": "F+ includes all FDs derivable using reflexivity, augmentation, and transitivity."
+    "explanation": "F+は反射律、増幅度、推移律を用いて導出可能なすべての関数従属を含む。"
   },
   {
     "id": 10,
@@ -127,7 +127,7 @@
       "B->A and C->B"
     ],
     "answer": 0,
-    "explanation": "Transitivity is fundamental for computing attribute closures."
+    "explanation": "推移律: A→BかつB→CならばA→C。属性クロージャの計算に不可欠。"
   },
   {
     "id": 11,
@@ -140,7 +140,7 @@
       "BCNF"
     ],
     "answer": 2,
-    "explanation": "Transitive dep A->B->C. A is only key; B->C where B not superkey = 3NF violation."
+    "explanation": "推移的従属A→B→C。Aは唯一のキー。BはスーパーキーではないためB→Cは3NF違反。"
   },
   {
     "id": 12,
@@ -153,7 +153,7 @@
       "Aggregation"
     ],
     "answer": 1,
-    "explanation": "EXISTS retrieves tuples where a matching tuple exists in the specified relation."
+    "explanation": "EXISTSは指定されたリレーションにマッチするタプルが存在する場合にタプルを取得する。"
   },
   {
     "id": 13,
@@ -166,7 +166,7 @@
       "Cannot be NULL"
     ],
     "answer": 0,
-    "explanation": "Prime attributes are in at least one candidate key. Crucial for 2NF and 3NF."
+    "explanation": "素属性は少なくとも1つの候補キーに含まれる。2NFと3NFにおいて重要な概念。"
   },
   {
     "id": 14,
@@ -179,7 +179,7 @@
       "Attribute preservation"
     ],
     "answer": 1,
-    "explanation": "Joining decomposed relations recovers original exactly. Intersection must be superkey of one part."
+    "explanation": "分解されたリレーションを結合すると元のリレーションが完全に復元される。交差は一方のスーパーキーでなければならない。"
   },
   {
     "id": 15,
@@ -192,7 +192,7 @@
       "Non-matching tuples"
     ],
     "answer": 1,
-    "explanation": "Merges join columns into one, returns only matching tuples on common attributes."
+    "explanation": "結合列を1つに統合し、共通属性でマッチするタプルのみを返す。"
   },
   {
     "id": 16,
@@ -205,7 +205,7 @@
       "Chosen primary key"
     ],
     "answer": 1,
-    "explanation": "No proper subset uniquely identifies tuples - minimal superkey."
+    "explanation": "真の部分集合がスーパーキーにならないこと。最小のスーパーキー。"
   },
   {
     "id": 17,
@@ -218,7 +218,7 @@
       "Sorted results"
     ],
     "answer": 1,
-    "explanation": "Includes unmatched tuples from one or both relations, padding with NULLs."
+    "explanation": "一方または両方のリレーションからのマッチしないタプルをNULLでパディングして含める。"
   },
   {
     "id": 18,
@@ -231,7 +231,7 @@
       "4"
     ],
     "answer": 2,
-    "explanation": "AB+={ABCD}, BC+={BCDA}, BD+={BDAC}. Three candidate keys: AB, BC, BD."
+    "explanation": "AB+={ABCD}, BC+={BCDA}, BD+={BDAC}。3つの候補キー: AB, BC, BD。"
   },
   {
     "id": 19,
@@ -244,7 +244,7 @@
       "B->A"
     ],
     "answer": 1,
-    "explanation": "If A->B, then AC->BC for any C. Both sides augmented equally."
+    "explanation": "A→Bならば、任意のCに対してAC→BC。両辺が等しく拡張される。"
   },
   {
     "id": 20,
@@ -257,7 +257,7 @@
       "Every determinant superkey"
     ],
     "answer": 1,
-    "explanation": "No non-prime attribute partially depends on composite candidate key."
+    "explanation": "非素属性が複合候補キーの一部に部分的に従属しないこと。"
   },
   {
     "id": 21,
@@ -270,7 +270,7 @@
       "R intersect S"
     ],
     "answer": 1,
-    "explanation": "Only R tuples with matches in S, keeping only R attributes."
+    "explanation": "SにマッチするRのタプルのみ。Rの属性のみを保持する。"
   },
   {
     "id": 22,
@@ -283,7 +283,7 @@
       "Primary key"
     ],
     "answer": 1,
-    "explanation": "All attribute values must be atomic (indivisible)."
+    "explanation": "すべての属性値が原子値(分割不可)であること。"
   },
   {
     "id": 23,
@@ -296,7 +296,7 @@
       "Candidate keys with A"
     ],
     "answer": 0,
-    "explanation": "All attributes functionally determined by A via Armstrong axioms."
+    "explanation": "アームストロングの公理を通じてAから関数的に決定されるすべての属性。"
   },
   {
     "id": 24,
@@ -309,7 +309,7 @@
       "X is candidate key"
     ],
     "answer": 1,
-    "explanation": "X must be superkey. Stricter than 3NF which allows Y to be prime."
+    "explanation": "Xはスーパーキーでなければならない。Bが素属性でも許容する3NFより厳しい。"
   },
   {
     "id": 25,
@@ -322,7 +322,7 @@
       "Faster queries"
     ],
     "answer": 0,
-    "explanation": "Every original FD derivable from FDs on decomposed relations."
+    "explanation": "元のすべての関数従属が分解されたリレーション上の関数従属から導出可能。"
   },
   {
     "id": 26,
@@ -335,7 +335,7 @@
       "B,C same cardinality per A"
     ],
     "answer": 1,
-    "explanation": "For each A, B values are independent of C values. B and C are independent facts."
+    "explanation": "各Aについて、Bの値はCの値から独立している。BとCは独立した事実。"
   },
   {
     "id": 27,
@@ -348,7 +348,7 @@
       "4NF=>5NF=>BCNF"
     ],
     "answer": 1,
-    "explanation": "5NF=>4NF=>BCNF=>3NF=>2NF=>1NF. Each higher implies all lower."
+    "explanation": "5NF→4NF→BCNF→3NF→2NF→1NF。上位の正規形は下位のすべてを含む。"
   },
   {
     "id": 28,
@@ -361,7 +361,7 @@
       "Duplicate rows"
     ],
     "answer": 1,
-    "explanation": "Essential for self-joins and combining relations with same-named attributes."
+    "explanation": "自己結合や同じ名前の属性を持つリレーションの結合に不可欠。"
   },
   {
     "id": 29,
@@ -374,7 +374,7 @@
       "Union"
     ],
     "answer": 1,
-    "explanation": "Independent variables without linking constraint = Cartesian product."
+    "explanation": "連結制約のない独立変数＝直積。"
   },
   {
     "id": 30,
@@ -387,7 +387,7 @@
       "A->A union B"
     ],
     "answer": 0,
-    "explanation": "If B is subset of A, then A->B always holds (trivial dependency)."
+    "explanation": "BがAの部分集合ならば、A→Bは常に成り立つ(自明な関数従属)。"
   },
   {
     "id": 31,
@@ -400,7 +400,7 @@
       "Specified levels"
     ],
     "answer": 0,
-    "explanation": "CUBE generates 2^n groupings including all subtotals and grand total."
+    "explanation": "CUBEはすべての小計と総計を含む2^nのグループ化を生成する。"
   },
   {
     "id": 32,
@@ -413,7 +413,7 @@
       "RANK cannot ORDER BY"
     ],
     "answer": 1,
-    "explanation": "RANK: 1,2,2,4. ROW_NUMBER: 1,2,3,4. DENSE_RANK: 1,2,2,3."
+    "explanation": "RANK: 1,2,2,4。ROW_NUMBER: 1,2,3,4。DENSE_RANK: 1,2,2,3。"
   },
   {
     "id": 33,
@@ -426,7 +426,7 @@
       "INTERSECT"
     ],
     "answer": 1,
-    "explanation": "UNION ALL required. UNION would remove duplicates and could cause infinite loops."
+    "explanation": "UNION ALLが必要。UNIONは重複を削除し、無限ループを引き起こす可能性がある。"
   },
   {
     "id": 34,
@@ -439,7 +439,7 @@
       "Current row position"
     ],
     "answer": 1,
-    "explanation": "LAG() returns value from previous row (default offset 1). LEAD() returns from subsequent row."
+    "explanation": "LAG()は前行の値を返す(デフォルトオフセット1)。LEAD()は後続行の値を返す。"
   },
   {
     "id": 35,
@@ -452,7 +452,7 @@
       "Column exists"
     ],
     "answer": 1,
-    "explanation": "EXISTS returns TRUE if subquery returns any rows. More efficient than IN for existence checks."
+    "explanation": "EXISTSはサブクエリが行を返す場合にTRUE。存在確認ではINより効率的。"
   },
   {
     "id": 36,
@@ -465,7 +465,7 @@
       "EXCEPT ALL"
     ],
     "answer": 2,
-    "explanation": "UNION removes duplicates. UNION ALL is faster, skips deduplication."
+    "explanation": "UNIONは重複を削除する。UNION ALLはより高速で重複削除をスキップする。"
   },
   {
     "id": 37,
@@ -478,7 +478,7 @@
       "When optimizer decides"
     ],
     "answer": 1,
-    "explanation": "References outer columns, re-evaluated per row. Potentially slower."
+    "explanation": "外部列を参照し、各行ごとに再評価される。潜在的に遅くなる。"
   },
   {
     "id": 38,
@@ -491,7 +491,7 @@
       "CUME_DIST"
     ],
     "answer": 2,
-    "explanation": "PERCENT_RANK = (rank-1)/(N-1). CUME_DIST = rank/N."
+    "explanation": "PERCENT_RANK = (rank-1)/(N-1)。CUME_DIST = rank/N。"
   },
   {
     "id": 39,
@@ -504,7 +504,7 @@
       "Removes NULLs"
     ],
     "answer": 1,
-    "explanation": "FILTER(WHERE cond) includes only matching rows in aggregate."
+    "explanation": "FILTER(WHERE条件)は集計にマッチする行のみを含める。"
   },
   {
     "id": 40,
@@ -517,7 +517,7 @@
       "SELECT and INSERT only"
     ],
     "answer": 2,
-    "explanation": "MERGE (UPSERT) can INSERT new, UPDATE existing, DELETE rows based on match conditions."
+    "explanation": "MERGE(UPSERT)はマッチ条件に基づいてINSERT、UPDATE、DELETEを実行可能。"
   },
   {
     "id": 41,
@@ -530,7 +530,7 @@
       "Join condition"
     ],
     "answer": 1,
-    "explanation": "PARTITION BY divides, ORDER BY sorts within partition, frame defines range."
+    "explanation": "PARTITION BYで分割、ORDER BYでパーティション内ソート、フレームで範囲を定義。"
   },
   {
     "id": 42,
@@ -543,7 +543,7 @@
       "FILTER"
     ],
     "answer": 1,
-    "explanation": "WHERE filters before grouping. HAVING filters after aggregation."
+    "explanation": "WHEREはグループ化前にフィルタリング。HAVINGは集計後にフィルタリング。"
   },
   {
     "id": 43,
@@ -556,7 +556,7 @@
       "Always current"
     ],
     "answer": 1,
-    "explanation": "Stores result physically, improving reads but requiring refresh."
+    "explanation": "結果を物理的に格納し、読み取りを向上させるがリフレッシュが必要。"
   },
   {
     "id": 44,
@@ -569,7 +569,7 @@
       "Cross-tabulation"
     ],
     "answer": 1,
-    "explanation": "ROLLUP(a,b,c) produces (a,b,c),(a,b),(a),() groups - hierarchical subtotals."
+    "explanation": "ROLLUP(a,b,c)は(a,b,c),(a,b),(a),()のグループを生成する階層型小計。"
   },
   {
     "id": 45,
@@ -582,7 +582,7 @@
       "n tables"
     ],
     "answer": 0,
-    "explanation": "Divides result into n approximately equal groups, assigning numbers 1 to n."
+    "explanation": "結果をほぼ等しいn個のグループに分割し、1からnの番号を割り当てる。"
   },
   {
     "id": 46,
@@ -595,7 +595,7 @@
       "DIFFERENCE"
     ],
     "answer": 2,
-    "explanation": "EXCEPT/MINUS returns rows from first SELECT not in second."
+    "explanation": "EXCEPT/MINUSは1つ目のSELECTにあり2つ目にない行を返す。"
   },
   {
     "id": 47,
@@ -608,7 +608,7 @@
       "Parallel execution"
     ],
     "answer": 1,
-    "explanation": "Enables subqueries in FROM to reference preceding tables in same FROM clause."
+    "explanation": "FROM句のサブクエリが同じFROM句内の先行テーブルを参照できるようにする。"
   },
   {
     "id": 48,
@@ -621,7 +621,7 @@
       "RANGE UNBOUNDED both"
     ],
     "answer": 1,
-    "explanation": "Default is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW."
+    "explanation": "デフォルトはRANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW。"
   },
   {
     "id": 49,
@@ -634,7 +634,7 @@
       "REMOVE TABLE"
     ],
     "answer": 2,
-    "explanation": "TRUNCATE removes all rows fast with minimal logging, resets identity."
+    "explanation": "TRUNCATEは最小限のログで全行を高速に削除し、IDENTITYをリセットする。"
   },
   {
     "id": 50,
@@ -647,7 +647,7 @@
       "Referential integrity"
     ],
     "answer": 1,
-    "explanation": "Ensures all INSERT/UPDATE through view satisfy its WHERE condition."
+    "explanation": "ビューを通じたINSERT/UPDATEがWHERE条件を満たすことを保証する。"
   },
   {
     "id": 51,
@@ -660,7 +660,7 @@
       "Connection pooling"
     ],
     "answer": 1,
-    "explanation": "CTE creates named temporary result set for SELECT/INSERT/UPDATE/DELETE."
+    "explanation": "CTEはSELECT/INSERT/UPDATE/DELETE用の名前付き一時結果セットを作成する。"
   },
   {
     "id": 52,
@@ -673,7 +673,7 @@
       "Minimum value"
     ],
     "answer": 1,
-    "explanation": "Returns expression value from the first row of current window frame."
+    "explanation": "現在のウィンドウフレームの最初の行の式の値を返す。"
   },
   {
     "id": 53,
@@ -686,7 +686,7 @@
       "SERIALIZABLE"
     ],
     "answer": 2,
-    "explanation": "REPEATABLE READ prevents non-repeatable reads. Phantom prevention varies by DBMS."
+    "explanation": "REPEATABLE READは非反復可能読み取りを防止する。ファントム防止はDBMS依存。"
   },
   {
     "id": 54,
@@ -699,7 +699,7 @@
       "Used in triggers"
     ],
     "answer": 1,
-    "explanation": "Always returns same result for same inputs. Important for indexing."
+    "explanation": "同じ入力に対して常に同じ結果を返す。インデックス作成で重要。"
   },
   {
     "id": 55,
@@ -712,7 +712,7 @@
       "GROUP BY"
     ],
     "answer": 2,
-    "explanation": "ROWS/RANGE BETWEEN...AND... defines which rows are in the window."
+    "explanation": "ROWS/RANGE BETWEEN...AND...がウィンドウに含まれる行を定義する。"
   },
   {
     "id": 56,
@@ -725,7 +725,7 @@
       "System access"
     ],
     "answer": 1,
-    "explanation": "Permits grantee to further grant received privileges to other users."
+    "explanation": "許可された者が受け取った権限を他のユーザーにさらに付与することを許可する。"
   },
   {
     "id": 57,
@@ -738,7 +738,7 @@
       "Index type"
     ],
     "answer": 1,
-    "explanation": "Fired automatically when INSERT/UPDATE/DELETE occurs on table/view."
+    "explanation": "テーブル/ビューでINSERT/UPDATE/DELETEが発生すると自動的に発火する。"
   },
   {
     "id": 58,
@@ -751,7 +751,7 @@
       "First value"
     ],
     "answer": 1,
-    "explanation": "= ANY (equivalent to IN) returns TRUE if value equals any subquery result."
+    "explanation": "= ANY(INと同等)は値がサブクエリ結果のいずれかと等しい場合にTRUE。"
   },
   {
     "id": 59,
@@ -764,7 +764,7 @@
       "ORDER BY"
     ],
     "answer": 1,
-    "explanation": "Requires anchor, recursive member referencing CTE, and UNION ALL."
+    "explanation": "アンカー、CTEを参照する再帰メンバー、UNION ALLが必要。"
   },
   {
     "id": 60,
@@ -777,7 +777,7 @@
       "Rollup hierarchies"
     ],
     "answer": 1,
-    "explanation": "Multiple groupings in one query, equivalent to multiple GROUP BYs + UNION ALL."
+    "explanation": "1つのクエリで複数のグループ化。複数のGROUP BY + UNION ALLと同等。"
   },
   {
     "id": 61,
@@ -790,7 +790,7 @@
       "Average of non-NULLs"
     ],
     "answer": 0,
-    "explanation": "Returns first non-NULL from argument list. Useful for default values."
+    "explanation": "引数リストの最初の非NULL値を返す。デフォルト値の設定に有用。"
   },
   {
     "id": 62,
@@ -803,7 +803,7 @@
       "Only foreign keys"
     ],
     "answer": 1,
-    "explanation": "All query-referenced columns, query satisfied from index alone."
+    "explanation": "クエリで参照されるすべての列。インデックスのみでクエリが完結する。"
   },
   {
     "id": 63,
@@ -816,7 +816,7 @@
       "FK checks"
     ],
     "answer": 1,
-    "explanation": "Locks selected rows until transaction completes."
+    "explanation": "トランザクション完了まで選択行をロックする。"
   },
   {
     "id": 64,
@@ -829,7 +829,7 @@
       "Requires partition"
     ],
     "answer": 1,
-    "explanation": "DENSE_RANK: 2,2,3. RANK: 2,2,4. Both assign ties same rank."
+    "explanation": "DENSE_RANK: 2,2,3。RANK: 2,2,4。両方ともタイに同じ順位を付与。"
   },
   {
     "id": 65,
@@ -842,7 +842,7 @@
       "Transaction ID"
     ],
     "answer": 1,
-    "explanation": "Returns inserted/updated/deleted data without separate SELECT."
+    "explanation": "別途SELECTなしで挿入/更新/削除されたデータを返す。"
   },
   {
     "id": 66,
@@ -855,7 +855,7 @@
       "No parameters"
     ],
     "answer": 2,
-    "explanation": "Procedures can return multiple result sets and output parameters."
+    "explanation": "ストアドプロシージャは複数の結果セットと出力パラメータを返せる。"
   },
   {
     "id": 67,
@@ -868,7 +868,7 @@
       "Phantom reads"
     ],
     "answer": 1,
-    "explanation": "Row versioning prevents dirty/non-repeatable/phantom reads. Allows write skew."
+    "explanation": "行バージョニングによりダーティ読み取り/非反復可能読み取り/ファントム読み取りを防止。ライトスキューを許容。"
   },
   {
     "id": 68,
@@ -881,7 +881,7 @@
       "All right rows"
     ],
     "answer": 2,
-    "explanation": "All rows from both tables, non-matching sides padded with NULLs."
+    "explanation": "両方のテーブルのすべての行。マッチしない側はNULLでパディング。"
   },
   {
     "id": 69,
@@ -894,7 +894,7 @@
       "Subqueries"
     ],
     "answer": 1,
-    "explanation": "Distinguishes regular from superaggregate rows. Returns 1 for superaggregate."
+    "explanation": "通常行とスーパー集計行を区別する。スーパー集計では1を返す。"
   },
   {
     "id": 70,
@@ -907,7 +907,7 @@
       "Default values"
     ],
     "answer": 1,
-    "explanation": "Requires referencing values exist in referenced table."
+    "explanation": "参照値が参照先テーブルに存在することを要求する。"
   },
   {
     "id": 71,
@@ -920,7 +920,7 @@
       "Is optional"
     ],
     "answer": 1,
-    "explanation": "Weak entity lacks sufficient attributes for primary key, depends on identifying owner."
+    "explanation": "弱いエンティティは主キーに十分な属性を持たず、識別所有者に依存する。"
   },
   {
     "id": 72,
@@ -933,7 +933,7 @@
       "Three primary keys"
     ],
     "answer": 1,
-    "explanation": "Three entity types. Cannot always decompose into binary relationships."
+    "explanation": "3つのエンティティタイプ。常に2項関係に分解できるとは限らない。"
   },
   {
     "id": 73,
@@ -946,7 +946,7 @@
       "Table count"
     ],
     "answer": 1,
-    "explanation": "1:1, 1:N, M:N specify participation counts in relationships."
+    "explanation": "1:1、1:N、M:Nは関係における参加数を指定する。"
   },
   {
     "id": 74,
@@ -959,7 +959,7 @@
       "Dependency elimination"
     ],
     "answer": 1,
-    "explanation": "Introduces redundancy to reduce joins and improve reads."
+    "explanation": "冗長性を導入して結合を削減し、読み取りを向上させる。"
   },
   {
     "id": 75,
@@ -972,7 +972,7 @@
       "Surrogate key"
     ],
     "answer": 1,
-    "explanation": "Weak entity PK includes identifying owner PK, creating composite key."
+    "explanation": "弱いエンティティの主キーに識別所有者の主キーが含まれ、複合キーとなる。"
   },
   {
     "id": 76,
@@ -985,7 +985,7 @@
       "Secondary index"
     ],
     "answer": 1,
-    "explanation": "System-generated unique ID (auto-increment) with no business meaning."
+    "explanation": "システム生成の一意ID(自動採番)。業務的な意味を持たない。"
   },
   {
     "id": 77,
@@ -998,7 +998,7 @@
       "Data types"
     ],
     "answer": 1,
-    "explanation": "Sharding splits rows by key. Each partition: same columns, different rows."
+    "explanation": "シャーディングはキーで行を分割。各パーティションは同じ列、異なる行。"
   },
   {
     "id": 78,
@@ -1011,7 +1011,7 @@
       "Simplified schema"
     ],
     "answer": 2,
-    "explanation": "Allows queries to access only needed columns, reducing I/O."
+    "explanation": "必要な列のみにアクセスでき、I/Oを削減する。"
   },
   {
     "id": 79,
@@ -1024,7 +1024,7 @@
       "Primary key"
     ],
     "answer": 2,
-    "explanation": "Chen notation: diamonds=relationships, rectangles=entities, ovals=attributes."
+    "explanation": "Chen記法: ダイアモンド=関係、長方形=エンティティ、楕円=属性。"
   },
   {
     "id": 80,
@@ -1037,7 +1037,7 @@
       "Cross-table joins"
     ],
     "answer": 1,
-    "explanation": "Common in supertype, specific in subtypes (Employee->Manager/Developer)."
+    "explanation": "共通属性はスーパータイプに、固有属性はサブタイプに(Employee→Manager/Developer)。"
   },
   {
     "id": 81,
@@ -1050,7 +1050,7 @@
       "Only common attrs"
     ],
     "answer": 1,
-    "explanation": "One table with type discriminator and nullable subtype-specific columns."
+    "explanation": "タイプ識別子とNULL可能なサブタイプ固有列を持つ1つのテーブル。"
   },
   {
     "id": 82,
@@ -1063,7 +1063,7 @@
       "Weak to strong"
     ],
     "answer": 1,
-    "explanation": "Self-referencing: employee-manager within Employee table."
+    "explanation": "自己参照: Employeeテーブル内の従業員-管理者関係。"
   },
   {
     "id": 83,
@@ -1076,7 +1076,7 @@
       "Index definitions"
     ],
     "answer": 1,
-    "explanation": "ER model without implementation details."
+    "explanation": "実装詳細のないERモデル。"
   },
   {
     "id": 84,
@@ -1089,7 +1089,7 @@
       "ER diagrams"
     ],
     "answer": 1,
-    "explanation": "Implementation: data types, indexing, file organization, storage."
+    "explanation": "実装: データ型、インデックス作成、ファイル編成、ストレージ。"
   },
   {
     "id": 85,
@@ -1102,7 +1102,7 @@
       "Derived attr"
     ],
     "answer": 1,
-    "explanation": "E.g., Address = Street+City+Zip. Sub-attrs become columns."
+    "explanation": "例: Address = Street+City+Zip。サブ属性が列になる。"
   },
   {
     "id": 86,
@@ -1115,7 +1115,7 @@
       "Small tables"
     ],
     "answer": 1,
-    "explanation": "Ideal for date ranges, ID ranges, sequential value queries."
+    "explanation": "日付範囲、ID範囲、順次値クエリに最適。"
   },
   {
     "id": 87,
@@ -1128,7 +1128,7 @@
       "Always unique"
     ],
     "answer": 1,
-    "explanation": "E.g., age from birthdate. Not stored to avoid redundancy."
+    "explanation": "例: 生年月日からの年齢計算。冗長性を避けるため格納しない。"
   },
   {
     "id": 88,
@@ -1141,7 +1141,7 @@
       "Unlimited"
     ],
     "answer": 0,
-    "explanation": "Every instance must participate in at least one relationship."
+    "explanation": "すべてのインスタンスが少なくとも1つの関係に参加する必要がある。"
   },
   {
     "id": 89,
@@ -1154,7 +1154,7 @@
       "Date"
     ],
     "answer": 1,
-    "explanation": "Hash function distributes evenly. Prevents skew, hurts range queries."
+    "explanation": "ハッシュ関数で均等に分散。スキューを防止するが、範囲クエリには不向き。"
   },
   {
     "id": 90,
@@ -1167,7 +1167,7 @@
       "DEFAULT"
     ],
     "answer": 1,
-    "explanation": "Cannot be single column in 1NF. Requires separate linked table."
+    "explanation": "1NFでは単一列にできない。リンクされた別テーブルが必要。"
   },
   {
     "id": 91,
@@ -1180,7 +1180,7 @@
       "Composite attr"
     ],
     "answer": 1,
-    "explanation": "Requires junction table with foreign keys to both entities."
+    "explanation": "両方のエンティティへの外部キーを持つ結合テーブルが必要。"
   },
   {
     "id": 92,
@@ -1193,7 +1193,7 @@
       "Network protocol"
     ],
     "answer": 1,
-    "explanation": "Entities become tables, relationships become foreign keys."
+    "explanation": "エンティティがテーブルに、関係が外部キーになる。"
   },
   {
     "id": 93,
@@ -1206,7 +1206,7 @@
       "Index too large"
     ],
     "answer": 1,
-    "explanation": "Independent 1:N paths may lose information when queried."
+    "explanation": "独立した1:Nパスはクエリ時に情報を失う可能性がある。"
   },
   {
     "id": 94,
@@ -1219,7 +1219,7 @@
       "Reference tables"
     ],
     "answer": 1,
-    "explanation": "Totals/counts in dedicated tables to avoid GROUP BY queries."
+    "explanation": "GROUP BYクエリを回避するための専用テーブルに合計/カウントを格納。"
   },
   {
     "id": 95,
@@ -1232,7 +1232,7 @@
       "Physical"
     ],
     "answer": 2,
-    "explanation": "Part of converting ER model to relational tables."
+    "explanation": "ERモデルをリレーショナルテーブルに変換するプロセスの一部。"
   },
   {
     "id": 96,
@@ -1245,7 +1245,7 @@
       "Random"
     ],
     "answer": 1,
-    "explanation": "Assigns rows by predefined value list. Good for categorical data."
+    "explanation": "事前定義された値リストで行を割り当てる。カテゴリデータに適している。"
   },
   {
     "id": 97,
@@ -1258,7 +1258,7 @@
       "Missing FKs"
     ],
     "answer": 1,
-    "explanation": "Optional relationships mean some entities have no path between them."
+    "explanation": "オプショナルな関係により、一部のエンティティ間にパスが存在しない。"
   },
   {
     "id": 98,
@@ -1271,7 +1271,7 @@
       "Optimization"
     ],
     "answer": 1,
-    "explanation": "Table definitions, column types, constraints, indexes."
+    "explanation": "テーブル定義、列型、制約、インデックス。"
   },
   {
     "id": 99,
@@ -1284,7 +1284,7 @@
       "Denormalization"
     ],
     "answer": 1,
-    "explanation": "SCD Type 1: overwrite, Type 2: new row version, Type 3: add columns."
+    "explanation": "SCD Type 1: 上書き、Type 2: 新行バージョン、Type 3: 列追加。"
   },
   {
     "id": 100,
@@ -1297,7 +1297,7 @@
       "Partitions"
     ],
     "answer": 1,
-    "explanation": "Resolves many-to-many in dimensions (multi-valued dimensions)."
+    "explanation": "ディメンション間の多対多を解決する(多値ディメンション)。"
   },
   {
     "id": 101,
@@ -1310,7 +1310,7 @@
       "Isolation"
     ],
     "answer": 1,
-    "explanation": "All operations complete or none do. Any failure rolls back entire transaction."
+    "explanation": "全操作が完了するか全く完了しない。失敗時はトランザクション全体がロールバック。"
   },
   {
     "id": 102,
@@ -1323,7 +1323,7 @@
       "Reading corrupted blocks"
     ],
     "answer": 1,
-    "explanation": "Transaction reads uncommitted data from another transaction that may roll back."
+    "explanation": "トランザクションがロールバックする可能性のある別トランザクションの未コミットデータを読み取る。"
   },
   {
     "id": 103,
@@ -1336,7 +1336,7 @@
       "SERIALIZABLE"
     ],
     "answer": 1,
-    "explanation": "READ COMMITTED reads only committed data but allows modifications between reads."
+    "explanation": "READ COMMITTEDはコミット済みデータのみを読むが、読み取り間の変更を許容する。"
   },
   {
     "id": 104,
@@ -1349,7 +1349,7 @@
       "Tx aborted"
     ],
     "answer": 1,
-    "explanation": "Cycle: each holds lock needed by another, all waiting indefinitely."
+    "explanation": "循環: 各トランザクションが別のトランザクションが必要とするロックを保持し、全員が永遠に待機。"
   },
   {
     "id": 105,
@@ -1362,7 +1362,7 @@
       "Preventing concurrent access"
     ],
     "answer": 1,
-    "explanation": "Multiple versions let readers not block writers. Each tx sees consistent snapshot."
+    "explanation": "複数バージョンによりリーダーがライターをブロックしない。各トランザクションは一貫性のあるスナップショットを見る。"
   },
   {
     "id": 106,
@@ -1375,7 +1375,7 @@
       "Unexpected NULL"
     ],
     "answer": 1,
-    "explanation": "Range query returns different rows because another tx inserted new rows."
+    "explanation": "範囲クエリが別トランザクションの新規行挿入により異なる行を返す。"
   },
   {
     "id": 107,
@@ -1388,7 +1388,7 @@
       "Remote logs"
     ],
     "answer": 1,
-    "explanation": "Log records to stable storage first, guaranteeing crash recoverability."
+    "explanation": "ログレコードをまず安定ストレージに書き込み、クラッシュリカバリを保証する。"
   },
   {
     "id": 108,
@@ -1401,7 +1401,7 @@
       "Lock holder only"
     ],
     "answer": 1,
-    "explanation": "S lock allows multiple readers but blocks exclusive locks."
+    "explanation": "Sロックは複数リーダーを許容するが、排他ロックをブロックする。"
   },
   {
     "id": 109,
@@ -1414,7 +1414,7 @@
       "Maximum parallelism"
     ],
     "answer": 1,
-    "explanation": "Growing phase (acquire) then shrinking (release). Guarantees conflict serializability."
+    "explanation": "成長フェーズ(取得)→縮小フェーズ(解放)。競合直列化可能性を保証する。"
   },
   {
     "id": 110,
@@ -1427,7 +1427,7 @@
       "Wrong table"
     ],
     "answer": 1,
-    "explanation": "Tx A reads row, B modifies and commits, A re-reads sees different data."
+    "explanation": "Tx Aが行を読取り、Bが変更してコミット、Aが再読取りすると異なるデータを見る。"
   },
   {
     "id": 111,
@@ -1440,7 +1440,7 @@
       "Timeout"
     ],
     "answer": 1,
-    "explanation": "Older txs wait for younger. Younger txs abort when requesting older-held locks."
+    "explanation": "古いトランザクションは待機し、新しいトランザクションは中断される。"
   },
   {
     "id": 112,
@@ -1453,7 +1453,7 @@
       "All including deadlocks"
     ],
     "answer": 2,
-    "explanation": "Strictest level. Serializes execution preventing all anomaly types."
+    "explanation": "最も厳密な分離レベル。実行を直列化し、すべての異常タイプを防止する。"
   },
   {
     "id": 113,
@@ -1466,7 +1466,7 @@
       "Row shared lock"
     ],
     "answer": 1,
-    "explanation": "IS/IX signal intent to lock at lower hierarchy levels."
+    "explanation": "IS/IXは下位階層レベルでロックする意図を示す。"
   },
   {
     "id": 114,
@@ -1479,7 +1479,7 @@
       "Read-only"
     ],
     "answer": 1,
-    "explanation": "No locking during execution. Validate at commit, abort if conflicts."
+    "explanation": "実行中はロックなし。コミット時に検証し、競合時は中断する。"
   },
   {
     "id": 115,
@@ -1492,7 +1492,7 @@
       "Partial commit"
     ],
     "answer": 1,
-    "explanation": "ROLLBACK TO SAVEPOINT undoes changes after that point."
+    "explanation": "ROLLBACK TO SAVEPOINTはその時点以降の変更を取り消す。"
   },
   {
     "id": 116,
@@ -1505,7 +1505,7 @@
       "Per-statement release"
     ],
     "answer": 1,
-    "explanation": "Holds all exclusive locks until commit. Prevents cascading rollbacks."
+    "explanation": "すべての排他ロックをコミット/アボートまで保持。カスケードロールバックを防止。"
   },
   {
     "id": 117,
@@ -1518,7 +1518,7 @@
       "Deadlock resolution"
     ],
     "answer": 1,
-    "explanation": "Uncommitted data read by others forces them to rollback too."
+    "explanation": "未コミットデータが他者に読まれると、それらもロールバックを余儀なくされる。"
   },
   {
     "id": 118,
@@ -1531,7 +1531,7 @@
       "Query time"
     ],
     "answer": 1,
-    "explanation": "Records consistent state. Only post-checkpoint logs need processing."
+    "explanation": "整合性のある状態を記録。チェックポイント以降のログのみ処理が必要。"
   },
   {
     "id": 119,
@@ -1544,7 +1544,7 @@
       "Timeout"
     ],
     "answer": 1,
-    "explanation": "Older wounds (aborts) younger competing for same locks."
+    "explanation": "古いトランザクションが同じロックを競合する若いトランザクションを中止する。"
   },
   {
     "id": 120,
@@ -1557,7 +1557,7 @@
       "Checkpoint only"
     ],
     "answer": 1,
-    "explanation": "Before-images undo uncommitted, after-images redo committed changes."
+    "explanation": "前イメージで未コミットを取り消し、後イメージでコミット済みを再適用。"
   },
   {
     "id": 121,
@@ -1570,7 +1570,7 @@
       "Non-repeatable more serious"
     ],
     "answer": 1,
-    "explanation": "Non-repeatable: same row different data. Phantom: different row set."
+    "explanation": "非反復可能読み取り: 同じ行で異なるデータ。ファントム: 異なる行セット。"
   },
   {
     "id": 122,
@@ -1583,7 +1583,7 @@
       "Shadow paging"
     ],
     "answer": 2,
-    "explanation": "Analysis (find active txs), redo (reapply committed), undo (rollback uncommitted)."
+    "explanation": "分析(アクティブTx検出)→再実行(コミット済み再適用)→取り消し(未コミット巻き戻し)。"
   },
   {
     "id": 123,
@@ -1596,7 +1596,7 @@
       "Index locking"
     ],
     "answer": 1,
-    "explanation": "U lock compatible with S, upgradeable to X. Prevents S->X deadlock."
+    "explanation": "UロックはSと互換でXにアップグレード可能。S→Xデッドロックを防止。"
   },
   {
     "id": 124,
@@ -1609,7 +1609,7 @@
       "Changes survive failures"
     ],
     "answer": 3,
-    "explanation": "Committed changes permanent via WAL and force-write to stable storage."
+    "explanation": "WALと安定ストレージへの強制書き込みによりコミット済み変更を永続化。"
   },
   {
     "id": 125,
@@ -1622,7 +1622,7 @@
       "All including deadlocks"
     ],
     "answer": 1,
-    "explanation": "Prevents read anomalies but write skew with non-conflicting updates possible."
+    "explanation": "読み取り異常を防止するが、非競合更新によるライトスキューが可能。"
   },
   {
     "id": 126,
@@ -1635,7 +1635,7 @@
       "Log manager"
     ],
     "answer": 1,
-    "explanation": "Optimizer evaluates alternatives and chooses lowest cost."
+    "explanation": "オプティマイザが代替案を評価し、最低コストを選択する。"
   },
   {
     "id": 127,
@@ -1648,7 +1648,7 @@
       "Column count"
     ],
     "answer": 1,
-    "explanation": "Statistics-based estimation of I/O, CPU, and memory costs."
+    "explanation": "統計に基づくI/O、CPU、メモリコストの推定。"
   },
   {
     "id": 128,
@@ -1661,7 +1661,7 @@
       "One indexed"
     ],
     "answer": 1,
-    "explanation": "Builds hash table of smaller input in memory, probes with larger."
+    "explanation": "小さい方の入力をメモリにハッシュテーブルとして構築し、大きい方で探査。"
   },
   {
     "id": 129,
@@ -1674,7 +1674,7 @@
       "O(N+M log M)"
     ],
     "answer": 1,
-    "explanation": "For each outer (N), scan inner (M). O(N*M)."
+    "explanation": "外部(N)の各行に対して内部(M)をスキャン。O(N*M)。"
   },
   {
     "id": 130,
@@ -1687,7 +1687,7 @@
       "One indexed"
     ],
     "answer": 1,
-    "explanation": "Both sorted on join key. Scans simultaneously. O(N+M)."
+    "explanation": "両方が結合キーでソート済み必要。同時スキャン。O(N+M)。"
   },
   {
     "id": 131,
@@ -1700,7 +1700,7 @@
       "Modifies types"
     ],
     "answer": 1,
-    "explanation": "Reduces rows processed early in execution pipeline."
+    "explanation": "実行パイプラインの早期に処理行数を削減する。"
   },
   {
     "id": 132,
@@ -1713,7 +1713,7 @@
       "Access patterns"
     ],
     "answer": 1,
-    "explanation": "Cardinality and histograms enable accurate estimation."
+    "explanation": "カーディナリティとヒストグラムで正確な推定を可能にする。"
   },
   {
     "id": 133,
@@ -1726,7 +1726,7 @@
       "Index large"
     ],
     "answer": 1,
-    "explanation": "High selectivity (few rows) favors index. Large % favors table scan."
+    "explanation": "高選択度(少数行)はインデックス favor。高い割合はテーブルスキャン favor。"
   },
   {
     "id": 134,
@@ -1739,7 +1739,7 @@
       "Filtering"
     ],
     "answer": 1,
-    "explanation": "All query columns in index, no table access needed."
+    "explanation": "すべてのクエリ列がインデックスに含まれ、テーブルアクセス不要。"
   },
   {
     "id": 135,
@@ -1752,7 +1752,7 @@
       "Cross"
     ],
     "answer": 2,
-    "explanation": "Merge join outputs sorted on join key."
+    "explanation": "マージ結合は結合キーでソート済みの出力を生成する。"
   },
   {
     "id": 136,
@@ -1765,7 +1765,7 @@
       "Accuracy"
     ],
     "answer": 1,
-    "explanation": "Low favors index, high favors table scan."
+    "explanation": "低い値はインデックス favor、高い値はテーブルスキャン favor。"
   },
   {
     "id": 137,
@@ -1778,7 +1778,7 @@
       "All indexed"
     ],
     "answer": 2,
-    "explanation": "One new table per step. Enables pipelining."
+    "explanation": "各ステップで1つの新しいテーブルを結合。パイプライン処理を可能にする。"
   },
   {
     "id": 138,
@@ -1791,7 +1791,7 @@
       "Network"
     ],
     "answer": 1,
-    "explanation": "Value ranges with frequencies improve selectivity estimation."
+    "explanation": "値範囲と頻度で選択度推定を改善する。"
   },
   {
     "id": 139,
@@ -1804,7 +1804,7 @@
       "Join reorder"
     ],
     "answer": 1,
-    "explanation": "Enables more efficient join strategies for correlated subqueries."
+    "explanation": "相関サブクエリにより効率的な結合戦略を可能にする。"
   },
   {
     "id": 140,
@@ -1817,7 +1817,7 @@
       "GROUP BY"
     ],
     "answer": 1,
-    "explanation": "Small tables, large %, sequential I/O make full scan efficient."
+    "explanation": "小さなテーブル、大半の行、シーケンシャルI/Oがフルスキャンを効率的にする。"
   },
   {
     "id": 141,
@@ -1830,7 +1830,7 @@
       "Errors"
     ],
     "answer": 1,
-    "explanation": "Join methods, access paths, estimated costs without executing."
+    "explanation": "結合方法、アクセスパス、推定コストを実行せずに表示する。"
   },
   {
     "id": 142,
@@ -1843,7 +1843,7 @@
       "Caching"
     ],
     "answer": 0,
-    "explanation": "Splits scans, joins, aggregations across cores/nodes."
+    "explanation": "スキャン、結合、集計をコア/ノードに分割。"
   },
   {
     "id": 143,
@@ -1856,7 +1856,7 @@
       "Fixed orders"
     ],
     "answer": 1,
-    "explanation": "Explores join orderings, keeping cheapest per interesting order."
+    "explanation": "結合順序を探索し、興味深い順序ごとに最安値を保持する。"
   },
   {
     "id": 144,
@@ -1869,7 +1869,7 @@
       "Foreign keys"
     ],
     "answer": 1,
-    "explanation": "Bit per value, bit per row. Efficient bitwise AND/OR."
+    "explanation": "値ごとにビット、行ごとにビット。効率的なビット単位AND/OR。"
   },
   {
     "id": 145,
@@ -1882,7 +1882,7 @@
       "Removes"
     ],
     "answer": 1,
-    "explanation": "Replaces view reference with definition for holistic optimization."
+    "explanation": "ビュー参照を定義に置き換え、全体最適化を可能にする。"
   },
   {
     "id": 146,
@@ -1895,7 +1895,7 @@
       "Cross join"
     ],
     "answer": 1,
-    "explanation": "Quickly eliminates probe rows with no hash table match."
+    "explanation": "ハッシュテーブルにマッチしない探査行を高速に除外する。"
   },
   {
     "id": 147,
@@ -1908,7 +1908,7 @@
       "Clustered"
     ],
     "answer": 1,
-    "explanation": "All SELECT/WHERE/JOIN/ORDER BY columns in index."
+    "explanation": "SELECT/WHERE/JOIN/ORDER BYのすべての列がインデックスに含まれる。"
   },
   {
     "id": 148,
@@ -1921,7 +1921,7 @@
       "Machine learning"
     ],
     "answer": 1,
-    "explanation": "Fixed rules without statistical cost estimation."
+    "explanation": "統計的コスト推定のない固定ルール。"
   },
   {
     "id": 149,
@@ -1934,7 +1934,7 @@
       "CPU cycles"
     ],
     "answer": 1,
-    "explanation": "Uses statistics for row count prediction per operator."
+    "explanation": "統計を使用して演算子ごとの行数を予測する。"
   },
   {
     "id": 150,
@@ -1947,7 +1947,7 @@
       "Table elimination"
     ],
     "answer": 0,
-    "explanation": "OR->UNION ALL lets each branch use its optimal index."
+    "explanation": "OR→UNION ALLで各分岐が最適なインデックスを使用可能にする。"
   },
   {
     "id": 151,
@@ -1960,7 +1960,7 @@
       "Only scan"
     ],
     "answer": 1,
-    "explanation": "Balanced via splitting/merging, consistent logarithmic performance."
+    "explanation": "分割/マージでバランスを保ち、一貫した対数性能。"
   },
   {
     "id": 152,
@@ -1973,7 +1973,7 @@
       "No deletes"
     ],
     "answer": 1,
-    "explanation": "Leaves linked, internal nodes navigation only. Efficient range scans."
+    "explanation": "リーフがリンクされ、内部ノードはナビゲーションのみ。効率的な範囲スキャン。"
   },
   {
     "id": 153,
@@ -1986,7 +1986,7 @@
       "Sort order"
     ],
     "answer": 1,
-    "explanation": "% full per page. Lower = more free space = fewer splits."
+    "explanation": "ページの充填率。低い=より多くの空き領域=分割が少ない。"
   },
   {
     "id": 154,
@@ -1999,7 +1999,7 @@
       "B,A any order"
     ],
     "answer": 1,
-    "explanation": "Left-prefix rule. (A), (A,B), (A,B,C) efficient."
+    "explanation": "左前置詞ルール。(A)、(A,B)、(A,B,C)が効率的。"
   },
   {
     "id": 155,
@@ -2012,7 +2012,7 @@
       "Full-text"
     ],
     "answer": 1,
-    "explanation": "Hash maps keys to buckets. Optimal for exact match only."
+    "explanation": "ハッシュはキーをバケットにマップ。完全一致のみに最適。"
   },
   {
     "id": 156,
@@ -2025,7 +2025,7 @@
       "Index count"
     ],
     "answer": 1,
-    "explanation": "Physical sort by key. One per table (data = leaf level)."
+    "explanation": "キーで物理ソート。テーブルごとに1つ(データ=リーフレベル)。"
   },
   {
     "id": 157,
@@ -2038,7 +2038,7 @@
       "Composite"
     ],
     "answer": 1,
-    "explanation": "Ideal for low-cardinality. Efficient bitwise AND/OR."
+    "explanation": "低カーディナリティに最適。効率的なビット単位AND/OR。"
   },
   {
     "id": 158,
@@ -2051,7 +2051,7 @@
       "Adds columns"
     ],
     "answer": 1,
-    "explanation": "Drops and recreates, removing fragmentation."
+    "explanation": "削除して再作成し、フラグメンテーションを除去。"
   },
   {
     "id": 159,
@@ -2064,7 +2064,7 @@
       "last_name+first_name"
     ],
     "answer": 1,
-    "explanation": "Leading columns in order only."
+    "explanation": "先頭列を順序通りにのみ。"
   },
   {
     "id": 160,
@@ -2077,7 +2077,7 @@
       "FK refs"
     ],
     "answer": 1,
-    "explanation": "Pointers to actual data. Multiple allowed per table."
+    "explanation": "実際のデータへのポインタ。テーブルごとに複数許容。"
   },
   {
     "id": 161,
@@ -2090,7 +2090,7 @@
       "Size"
     ],
     "answer": 1,
-    "explanation": "Higher = more effective. Unique = 1.0 (max)."
+    "explanation": "高い=より効果的。一意=1.0(最大)。"
   },
   {
     "id": 162,
@@ -2103,7 +2103,7 @@
       "Archive"
     ],
     "answer": 1,
-    "explanation": "Auto-created and updated on DML operations."
+    "explanation": "DML操作時に自動作成・更新。"
   },
   {
     "id": 163,
@@ -2116,7 +2116,7 @@
       "View"
     ],
     "answer": 1,
-    "explanation": "E.g., LOWER(name). Enables efficient expression queries."
+    "explanation": "例: LOWER(name)。効率的な式クエリを可能にする。"
   },
   {
     "id": 164,
@@ -2129,7 +2129,7 @@
       "Rollbacks"
     ],
     "answer": 1,
-    "explanation": "Creates gaps and non-sequential page ordering."
+    "explanation": "ギャップと非連続なページ順序を作成する。"
   },
   {
     "id": 165,
@@ -2142,7 +2142,7 @@
       "PK values"
     ],
     "answer": 1,
-    "explanation": "Only matching rows indexed. Reduces size and maintenance."
+    "explanation": "マッチ行のみをインデックス化。サイズとメンテナンスを削減。"
   },
   {
     "id": 166,
@@ -2155,7 +2155,7 @@
       "Full-text"
     ],
     "answer": 1,
-    "explanation": "Sorted leaves enable direct sorted retrieval."
+    "explanation": "ソート済みリーフが直接ソート済み取得を可能にする。"
   },
   {
     "id": 167,
@@ -2168,7 +2168,7 @@
       "Transactions"
     ],
     "answer": 1,
-    "explanation": "All query columns in index = no table access needed."
+    "explanation": "すべてのクエリ列がインデックスに=テーブルアクセス不要。"
   },
   {
     "id": 168,
@@ -2181,7 +2181,7 @@
       "Backup"
     ],
     "answer": 1,
-    "explanation": "Each index updated on INSERT/UPDATE/DELETE."
+    "explanation": "各インデックスがINSERT/UPDATE/DELETEで更新される。"
   },
   {
     "id": 169,
@@ -2194,7 +2194,7 @@
       "Geographic only"
     ],
     "answer": 1,
-    "explanation": "Balanced tree for various types and custom access methods."
+    "explanation": "各種タイプとカスタムアクセスメソッド用のバランスツリー。"
   },
   {
     "id": 170,
@@ -2207,7 +2207,7 @@
       "Sequential keys"
     ],
     "answer": 1,
-    "explanation": "Self-balancing guarantees O(log N) regardless of order."
+    "explanation": "自己平衡化により順序に関係なくO(log N)を保証。"
   },
   {
     "id": 171,
@@ -2220,7 +2220,7 @@
       "C and A"
     ],
     "answer": 1,
-    "explanation": "With partitions, must choose C or A. P mandatory for distributed."
+    "explanation": "パーティション時、CかAを選択。Pは分散で必須。"
   },
   {
     "id": 172,
@@ -2233,7 +2233,7 @@
       "Read and Write"
     ],
     "answer": 1,
-    "explanation": "Phase 1: all vote yes? Phase 2: commit or abort."
+    "explanation": "フェーズ1: 全員が賛成票? フェーズ2: コミットまたはアボート。"
   },
   {
     "id": 173,
@@ -2246,7 +2246,7 @@
       "Primary only"
     ],
     "answer": 1,
-    "explanation": "Temporary divergence during updates, convergence when updates stop."
+    "explanation": "更新中の一時的乖離、更新停止時の収束。"
   },
   {
     "id": 174,
@@ -2259,7 +2259,7 @@
       "Compression"
     ],
     "answer": 1,
-    "explanation": "Rows by shard key across instances. Horizontal scaling."
+    "explanation": "シャードキーでインスタンス間に行を分散。水平スケーリング。"
   },
   {
     "id": 175,
@@ -2272,7 +2272,7 @@
       "Client confirms"
     ],
     "answer": 1,
-    "explanation": "Strong consistency but higher write latency."
+    "explanation": "強い一貫性だが書き込みレイテンシが高い。"
   },
   {
     "id": 176,
@@ -2285,7 +2285,7 @@
       "Compression"
     ],
     "answer": 1,
-    "explanation": "Both sides act as primary, creating conflicts."
+    "explanation": "両方がプライマリとして振る舞い、競合を発生させる。"
   },
   {
     "id": 177,
@@ -2298,7 +2298,7 @@
       "Optimization"
     ],
     "answer": 1,
-    "explanation": "More than half must agree. W+R>N ensures consistency."
+    "explanation": "過半数が同意する必要。W+R>Nで一貫性を確保。"
   },
   {
     "id": 178,
@@ -2311,7 +2311,7 @@
       "Optimization"
     ],
     "answer": 1,
-    "explanation": "Safety (same value) and liveness (termination) despite failures."
+    "explanation": "障害時でも安全性(同じ値)と活性化(終了)を保証。"
   },
   {
     "id": 179,
@@ -2324,7 +2324,7 @@
       "Read-your-writes"
     ],
     "answer": 2,
-    "explanation": "Operations appear atomic in real-time order."
+    "explanation": "操作がリアルタイム順序でアトミックに見える。"
   },
   {
     "id": 180,
@@ -2337,7 +2337,7 @@
       "Read locks"
     ],
     "answer": 1,
-    "explanation": "No central coordinator. Requires global info exchange."
+    "explanation": "中央コーディネータがない。グローバル情報交換が必要。"
   },
   {
     "id": 181,
@@ -2350,7 +2350,7 @@
       "Never"
     ],
     "answer": 1,
-    "explanation": "Low latency, high availability, data loss risk."
+    "explanation": "低レイテンシ、高可用性、データ損失リスク。"
   },
   {
     "id": 182,
@@ -2363,7 +2363,7 @@
       "No failures"
     ],
     "answer": 1,
-    "explanation": "Hash ring: adding node affects only immediate keys."
+    "explanation": "ハッシュリング: ノード追加は直近のキーにのみ影響。"
   },
   {
     "id": 183,
@@ -2376,7 +2376,7 @@
       "Compression"
     ],
     "answer": 1,
-    "explanation": "Timestamp vectors determine causal ordering."
+    "explanation": "タイムスタンプベクトルで因果順序を決定。"
   },
   {
     "id": 184,
@@ -2389,7 +2389,7 @@
       "Three-phase"
     ],
     "answer": 1,
-    "explanation": "Local 2PL + global 2PC for all-sites-commit-or-abort."
+    "explanation": "ローカル2PL + グローバル2PCで全サイトコミットまたはアボート。"
   },
   {
     "id": 185,
@@ -2402,7 +2402,7 @@
       "Writes invisible"
     ],
     "answer": 1,
-    "explanation": "After writing, subsequent reads by same client see that write."
+    "explanation": "書き込み後、同じクライアントの後続読み取りでその書き込みを見る。"
   },
   {
     "id": 186,
@@ -2415,7 +2415,7 @@
       "Reads only"
     ],
     "answer": 1,
-    "explanation": "Active-active with conflict resolution for concurrent writes."
+    "explanation": "同時書き込み用の競合解決を持つアクティブ-アクティブ。"
   },
   {
     "id": 187,
@@ -2428,7 +2428,7 @@
       "Encryption"
     ],
     "answer": 1,
-    "explanation": "At least one read node has latest write."
+    "explanation": "少なくとも1つの読み取りノードが最新の書き込みを持つ。"
   },
   {
     "id": 188,
@@ -2441,7 +2441,7 @@
       "Indexing"
     ],
     "answer": 1,
-    "explanation": "Query decomposition, localization, optimization, assembly."
+    "explanation": "クエリ分解、局所化、最適化、組み立て。"
   },
   {
     "id": 189,
@@ -2454,7 +2454,7 @@
       "Backups"
     ],
     "answer": 1,
-    "explanation": "Different sites get different column subsets."
+    "explanation": "異なるサイトが異なる列サブセットを取得。"
   },
   {
     "id": 190,
@@ -2467,7 +2467,7 @@
       "Participants"
     ],
     "answer": 1,
-    "explanation": "Pre-commit between prepare and commit. Reduces blocking."
+    "explanation": "prepareとcommitの間にpre-commit。ブロックを削減。"
   },
   {
     "id": 191,
@@ -2480,7 +2480,7 @@
       "OLAP"
     ],
     "answer": 1,
-    "explanation": "JSON/BSON documents. Flexible, no fixed structure."
+    "explanation": "JSON/BSONドキュメント。柔軟で固定構造がない。"
   },
   {
     "id": 192,
@@ -2493,7 +2493,7 @@
       "Backup, Archive, Storage"
     ],
     "answer": 0,
-    "explanation": "Opposite of ACID. Prioritizes availability over consistency."
+    "explanation": "ACIDの対極。一貫性より可用性を優先。"
   },
   {
     "id": 193,
@@ -2506,7 +2506,7 @@
       "Graph"
     ],
     "answer": 1,
-    "explanation": "O(1) access. Redis, DynamoDB. High throughput."
+    "explanation": "O(1)アクセス。Redis、DynamoDB。高スループット。"
   },
   {
     "id": 194,
@@ -2519,7 +2519,7 @@
       "Time-series"
     ],
     "answer": 1,
-    "explanation": "Nodes, edges, properties. Social networks, fraud detection."
+    "explanation": "ノード、エッジ、プロパティ。ソーシャルネットワーク、不正検出。"
   },
   {
     "id": 195,
@@ -2532,7 +2532,7 @@
       "ACID"
     ],
     "answer": 1,
-    "explanation": "Cassandra, HBase. Efficient writes and column-range reads."
+    "explanation": "Cassandra、HBase。効率的な書き込みと列範囲読み取り。"
   },
   {
     "id": 196,
@@ -2545,7 +2545,7 @@
       "No tx"
     ],
     "answer": 1,
-    "explanation": "CockroachDB, Spanner. Distributed consensus for scale+ACID."
+    "explanation": "CockroachDB、Spanner。スケール+ACIDのための分散合意。"
   },
   {
     "id": 197,
@@ -2558,7 +2558,7 @@
       "C+A (CA)"
     ],
     "answer": 1,
-    "explanation": "AP: continued operation, temporary inconsistency accepted."
+    "explanation": "AP: 継続稼働、一時的非整合性を許容。"
   },
   {
     "id": 198,
@@ -2571,7 +2571,7 @@
       "Charsets"
     ],
     "answer": 1,
-    "explanation": "Best-fit DB per use case within one application."
+    "explanation": "1つのアプリケーション内で用途ごとに最適なDB。"
   },
   {
     "id": 199,
@@ -2584,7 +2584,7 @@
       "Config"
     ],
     "answer": 1,
-    "explanation": "Per-operation: ONE, QUORUM, ALL for different trade-offs."
+    "explanation": "操作ごとに異なるトレードオフ: ONE、QUORUM、ALL。"
   },
   {
     "id": 200,
@@ -2597,7 +2597,7 @@
       "Read-your-writes"
     ],
     "answer": 1,
-    "explanation": "If A before B, all see A before B. Stronger than eventual."
+    "explanation": "AがBの前にある場合、全員がAをBの前に見る。イベントualより強い。"
   },
   {
     "id": 201,
@@ -2610,7 +2610,7 @@
       "Simple locks"
     ],
     "answer": 1,
-    "explanation": "Spanner: TrueTime+Paxos. CockroachDB: HLC+Raft."
+    "explanation": "Spanner: TrueTime+Paxos。CockroachDB: HLC+Raft。"
   },
   {
     "id": 202,
@@ -2623,7 +2623,7 @@
       "Documents"
     ],
     "answer": 1,
-    "explanation": "InfluxDB, TimescaleDB. Columnar, compression, range queries."
+    "explanation": "InfluxDB、TimescaleDB。カラム型、圧縮、範囲クエリ。"
   },
   {
     "id": 203,
@@ -2636,7 +2636,7 @@
       "No indexing"
     ],
     "answer": 1,
-    "explanation": "Less query flexibility, no SQL standard, weaker ACID."
+    "explanation": "クエリ柔軟性が低く、SQL標準がなく、ACIDが弱い。"
   },
   {
     "id": 204,
@@ -2649,7 +2649,7 @@
       "Schema design"
     ],
     "answer": 1,
-    "explanation": "Map (parallel) + Reduce (aggregate). Hadoop framework."
+    "explanation": "Map(並列) + Reduce(集約)。Hadoopフレームワーク。"
   },
   {
     "id": 205,
@@ -2662,7 +2662,7 @@
       "Hash"
     ],
     "answer": 1,
-    "explanation": "Columns grouped, stored column-by-column. Efficient compression."
+    "explanation": "列をグループ化し、列ごとに格納。効率的な圧縮。"
   },
   {
     "id": 206,
@@ -2675,7 +2675,7 @@
       "DB type"
     ],
     "answer": 1,
-    "explanation": "Public, Internal, Confidential, Restricted. Determines controls."
+    "explanation": "公開、内部、機密、制限。管理措置を決定する。"
   },
   {
     "id": 207,
@@ -2688,7 +2688,7 @@
       "Backup only"
     ],
     "answer": 1,
-    "explanation": "AES-256 on disk. Protects against media theft."
+    "explanation": "ディスク上のAES-256。メディア盗難から保護。"
   },
   {
     "id": 208,
@@ -2701,7 +2701,7 @@
       "Encrypt all"
     ],
     "answer": 1,
-    "explanation": "Only data absolutely necessary for specified purpose."
+    "explanation": "指定目的に必要なデータのみ。"
   },
   {
     "id": 209,
@@ -2714,7 +2714,7 @@
       "All visible"
     ],
     "answer": 1,
-    "explanation": "Security predicates restrict row access per role."
+    "explanation": "セキュリティ述語がロールごとに行アクセスを制限。"
   },
   {
     "id": 210,
@@ -2727,7 +2727,7 @@
       "Logins only"
     ],
     "answer": 1,
-    "explanation": "Who, what, when, where. Essential for compliance."
+    "explanation": "誰が、何を、いつ、どこで。コンプライアンスに不可欠。"
   },
   {
     "id": 211,
@@ -2740,7 +2740,7 @@
       "Backup"
     ],
     "answer": 1,
-    "explanation": "Client-server encryption preventing eavesdropping."
+    "explanation": "クライアント-サーバー暗号化で盗聴を防止。"
   },
   {
     "id": 212,
@@ -2753,7 +2753,7 @@
       "Anonymize"
     ],
     "answer": 1,
-    "explanation": "Individuals request deletion when no legal retention obligation."
+    "explanation": "法的保持義務がない場合、個人の削除リクエスト。"
   },
   {
     "id": 213,
@@ -2766,7 +2766,7 @@
       "Encrypts"
     ],
     "answer": 1,
-    "explanation": "Real-time masking. Stored data unchanged."
+    "explanation": "リアルタイムマスキング。格納データは変更なし。"
   },
   {
     "id": 214,
@@ -2779,7 +2779,7 @@
       "IPs"
     ],
     "answer": 1,
-    "explanation": "Users inherit via role membership. Simplifies management."
+    "explanation": "ユーザーはロールメンバーシップを通じて権限を継承。管理を簡素化。"
   },
   {
     "id": 215,
@@ -2792,7 +2792,7 @@
       "Backup"
     ],
     "answer": 1,
-    "explanation": "Balances regulatory requirements with privacy and storage costs."
+    "explanation": "規制要件とプライバシーとストレージコストのバランス。"
   },
   {
     "id": 216,
@@ -2805,7 +2805,7 @@
       "Hardware"
     ],
     "answer": 1,
-    "explanation": "Prepared statements separate code from data."
+    "explanation": "準備済みステートメントでコードとデータを分離。"
   },
   {
     "id": 217,
@@ -2818,7 +2818,7 @@
       "Deleted values"
     ],
     "answer": 1,
-    "explanation": "Token vault maps tokens. No mathematical relation to original."
+    "explanation": "トークン保管庫がトークンをマップ。元データとの数学的関係はない。"
   },
   {
     "id": 218,
@@ -2831,7 +2831,7 @@
       "DBA only"
     ],
     "answer": 1,
-    "explanation": "Reduces attack surface and potential damage."
+    "explanation": "攻撃面と潜在的損害を削減。"
   },
   {
     "id": 219,
@@ -2844,7 +2844,7 @@
       "Prod encryption"
     ],
     "answer": 1,
-    "explanation": "Fictitious but realistic data for dev/test environments."
+    "explanation": "開発/テスト環境用の架空だが現実的なデータ。"
   },
   {
     "id": 220,
@@ -2857,7 +2857,7 @@
       "Application"
     ],
     "answer": 1,
-    "explanation": "Auto page/file-level. Transparent to apps. OS-level protection."
+    "explanation": "自動ページ/ファイルレベル。アプリに透過的。OSレベルの保護。"
   },
   {
     "id": 221,
@@ -2870,7 +2870,7 @@
       "Log only"
     ],
     "answer": 1,
-    "explanation": "Complete database copy. Backup strategy foundation."
+    "explanation": "完全なデータベースコピー。バックアップ戦略の基盤。"
   },
   {
     "id": 222,
@@ -2883,7 +2883,7 @@
       "Schema"
     ],
     "answer": 1,
-    "explanation": "Only changes since last backup. Fast/small, needs full+all incrementals."
+    "explanation": "最後のバックアップ以降の変更のみ。高速/小さいが、フル+全増分が必要。"
   },
   {
     "id": 223,
@@ -2896,7 +2896,7 @@
       "Log only"
     ],
     "answer": 0,
-    "explanation": "Since last full. Grows over time but needs full+latest only."
+    "explanation": "最後のフルバックアップ以降。時間とともに増大するが、フル+最新のみで済む。"
   },
   {
     "id": 224,
@@ -2909,7 +2909,7 @@
       "HW replacement"
     ],
     "answer": 1,
-    "explanation": "Max acceptable data loss. Determines backup frequency."
+    "explanation": "最大許容データ損失。バックアップ頻度を決定。"
   },
   {
     "id": 225,
@@ -2922,7 +2922,7 @@
       "Frequency"
     ],
     "answer": 1,
-    "explanation": "System back online within RTO after failure."
+    "explanation": "障害後にシステムがオンラインに戻るまでの最大時間。"
   },
   {
     "id": 226,
@@ -2935,7 +2935,7 @@
       "Random state"
     ],
     "answer": 1,
-    "explanation": "Log backups enable restore to any moment between full backups."
+    "explanation": "ログバックアップでフルバックアップ間の任意の時点への復元を可能にする。"
   },
   {
     "id": 227,
@@ -2948,7 +2948,7 @@
       "Auto by OS"
     ],
     "answer": 1,
-    "explanation": "During operations. Requires consistent view via logs/snapshots."
+    "explanation": "稼働中。ログ/スナップショットで整合性のあるビューが必要。"
   },
   {
     "id": 228,
@@ -2961,7 +2961,7 @@
       "Auto hourly"
     ],
     "answer": 1,
-    "explanation": "Offline. Consistent (no changes). Requires downtime."
+    "explanation": "オフライン。整合性が保証(変更なし)。ダウンタイムが必要。"
   },
   {
     "id": 229,
@@ -2974,7 +2974,7 @@
       "Schema migration"
     ],
     "answer": 1,
-    "explanation": "Capture changes for restore to any moment."
+    "explanation": "任意の時点への復元のための変更をキャプチャ。"
   },
   {
     "id": 230,
@@ -2987,7 +2987,7 @@
       "Full,log,diff"
     ],
     "answer": 1,
-    "explanation": "Full first, then latest differential, then transaction logs."
+    "explanation": "フルバックアップ→最新差分→差分以降のトランザクションログ。"
   },
   {
     "id": 231,
@@ -3000,7 +3000,7 @@
       "Network"
     ],
     "answer": 1,
-    "explanation": "Instant via storage system. Minimal performance impact."
+    "explanation": "ストレージシステムによるインスタント コピー・オン・ライト。最小限の性能影響。"
   },
   {
     "id": 232,
@@ -3013,7 +3013,7 @@
       "Less storage"
     ],
     "answer": 1,
-    "explanation": "Detects corruption. Unverified backup unreliable."
+    "explanation": "破損を検出。未検証バックアップは信頼できない。"
   },
   {
     "id": 233,
@@ -3026,7 +3026,7 @@
       "3 DBs, 2 backups"
     ],
     "answer": 0,
-    "explanation": "3 copies, 2 media types, 1 offsite/cloud."
+    "explanation": "3部のコピー、2種類のメディア、1箇所オフサイト/クラウド。"
   },
   {
     "id": 234,
@@ -3039,7 +3039,7 @@
       "Old deletion"
     ],
     "answer": 1,
-    "explanation": "Keep standby nearly synchronized for failover."
+    "explanation": "スタンバイをほぼ同期してフェイルオーバー用に維持。"
   },
   {
     "id": 235,
@@ -3052,7 +3052,7 @@
       "Supports shipping"
     ],
     "answer": 1,
-    "explanation": "No PITR or log shipping. Only full/differential."
+    "explanation": "PITRやログ出荷なし。フル/差分のみ。"
   },
   {
     "id": 236,
@@ -3065,7 +3065,7 @@
       "Always offline"
     ],
     "answer": 1,
-    "explanation": "Continuously synced replica. Quick failover."
+    "explanation": "継続的に同期されるレプリカ。高速フェイルオーバー。"
   },
   {
     "id": 237,
@@ -3078,7 +3078,7 @@
       "Scheduling"
     ],
     "answer": 1,
-    "explanation": "Regular restore testing ensures backups work when needed."
+    "explanation": "定期的なリストアテストでバックアップが実際に機能することを確認。"
   },
   {
     "id": 238,
@@ -3091,7 +3091,7 @@
       "Full restore"
     ],
     "answer": 1,
-    "explanation": "Redo committed changes, undo uncommitted for consistency."
+    "explanation": "コミット済み変更を再実行し、未コミット変更を取り消して整合性を確保。"
   },
   {
     "id": 239,
@@ -3104,7 +3104,7 @@
       "30 min"
     ],
     "answer": 1,
-    "explanation": "Interval must be <= RPO."
+    "explanation": "間隔はRPO以下でなければならない。"
   },
   {
     "id": 240,
@@ -3117,7 +3117,7 @@
       "Security"
     ],
     "answer": 1,
-    "explanation": "Unverified backup may be useless when needed."
+    "explanation": "未検証バックアップは必要時に役に立たない可能性がある。"
   },
   {
     "id": 241,
@@ -3130,7 +3130,7 @@
       "Cold standby"
     ],
     "answer": 1,
-    "explanation": "Hot standby with sync replication = near-zero RTO."
+    "explanation": "同期レプリケーション付きホットスタンバイ=ほぼゼロRTO。"
   },
   {
     "id": 242,
@@ -3143,7 +3143,7 @@
       "Data only"
     ],
     "answer": 1,
-    "explanation": "Comprehensive: roles, procedures, communication, testing."
+    "explanation": "包括的: 役割、手順、通信、テスト。"
   },
   {
     "id": 243,
@@ -3156,7 +3156,7 @@
       "Bandwidth"
     ],
     "answer": 1,
-    "explanation": "Daily (son), weekly (father), monthly (grandfather)."
+    "explanation": "日次(息子)、週次(父)、月次(祖父)。"
   },
   {
     "id": 244,
@@ -3169,7 +3169,7 @@
       "Manual"
     ],
     "answer": 1,
-    "explanation": "Redo committed, undo uncommitted via log."
+    "explanation": "ログによるコミット済み再実行と未コミット取り消し。"
   },
   {
     "id": 245,
@@ -3182,7 +3182,7 @@
       "Online optional"
     ],
     "answer": 1,
-    "explanation": "Online records current. Archived = saved for recovery."
+    "explanation": "オンライン=現在使用中、アーカイブ=保存済みコピー。"
   },
   {
     "id": 246,
@@ -3195,7 +3195,7 @@
       "Always slower"
     ],
     "answer": 1,
-    "explanation": "Incremental needs full+ALL incrementals. Differential needs full+latest only."
+    "explanation": "増分はフル+全増分が必要。差分はフル+最新のみ。"
   },
   {
     "id": 247,
@@ -3208,7 +3208,7 @@
       "Compression"
     ],
     "answer": 1,
-    "explanation": "Real-time copy. Auto (high-safety) or manual (high-performance) failover."
+    "explanation": "リアルタイムコピー。自動(高安全性)または手動(高パフォーマンス)フェイルオーバー。"
   },
   {
     "id": 248,
@@ -3221,7 +3221,7 @@
       "NoSQL"
     ],
     "answer": 1,
-    "explanation": "Systematic rotation across time horizons."
+    "explanation": "時間軸にまたがる体系的なローテーション。"
   },
   {
     "id": 249,
@@ -3234,7 +3234,7 @@
       "No recovery"
     ],
     "answer": 1,
-    "explanation": "Most efficient human error recovery method."
+    "explanation": "最も効率的な人的エラー回復方法。"
   },
   {
     "id": 250,
@@ -3247,6 +3247,6 @@
       "Retention"
     ],
     "answer": 1,
-    "explanation": "Scheduled time. Determines feasible backup types."
+    "explanation": "スケジュールされた時間。実行可能なバックアップ種別を決定。"
   }
 ]
