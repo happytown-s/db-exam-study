@@ -13,6 +13,19 @@ interface Question {
 const WRONG_KEY = 'db-quiz-wrong';
 const STATS_KEY = 'db-quiz-stats';
 
+const categoryNames: Record<string, string> = {
+  'Relational Database Theory': 'リレーショナルデータベース理論',
+  'SQL Advanced': 'SQL上級',
+  'Database Design': 'データベース設計',
+  'Transaction Management': 'トランザクション管理',
+  'Query Optimization': 'クエリ最適化',
+  'Indexing': 'インデックス',
+  'Distributed Database': '分散データベース',
+  'NoSQL & NewSQL': 'NoSQL / NewSQL',
+  'Data Governance & Security': 'データガバナンスとセキュリティ',
+  'Backup & Recovery': 'バックアップとリカバリ',
+};
+
 const categories = [...new Set((examData as Question[]).map(q => q.category))];
 
 export default function Quiz() {
@@ -116,7 +129,7 @@ export default function Quiz() {
       <div className="p-4 max-w-lg mx-auto">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm text-[#a0a0c0]">{current + 1} / {questions.length}</span>
-          <span className="text-sm px-2 py-1 rounded" style={{ background: '#1a1a3e' }}>{q.category}</span>
+          <span className="text-sm px-2 py-1 rounded" style={{ background: '#1a1a3e' }}>{categoryNames[q.category] || q.category}</span>
         </div>
         <div className="w-full h-2 rounded-full mb-6" style={{ background: '#1a1a3e' }}>
           <div className="h-2 rounded-full transition-all" style={{ width: `${((current + 1) / questions.length) * 100}%`, background: '#8e44ad' }}></div>
@@ -143,14 +156,14 @@ export default function Quiz() {
         {showAnswer && (
           <div className="mt-6 p-4 rounded-lg" style={{ background: '#1a1a3e' }}>
             <p className="text-sm mb-2" style={{ color: selected === q.answer ? '#4ade80' : '#f87171' }}>
-              {selected === q.answer ? 'Correct!' : `Incorrect. Answer: ${String.fromCharCode(65 + q.answer)}`}
+              {selected === q.answer ? '正解!' : `不正解。正解: ${String.fromCharCode(65 + q.answer)}`}
             </p>
             <p className="text-sm text-[#a0a0c0]">{q.explanation}</p>
           </div>
         )}
         {showAnswer && (
           <button onClick={next} className="mt-4 w-full py-3 rounded-lg font-semibold" style={{ background: '#8e44ad' }}>
-            {current + 1 >= questions.length ? 'See Results' : 'Next'}
+            {current + 1 >= questions.length ? '結果を見る' : '次へ'}
           </button>
         )}
       </div>
@@ -159,26 +172,26 @@ export default function Quiz() {
 
   return (
     <div className="p-4 max-w-lg mx-auto">
-      <h2 className="text-xl font-bold mb-4">Database Specialist Exam</h2>
+      <h2 className="text-xl font-bold mb-4">データベーススペシャリスト試験</h2>
       <div className="space-y-2 mb-6">
         <button onClick={() => startQuiz('all')} className="w-full text-left p-4 rounded-lg border border-[#1a1a3e] hover:border-[#9b59b6] transition-all">
-          <span className="font-semibold">All Categories</span>
-          <span className="text-sm text-[#a0a0c0] block">{(examData as Question[]).length} questions</span>
+          <span className="font-semibold">全カテゴリ</span>
+          <span className="text-sm text-[#a0a0c0] block">{(examData as Question[]).length}問</span>
         </button>
         <button onClick={() => startQuiz('wrong')} className="w-full text-left p-4 rounded-lg border border-[#1a1a3e] hover:border-[#9b59b6] transition-all">
-          <span className="font-semibold">Wrong Answers Review</span>
-          <span className="text-sm text-[#a0a0c0] block">{wrongIds.length} questions to review</span>
+          <span className="font-semibold">復習</span>
+          <span className="text-sm text-[#a0a0c0] block">{wrongIds.length}問を復習</span>
         </button>
       </div>
-      <h3 className="text-sm font-semibold text-[#a0a0c0] uppercase mb-3">Categories</h3>
+      <h3 className="text-sm font-semibold text-[#a0a0c0] uppercase mb-3">カテゴリ</h3>
       <div className="space-y-2">
         {categories.map(cat => {
           const count = (examData as Question[]).filter(q => q.category === cat).length;
           const s = stats[cat];
           return (
             <button key={cat} onClick={() => startQuiz(cat)} className="w-full text-left p-3 rounded-lg border border-[#1a1a3e] hover:border-[#9b59b6] transition-all">
-              <span className="font-medium">{cat}</span>
-              <span className="text-sm text-[#a0a0c0] block">{count} questions{s ? ` | ${Math.round((s.correct/s.total)*100)}%` : ''}</span>
+              <span className="font-medium">{categoryNames[cat] || cat}</span>
+              <span className="text-sm text-[#a0a0c0] block">{count}問{s ? ` | ${Math.round((s.correct/s.total)*100)}%` : ''}</span>
             </button>
           );
         })}

@@ -615,10 +615,10 @@
     "category": "SQL Advanced",
     "question": "ORDER BY指定時のデフォルトフレームはどれか。",
     "options": [
-      "ROWS UNBOUNDED TO CURRENT ROW",
-      "RANGE UNBOUNDED TO CURRENT ROW",
-      "ROWS UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING",
-      "RANGE UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING"
+      "現在の行に制限されていない行",
+      "現在の行に制限されていない範囲",
+      "境界のない前後の行",
+      "範囲無制限の前後の範囲"
     ],
     "answer": 1,
     "explanation": "デフォルトはRANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW。"
@@ -708,7 +708,7 @@
     "options": [
       "PARTITION BY",
       "ORDER BY",
-      "ROWS/RANGE BETWEEN...AND...",
+      "...と...の間の行/範囲",
       "GROUP BY"
     ],
     "answer": 2,
@@ -2487,8 +2487,8 @@
     "category": "NoSQL & NewSQL",
     "question": "BASEの意味はどれか。",
     "options": [
-      "Basically Available、Soft state、Eventual consistency",
-      "Broad Access、Secure、Encrypted",
+      "基本的に利用可能、ソフトステート、最終整合性",
+      "ブロードアクセス、セキュア、暗号化",
       "Binary、Standard、Efficient",
       "Backup、Archive、Storage"
     ],
