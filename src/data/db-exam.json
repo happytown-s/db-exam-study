@@ -2,12 +2,12 @@
   {
     "id": 1,
     "category": "Relational Database Theory",
-    "question": "Which relational algebra operation combines tuples from two relations satisfying a predicate?",
+    "question": "述語を満たす2つのリレーションのタプルを結合する関係代数演算はどれか。",
     "options": [
-      "Selection",
-      "Projection",
-      "Join",
-      "Division"
+      "選択",
+      "射影",
+      "結合",
+      "除算"
     ],
     "answer": 2,
     "explanation": "結合は述語を満たすタプルを結合する。選択は行を絞り込み、射影は列を選択し、除算は全称クエリに応答する。"
@@ -15,10 +15,10 @@
   {
     "id": 2,
     "category": "Relational Database Theory",
-    "question": "Cartesian product of relations with m and n tuples produces:",
+    "question": "m個とn個のタプルを持つリレーションの直積が生成するタプル数はどれか。",
     "options": [
-      "m+n tuples",
-      "m*n tuples",
+      "m+n個のタプル",
+      "m×n個のタプル",
       "max(m,n)",
       "min(m,n)"
     ],
@@ -28,12 +28,12 @@
   {
     "id": 3,
     "category": "Relational Database Theory",
-    "question": "DIVISION operation answers which query type?",
+    "question": "除算演算が応答するクエリの種類はどれか。",
     "options": [
-      "OR conditions",
-      "EXISTS queries",
-      "For-all queries",
-      "Aggregations"
+      "OR条件",
+      "EXISTSクエリ",
+      "全称クエリ（∀）",
+      "集計"
     ],
     "answer": 2,
     "explanation": "除算は全称クエリに応答する：全科目を受講した学生を検索する＝R/S。"
@@ -41,12 +41,12 @@
   {
     "id": 4,
     "category": "Relational Database Theory",
-    "question": "FD A->B is trivial if:",
+    "question": "関数従属A→Bが自明なのはどの場合か。",
     "options": [
-      "A is a candidate key",
-      "B is subset of A",
-      "A is subset of B",
-      "A and B disjoint"
+      "Aが候補キー",
+      "BがAの部分集合",
+      "AがBの部分集合",
+      "AとBが互いに素"
     ],
     "answer": 1,
     "explanation": "BがAの部分集合の場合に自明。常に成り立ち、意味のある制約ではない。"
@@ -54,12 +54,12 @@
   {
     "id": 5,
     "category": "Relational Database Theory",
-    "question": "Which NF eliminates transitive dependencies?",
+    "question": "推移的従属を排除する正規形はどれか。",
     "options": [
-      "1NF",
-      "2NF",
-      "3NF",
-      "BCNF"
+      "第1正規形",
+      "第2正規形",
+      "第3正規形",
+      "ボイス・コッド正規形"
     ],
     "answer": 2,
     "explanation": "第3正規形は非キー属性が別の非キー属性に従属する推移的従属を排除する。"
@@ -67,12 +67,12 @@
   {
     "id": 6,
     "category": "Relational Database Theory",
-    "question": "BCNF is stricter than 3NF because it requires:",
+    "question": "BCNFが3NFより厳しい理由は何か。",
     "options": [
-      "All attrs must be prime",
-      "Every determinant to be a superkey",
-      "No MVDs allowed",
-      "Single-valued only"
+      "すべての属性が素属性",
+      "すべての決定項がスーパーキー",
+      "多値従属は許可されない",
+      "単一値のみ"
     ],
     "answer": 1,
     "explanation": "BCNF: すべての非自明な関数従属A→Bにおいて、Aはスーパーキーでなければならない。3NFはBが素属性であればAがスーパーキーでなくても許容する。"
@@ -80,12 +80,12 @@
   {
     "id": 7,
     "category": "Relational Database Theory",
-    "question": "Which NF addresses multi-valued dependencies?",
+    "question": "多値従属に対処する正規形はどれか。",
     "options": [
-      "3NF",
-      "BCNF",
-      "4NF",
-      "5NF"
+      "第3正規形",
+      "ボイス・コッド正規形",
+      "第4正規形",
+      "第5正規形"
     ],
     "answer": 2,
     "explanation": "第4正規形は多値従属性に対処する。4NFのリレーションはBCNFであり、非自明な多値従属性を持たない。"
@@ -93,12 +93,12 @@
   {
     "id": 8,
     "category": "Relational Database Theory",
-    "question": "5NF (Project-Join NF) concerns:",
+    "question": "第5正規形（射影・結合正規形）が対象とするものは何か。",
     "options": [
-      "MVDs",
-      "FDs",
-      "Join dependencies",
-      "Transitive deps"
+      "多値従属",
+      "関数従属",
+      "結合従属",
+      "推移的従属"
     ],
     "answer": 2,
     "explanation": "第5正規形は結合従属性を扱う。情報の損失なしにより小さなリレーションに分解できない場合に適合する。"
@@ -106,12 +106,12 @@
   {
     "id": 9,
     "category": "Relational Database Theory",
-    "question": "Closure F+ of FDs is:",
+    "question": "関数従属集合Fの閉包F+とは何か。",
     "options": [
-      "Minimal set equivalent to F",
-      "All FDs derivable via Armstrong axioms",
-      "FDs in current DB state",
-      "Subset of F in BCNF"
+      "Fと等価な最小集合",
+      "アームストロング公理から導出可能なすべての関数従属",
+      "現在のDB状態の関数従属",
+      "BCNFでのFの部分集合"
     ],
     "answer": 1,
     "explanation": "F+は反射律、増幅度、推移律を用いて導出可能なすべての関数従属を含む。"
@@ -119,12 +119,12 @@
   {
     "id": 10,
     "category": "Relational Database Theory",
-    "question": "Armstrong transitivity: A->B, B->C then:",
+    "question": "アームストロングの推移律：A→B、B→C のとき、何が成り立つか。",
     "options": [
-      "A->C",
-      "C->A",
-      "A->B and A->C",
-      "B->A and C->B"
+      "A→C",
+      "C→A",
+      "A→B かつ A→C",
+      "B→A かつ C→B"
     ],
     "answer": 0,
     "explanation": "推移律: A→BかつB→CならばA→C。属性クロージャの計算に不可欠。"
@@ -132,12 +132,12 @@
   {
     "id": 11,
     "category": "Relational Database Theory",
-    "question": "R(A,B,C) with FDs A->B, B->C violates which NF?",
+    "question": "R(A,B,C)に関数従属A→B, B→Cがある場合、どの正規形に違反するか。",
     "options": [
-      "1NF only",
-      "2NF",
-      "3NF",
-      "BCNF"
+      "第1正規形のみ",
+      "第2正規形",
+      "第3正規形",
+      "ボイス・コッド正規形"
     ],
     "answer": 2,
     "explanation": "推移的従属A→B→C。Aは唯一のキー。BはスーパーキーではないためB→Cは3NF違反。"
@@ -145,12 +145,12 @@
   {
     "id": 12,
     "category": "Relational Database Theory",
-    "question": "EXISTS in tuple relational calculus is:",
+    "question": "タプル関係計算におけるEXISTSは何を表すか。",
     "options": [
-      "Universal quantification",
-      "Existential quantification",
-      "Negation",
-      "Aggregation"
+      "全称量化",
+      "存在量化",
+      "否定",
+      "集計"
     ],
     "answer": 1,
     "explanation": "EXISTSは指定されたリレーションにマッチするタプルが存在する場合にタプルを取得する。"
@@ -158,12 +158,12 @@
   {
     "id": 13,
     "category": "Relational Database Theory",
-    "question": "A prime attribute is:",
+    "question": "素属性とは何か。",
     "options": [
-      "Part of any candidate key",
-      "First attr of primary key",
-      "Always unique",
-      "Cannot be NULL"
+      "いずれかの候補キーの一部",
+      "主キーの先頭属性",
+      "常に一意",
+      "NULL不可"
     ],
     "answer": 0,
     "explanation": "素属性は少なくとも1つの候補キーに含まれる。2NFと3NFにおいて重要な概念。"
@@ -171,12 +171,12 @@
   {
     "id": 14,
     "category": "Relational Database Theory",
-    "question": "Lossless-join ensures:",
+    "question": "ロスレス結合が保証するものは何か。",
     "options": [
-      "Dependency preservation",
-      "Original recoverable by join",
-      "Minimal redundancy",
-      "Attribute preservation"
+      "従属保存",
+      "結合で元のリレーションが復元可能",
+      "最小の冗長性",
+      "属性保存"
     ],
     "answer": 1,
     "explanation": "分解されたリレーションを結合すると元のリレーションが完全に復元される。交差は一方のスーパーキーでなければならない。"
@@ -184,12 +184,12 @@
   {
     "id": 15,
     "category": "Relational Database Theory",
-    "question": "Natural join eliminates:",
+    "question": "自然結合が排除するものは何か。",
     "options": [
-      "Left duplicates",
-      "Duplicate join column",
-      "All NULLs",
-      "Non-matching tuples"
+      "左側の重複",
+      "重複する結合列",
+      "すべてのNULL",
+      "一致しないタプル"
     ],
     "answer": 1,
     "explanation": "結合列を1つに統合し、共通属性でマッチするタプルのみを返す。"
@@ -197,12 +197,12 @@
   {
     "id": 16,
     "category": "Relational Database Theory",
-    "question": "Candidate key is minimal because:",
+    "question": "候補キーが最小である理由は何か。",
     "options": [
-      "Fewest attributes",
-      "No proper subset is superkey",
-      "Only non-nulls",
-      "Chosen primary key"
+      "最も少ない属性",
+      "真部分集合がスーパーキーにならない",
+      "非NULLのみ",
+      "選ばれた主キー"
     ],
     "answer": 1,
     "explanation": "真の部分集合がスーパーキーにならないこと。最小のスーパーキー。"
@@ -210,12 +210,12 @@
   {
     "id": 17,
     "category": "Relational Database Theory",
-    "question": "Outer join includes:",
+    "question": "外部結合に含まれるものは何か。",
     "options": [
-      "Nothing extra",
-      "Unmatched tuples with NULLs",
-      "No duplicates",
-      "Sorted results"
+      "追加なし",
+      "一致しないタプルをNULL付きで含む",
+      "重複なし",
+      "ソート済み結果"
     ],
     "answer": 1,
     "explanation": "一方または両方のリレーションからのマッチしないタプルをNULLでパディングして含める。"
@@ -223,7 +223,7 @@
   {
     "id": 18,
     "category": "Relational Database Theory",
-    "question": "R(A,B,C,D) with FDs {AB->C,C->D,D->A}: candidate keys?",
+    "question": "R(A,B,C,D)に関数従属{AB→C, C→D, D→A}がある場合、候補キーはいくつか。",
     "options": [
       "1",
       "2",
@@ -236,12 +236,12 @@
   {
     "id": 19,
     "category": "Relational Database Theory",
-    "question": "Armstrong augmentation: A->B implies:",
+    "question": "アームストロングの拡張律：A→Bが成り立つとき、何が導けるか。",
     "options": [
       "A->BC",
       "AC->BC",
       "AB->C",
-      "B->A"
+      "B→A"
     ],
     "answer": 1,
     "explanation": "A→Bならば、任意のCに対してAC→BC。両辺が等しく拡張される。"
@@ -249,12 +249,12 @@
   {
     "id": 20,
     "category": "Relational Database Theory",
-    "question": "2NF requires:",
+    "question": "第2正規形が要求する条件は何か。",
     "options": [
-      "Atomic values",
-      "No partial dependency on candidate keys",
-      "No transitive deps",
-      "Every determinant superkey"
+      "原子値",
+      "候補キーへの部分従属がない",
+      "推移的従属がない",
+      "すべての決定項がスーパーキー"
     ],
     "answer": 1,
     "explanation": "非素属性が複合候補キーの一部に部分的に従属しないこと。"
@@ -262,12 +262,12 @@
   {
     "id": 21,
     "category": "Relational Database Theory",
-    "question": "Semi-join returns:",
+    "question": "半結合が返すものは何か。",
     "options": [
-      "All R tuples",
-      "R tuples matching S",
-      "S tuples matching R",
-      "R intersect S"
+      "Rのすべてのタプル",
+      "Sに一致するRのタプル",
+      "Rに一致するSのタプル",
+      "RとSの共通部分"
     ],
     "answer": 1,
     "explanation": "SにマッチするRのタプルのみ。Rの属性のみを保持する。"
@@ -275,12 +275,12 @@
   {
     "id": 22,
     "category": "Relational Database Theory",
-    "question": "1NF requires:",
+    "question": "第1正規形が要求する条件は何か。",
     "options": [
-      "Unique values",
-      "Atomic values",
-      "Dependence on entire key",
-      "Primary key"
+      "一意な値",
+      "原子値",
+      "キー全体への従属",
+      "主キー"
     ],
     "answer": 1,
     "explanation": "すべての属性値が原子値(分割不可)であること。"
@@ -288,12 +288,12 @@
   {
     "id": 23,
     "category": "Relational Database Theory",
-    "question": "Attribute closure A+ is:",
+    "question": "属性閉包A+とは何か。",
     "options": [
-      "All attrs dependent on A",
-      "All FDs A determines",
-      "Superkey containing A",
-      "Candidate keys with A"
+      "Aに従属するすべての属性",
+      "Aが決定するすべての関数従属",
+      "Aを含むスーパーキー",
+      "Aを含む候補キー"
     ],
     "answer": 0,
     "explanation": "アームストロングの公理を通じてAから関数的に決定されるすべての属性。"
@@ -301,12 +301,12 @@
   {
     "id": 24,
     "category": "Relational Database Theory",
-    "question": "BCNF requires for non-trivial FD X->Y:",
+    "question": "非自明な関数従属X→Yに対するBCNFの要件は何か。",
     "options": [
-      "Y is prime",
-      "X is superkey",
-      "Y not subset X",
-      "X is candidate key"
+      "Yが素属性",
+      "Xがスーパーキー",
+      "YがXの部分集合でない",
+      "Xが候補キー"
     ],
     "answer": 1,
     "explanation": "Xはスーパーキーでなければならない。Bが素属性でも許容する3NFより厳しい。"
@@ -314,12 +314,12 @@
   {
     "id": 25,
     "category": "Relational Database Theory",
-    "question": "Dependency preservation means:",
+    "question": "従属保存とは何を意味するか。",
     "options": [
-      "All FDs checkable on decomposed relations",
-      "All data preserved",
-      "No redundancy",
-      "Faster queries"
+      "すべての関数従属が分解後のリレーションで検査可能",
+      "すべてのデータが保存される",
+      "冗長性なし",
+      "クエリが高速"
     ],
     "answer": 0,
     "explanation": "元のすべての関数従属が分解されたリレーション上の関数従属から導出可能。"
@@ -327,12 +327,12 @@
   {
     "id": 26,
     "category": "Relational Database Theory",
-    "question": "MVD A->>B means:",
+    "question": "多値従属A→→Bが意味するものは何か。",
     "options": [
-      "B functionally determined by A",
-      "B values independent of C per A",
-      "A determines B and C",
-      "B,C same cardinality per A"
+      "BがAに関数従属",
+      "AごとにBの値がCから独立",
+      "AがBとCを決定",
+      "AごとにB,Cのカーディナリティが同じ"
     ],
     "answer": 1,
     "explanation": "各Aについて、Bの値はCの値から独立している。BとCは独立した事実。"
@@ -340,12 +340,12 @@
   {
     "id": 27,
     "category": "Relational Database Theory",
-    "question": "Correct NF hierarchy:",
+    "question": "正しい正規形の階層はどれか。",
     "options": [
-      "BCNF=>4NF=>3NF",
-      "5NF=>4NF=>BCNF=>3NF",
-      "3NF=>BCNF=>4NF",
-      "4NF=>5NF=>BCNF"
+      "BCNF⇒4NF⇒3NF",
+      "5NF⇒4NF⇒BCNF⇒3NF",
+      "3NF⇒BCNF⇒4NF",
+      "4NF⇒5NF⇒BCNF"
     ],
     "answer": 1,
     "explanation": "5NF→4NF→BCNF→3NF→2NF→1NF。上位の正規形は下位のすべてを含む。"
@@ -353,12 +353,12 @@
   {
     "id": 28,
     "category": "Relational Database Theory",
-    "question": "Rename operation resolves:",
+    "question": "名前変更演算が解決するものは何か。",
     "options": [
-      "Performance issues",
-      "Naming conflicts",
-      "Sorting problems",
-      "Duplicate rows"
+      "パフォーマンス問題",
+      "命名衝突",
+      "ソート問題",
+      "重複行"
     ],
     "answer": 1,
     "explanation": "自己結合や同じ名前の属性を持つリレーションの結合に不可欠。"
@@ -366,12 +366,12 @@
   {
     "id": 29,
     "category": "Relational Database Theory",
-    "question": "Domain calculus {<x,y>|R(x) AND S(y)} produces:",
+    "question": "ドメイン関係計算{<x,y>|R(x) AND S(y)}が生成するものは何か。",
     "options": [
-      "Intersection",
-      "Cartesian product",
-      "Natural join",
-      "Union"
+      "積（共通部分）",
+      "直積",
+      "自然結合",
+      "和（UNION）"
     ],
     "answer": 1,
     "explanation": "連結制約のない独立変数＝直積。"
@@ -379,12 +379,12 @@
   {
     "id": 30,
     "category": "Relational Database Theory",
-    "question": "Armstrong reflexivity: B subset of A implies:",
+    "question": "アームストロングの反射律：BがAの部分集合のとき、何が成り立つか。",
     "options": [
-      "A->B",
-      "B->A",
-      "A+B->A",
-      "A->A union B"
+      "A→B",
+      "B→A",
+      "A+B→A",
+      "A→A∪B"
     ],
     "answer": 0,
     "explanation": "BがAの部分集合ならば、A→Bは常に成り立つ(自明な関数従属)。"
@@ -392,12 +392,12 @@
   {
     "id": 31,
     "category": "SQL Advanced",
-    "question": "CUBE in GROUP BY generates:",
+    "question": "GROUP BYのCUBEが生成するものは何か。",
     "options": [
-      "All column combinations",
-      "Hierarchical subtotals",
-      "Grand total only",
-      "Specified levels"
+      "すべての列の組み合わせ",
+      "階層的小計",
+      "総計のみ",
+      "指定されたレベル"
     ],
     "answer": 0,
     "explanation": "CUBEはすべての小計と総計を含む2^nのグループ化を生成する。"
@@ -405,12 +405,12 @@
   {
     "id": 32,
     "category": "SQL Advanced",
-    "question": "ROW_NUMBER() vs RANK() difference:",
+    "question": "ROW_NUMBER()とRANK()の違いは何か。",
     "options": [
-      "Identical",
-      "RANK gives ties same rank and skips numbers",
-      "ROW_NUMBER not window function",
-      "RANK cannot ORDER BY"
+      "同じ",
+      "RANKは同順に同じ順位を付け、次の順位を飛ばす",
+      "ROW_NUMBERはウィンドウ関数でない",
+      "RANKはORDER BY不可"
     ],
     "answer": 1,
     "explanation": "RANK: 1,2,2,4。ROW_NUMBER: 1,2,3,4。DENSE_RANK: 1,2,2,3。"
@@ -418,7 +418,7 @@
   {
     "id": 33,
     "category": "SQL Advanced",
-    "question": "In recursive CTE, anchor and recursive combined by:",
+    "question": "再帰CTEでアンカーと再帰部分を結合する方法はどれか。",
     "options": [
       "UNION",
       "UNION ALL",
@@ -431,12 +431,12 @@
   {
     "id": 34,
     "category": "SQL Advanced",
-    "question": "LAG() returns:",
+    "question": "LAG()が返すものは何か。",
     "options": [
-      "Next row value",
-      "Previous row value",
-      "Difference from previous",
-      "Current row position"
+      "次の行の値",
+      "前の行の値",
+      "前の行との差分",
+      "現在の行の位置"
     ],
     "answer": 1,
     "explanation": "LAG()は前行の値を返す(デフォルトオフセット1)。LEAD()は後続行の値を返す。"
@@ -444,12 +444,12 @@
   {
     "id": 35,
     "category": "SQL Advanced",
-    "question": "EXISTS returns TRUE when:",
+    "question": "EXISTSがTRUEを返す条件はどれか。",
     "options": [
-      "Subquery returns count",
-      "Subquery returns at least one row",
-      "All rows match",
-      "Column exists"
+      "サブクエリが件数を返す",
+      "サブクエリが1行以上返す",
+      "すべての行が一致",
+      "列が存在する"
     ],
     "answer": 1,
     "explanation": "EXISTSはサブクエリが行を返す場合にTRUE。存在確認ではINより効率的。"
@@ -457,7 +457,7 @@
   {
     "id": 36,
     "category": "SQL Advanced",
-    "question": "Which set operation removes duplicates?",
+    "question": "重複を削除する集合演算はどれか。",
     "options": [
       "UNION ALL",
       "INTERSECT ALL",
@@ -470,12 +470,12 @@
   {
     "id": 37,
     "category": "SQL Advanced",
-    "question": "Correlated subquery re-evaluates:",
+    "question": "相関サブクエリが再評価するタイミングはいつか。",
     "options": [
-      "Once only",
-      "For each outer query row",
-      "After outer completes",
-      "When optimizer decides"
+      "1回のみ",
+      "外部クエリの各行ごと",
+      "外部クエリ完了後",
+      "オプティマイザが決定したとき"
     ],
     "answer": 1,
     "explanation": "外部列を参照し、各行ごとに再評価される。潜在的に遅くなる。"
@@ -483,7 +483,7 @@
   {
     "id": 38,
     "category": "SQL Advanced",
-    "question": "(rank-1)/(N-1) is calculated by:",
+    "question": "(rank-1)/(N-1)を計算する関数はどれか。",
     "options": [
       "ROW_NUMBER",
       "RANK",
@@ -496,12 +496,12 @@
   {
     "id": 39,
     "category": "SQL Advanced",
-    "question": "FILTER clause in aggregates:",
+    "question": "集計関数のFILTER句の役割は何か。",
     "options": [
-      "Sorts input",
-      "Conditionally includes rows",
-      "Filters final result",
-      "Removes NULLs"
+      "入力をソート",
+      "条件付きで行を含める",
+      "最終結果をフィルタ",
+      "NULLを削除"
     ],
     "answer": 1,
     "explanation": "FILTER(WHERE条件)は集計にマッチする行のみを含める。"
@@ -509,12 +509,12 @@
   {
     "id": 40,
     "category": "SQL Advanced",
-    "question": "MERGE statement can:",
+    "question": "MERGE文が実行できる操作はどれか。",
     "options": [
-      "Only INSERT",
-      "Only UPDATE",
-      "INSERT, UPDATE, DELETE based on match",
-      "SELECT and INSERT only"
+      "INSERTのみ",
+      "UPDATEのみ",
+      "一致に応じてINSERT、UPDATE、DELETE",
+      "SELECTとINSERTのみ"
     ],
     "answer": 2,
     "explanation": "MERGE(UPSERT)はマッチ条件に基づいてINSERT、UPDATE、DELETEを実行可能。"
@@ -522,12 +522,12 @@
   {
     "id": 41,
     "category": "SQL Advanced",
-    "question": "OVER() clause specifies:",
+    "question": "OVER()句が指定するものは何か。",
     "options": [
-      "Table to query",
-      "Partitioning and ordering for window",
-      "Filter condition",
-      "Join condition"
+      "クエリ対象テーブル",
+      "ウィンドウのパーティショニングと順序付け",
+      "フィルタ条件",
+      "結合条件"
     ],
     "answer": 1,
     "explanation": "PARTITION BYで分割、ORDER BYでパーティション内ソート、フレームで範囲を定義。"
@@ -535,7 +535,7 @@
   {
     "id": 42,
     "category": "SQL Advanced",
-    "question": "Which clause filters BEFORE GROUP BY?",
+    "question": "GROUP BYの前にフィルタリングする句はどれか。",
     "options": [
       "HAVING",
       "WHERE",
@@ -548,12 +548,12 @@
   {
     "id": 43,
     "category": "SQL Advanced",
-    "question": "Materialized view vs regular view:",
+    "question": "マテリアライズドビューと通常ビューの違いは何か。",
     "options": [
-      "Cannot be queried",
-      "Result stored on disk",
-      "No joins supported",
-      "Always current"
+      "クエリ不可",
+      "結果をディスクに格納",
+      "結合非対応",
+      "常に最新"
     ],
     "answer": 1,
     "explanation": "結果を物理的に格納し、読み取りを向上させるがリフレッシュが必要。"
@@ -561,12 +561,12 @@
   {
     "id": 44,
     "category": "SQL Advanced",
-    "question": "ROLLUP produces:",
+    "question": "ROLLUPが生成するものは何か。",
     "options": [
-      "All combinations",
-      "Hierarchical subtotals and grand total",
-      "Grand total only",
-      "Cross-tabulation"
+      "すべての組み合わせ",
+      "階層的小計と総計",
+      "総計のみ",
+      "クロス集計"
     ],
     "answer": 1,
     "explanation": "ROLLUP(a,b,c)は(a,b,c),(a,b),(a),()のグループを生成する階層型小計。"
@@ -574,12 +574,12 @@
   {
     "id": 45,
     "category": "SQL Advanced",
-    "question": "NTILE(n) divides rows into:",
+    "question": "NTILE(n)が行をどう分割するか。",
     "options": [
-      "n equal parts",
-      "n columns",
-      "n subqueries",
-      "n tables"
+      "n個の等分グループ",
+      "n列",
+      "n個のサブクエリ",
+      "n個のテーブル"
     ],
     "answer": 0,
     "explanation": "結果をほぼ等しいn個のグループに分割し、1からnの番号を割り当てる。"
@@ -587,11 +587,11 @@
   {
     "id": 46,
     "category": "SQL Advanced",
-    "question": "Rows in first query NOT in second:",
+    "question": "最初のクエリにあって2番目のクエリにない行を取得する演算はどれか。",
     "options": [
       "INTERSECT",
       "UNION",
-      "EXCEPT (MINUS)",
+      "EXCEPT（MINUS）",
       "DIFFERENCE"
     ],
     "answer": 2,
@@ -600,12 +600,12 @@
   {
     "id": 47,
     "category": "SQL Advanced",
-    "question": "LATERAL join allows:",
+    "question": "LATERAL結合が許可するものは何か。",
     "options": [
-      "Cross-DB queries",
-      "Subquery to reference preceding FROM columns",
-      "Recursive queries",
-      "Parallel execution"
+      "クロスDBクエリ",
+      "サブクエリが前方のFROM列を参照可能",
+      "再帰クエリ",
+      "並列実行"
     ],
     "answer": 1,
     "explanation": "FROM句のサブクエリが同じFROM句内の先行テーブルを参照できるようにする。"
@@ -613,12 +613,12 @@
   {
     "id": 48,
     "category": "SQL Advanced",
-    "question": "Default frame with ORDER BY:",
+    "question": "ORDER BY指定時のデフォルトフレームはどれか。",
     "options": [
-      "ROWS UNBOUNDED to CURRENT ROW",
-      "RANGE UNBOUNDED to CURRENT ROW",
-      "ROWS UNBOUNDED both",
-      "RANGE UNBOUNDED both"
+      "ROWS UNBOUNDED TO CURRENT ROW",
+      "RANGE UNBOUNDED TO CURRENT ROW",
+      "ROWS UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING",
+      "RANGE UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING"
     ],
     "answer": 1,
     "explanation": "デフォルトはRANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW。"
@@ -626,7 +626,7 @@
   {
     "id": 49,
     "category": "SQL Advanced",
-    "question": "Removes all rows, resets identity with minimal logging?",
+    "question": "全行を削除し、IDENTITYをリセットする最小ログ記録の操作はどれか。",
     "options": [
       "DELETE FROM",
       "DROP TABLE",
@@ -639,12 +639,12 @@
   {
     "id": 50,
     "category": "SQL Advanced",
-    "question": "WITH CHECK OPTION enforces:",
+    "question": "WITH CHECK OPTIONが施行する制約は何か。",
     "options": [
-      "Performance",
-      "Inserts/updates satisfy view WHERE clause",
-      "View updatable",
-      "Referential integrity"
+      "パフォーマンス",
+      "INSERT/UPDATEがビューのWHERE句を満たす",
+      "ビューが更新可能",
+      "参照整合性"
     ],
     "answer": 1,
     "explanation": "ビューを通じたINSERT/UPDATEがWHERE条件を満たすことを保証する。"
@@ -652,12 +652,12 @@
   {
     "id": 51,
     "category": "SQL Advanced",
-    "question": "WITH clause (CTE) provides:",
+    "question": "WITH句（CTE）が提供するものは何か。",
     "options": [
-      "Transaction boundary",
-      "Named temporary result set",
-      "Security context",
-      "Connection pooling"
+      "トランザクション境界",
+      "名前付き一時結果セット",
+      "セキュリティコンテキスト",
+      "コネクションプーリング"
     ],
     "answer": 1,
     "explanation": "CTEはSELECT/INSERT/UPDATE/DELETE用の名前付き一時結果セットを作成する。"
@@ -665,12 +665,12 @@
   {
     "id": 52,
     "category": "SQL Advanced",
-    "question": "FIRST_VALUE() returns:",
+    "question": "FIRST_VALUE()が返すものは何か。",
     "options": [
-      "First column",
-      "Value from first row of window frame",
-      "First row number",
-      "Minimum value"
+      "最初の列",
+      "ウィンドウフレームの最初の行の値",
+      "最初の行番号",
+      "最小値"
     ],
     "answer": 1,
     "explanation": "現在のウィンドウフレームの最初の行の式の値を返す。"
@@ -678,7 +678,7 @@
   {
     "id": 53,
     "category": "SQL Advanced",
-    "question": "Prevents phantoms, allows non-repeatable reads:",
+    "question": "ファントムリードを防ぎ、非リピータブルリードを許容する分離レベルはどれか。",
     "options": [
       "READ UNCOMMITTED",
       "READ COMMITTED",
@@ -691,12 +691,12 @@
   {
     "id": 54,
     "category": "SQL Advanced",
-    "question": "Deterministic SQL function:",
+    "question": "決定的なSQL関数とは何か。",
     "options": [
-      "Always returns NULL",
-      "Same result for same input",
-      "Modifies data",
-      "Used in triggers"
+      "常にNULLを返す",
+      "同じ入力には常に同じ結果",
+      "データを変更",
+      "トリガーで使用"
     ],
     "answer": 1,
     "explanation": "同じ入力に対して常に同じ結果を返す。インデックス作成で重要。"
@@ -704,7 +704,7 @@
   {
     "id": 55,
     "category": "SQL Advanced",
-    "question": "Window frame boundary defined by:",
+    "question": "ウィンドウフレームの境界を定義するものは何か。",
     "options": [
       "PARTITION BY",
       "ORDER BY",
@@ -717,12 +717,12 @@
   {
     "id": 56,
     "category": "SQL Advanced",
-    "question": "GRANT WITH GRANT OPTION allows:",
+    "question": "GRANT WITH GRANT OPTIONが許可するものは何か。",
     "options": [
-      "Creating tables",
-      "Grantee to grant privileges to others",
-      "Revoking privileges",
-      "System access"
+      "テーブル作成",
+      "被権限者が他者に権限を付与可能",
+      "権限取消",
+      "システムアクセス"
     ],
     "answer": 1,
     "explanation": "許可された者が受け取った権限を他のユーザーにさらに付与することを許可する。"
@@ -730,12 +730,12 @@
   {
     "id": 57,
     "category": "SQL Advanced",
-    "question": "SQL trigger is:",
+    "question": "SQLトリガーとは何か。",
     "options": [
-      "Manual stored procedure",
-      "Auto-executed on table event",
-      "Constraint",
-      "Index type"
+      "手動ストアドプロシージャ",
+      "テーブルイベントで自動実行",
+      "制約",
+      "インデックスタイプ"
     ],
     "answer": 1,
     "explanation": "テーブル/ビューでINSERT/UPDATE/DELETEが発生すると自動的に発火する。"
@@ -743,12 +743,12 @@
   {
     "id": 58,
     "category": "SQL Advanced",
-    "question": "= ANY tests:",
+    "question": "= ANYがテストするものは何か。",
     "options": [
-      "No values",
-      "Any value in subquery result",
-      "All values",
-      "First value"
+      "値なし",
+      "サブクエリ結果のいずれかの値",
+      "すべての値",
+      "最初の値"
     ],
     "answer": 1,
     "explanation": "= ANY(INと同等)は値がサブクエリ結果のいずれかと等しい場合にTRUE。"
@@ -756,10 +756,10 @@
   {
     "id": 59,
     "category": "SQL Advanced",
-    "question": "Recursive CTE must include:",
+    "question": "再帰CTEに必須な要素は何か。",
     "options": [
-      "Two anchors",
-      "UNION ALL between anchor and recursive",
+      "2つのアンカー",
+      "アンカーと再帰部をUNION ALLで結合",
       "LIMIT",
       "ORDER BY"
     ],
@@ -769,12 +769,12 @@
   {
     "id": 60,
     "category": "SQL Advanced",
-    "question": "GROUPING SETS allows:",
+    "question": "GROUPING SETSが許可するものは何か。",
     "options": [
-      "All CUBE combos",
-      "Multiple GROUP BY groupings in one query",
-      "Creating grouping columns",
-      "Rollup hierarchies"
+      "すべてのCUBE組み合わせ",
+      "1クエリで複数のGROUP BYグループ化",
+      "グループ化列の作成",
+      "ロールアップ階層"
     ],
     "answer": 1,
     "explanation": "1つのクエリで複数のグループ化。複数のGROUP BY + UNION ALLと同等。"
@@ -782,12 +782,12 @@
   {
     "id": 61,
     "category": "SQL Advanced",
-    "question": "COALESCE() returns:",
+    "question": "COALESCE()が返すものは何か。",
     "options": [
-      "First non-NULL argument",
-      "Last non-NULL",
-      "NULL if any NULL",
-      "Average of non-NULLs"
+      "最初の非NULL引数",
+      "最後の非NULL",
+      "いずれかがNULLならNULL",
+      "非NULLの平均"
     ],
     "answer": 0,
     "explanation": "引数リストの最初の非NULL値を返す。デフォルト値の設定に有用。"
@@ -795,12 +795,12 @@
   {
     "id": 62,
     "category": "SQL Advanced",
-    "question": "Covering index includes:",
+    "question": "カバリングインデックスに含まれるものは何か。",
     "options": [
-      "Only primary key",
-      "All columns needed by query",
-      "All table columns",
-      "Only foreign keys"
+      "主キーのみ",
+      "クエリが必要とするすべての列",
+      "テーブルのすべての列",
+      "外部キーのみ"
     ],
     "answer": 1,
     "explanation": "クエリで参照されるすべての列。インデックスのみでクエリが完結する。"
@@ -808,12 +808,12 @@
   {
     "id": 63,
     "category": "SQL Advanced",
-    "question": "SELECT FOR UPDATE prevents:",
+    "question": "SELECT FOR UPDATEが防ぐものは何か。",
     "options": [
-      "Reads",
-      "Concurrent modification of selected rows",
-      "All queries",
-      "FK checks"
+      "読み取り",
+      "選択行の同時変更",
+      "すべてのクエリ",
+      "外部キーチェック"
     ],
     "answer": 1,
     "explanation": "トランザクション完了まで選択行をロックする。"
@@ -821,12 +821,12 @@
   {
     "id": 64,
     "category": "SQL Advanced",
-    "question": "DENSE_RANK vs RANK:",
+    "question": "DENSE_RANKとRANKの違いは何か。",
     "options": [
-      "Different sorting",
-      "DENSE_RANK does not skip ranks after ties",
-      "Numeric only",
-      "Requires partition"
+      "異なるソート",
+      "DENSE_RANKは同順後に順位を飛ばさない",
+      "数値のみ",
+      "パーティション必須"
     ],
     "answer": 1,
     "explanation": "DENSE_RANK: 2,2,3。RANK: 2,2,4。両方ともタイに同じ順位を付与。"
@@ -834,12 +834,12 @@
   {
     "id": 65,
     "category": "SQL Advanced",
-    "question": "RETURNING clause returns:",
+    "question": "RETURNING句が返すものは何か。",
     "options": [
-      "Affected row count",
-      "The modified data",
-      "Status code",
-      "Transaction ID"
+      "影響を受けた行数",
+      "変更されたデータ",
+      "ステータスコード",
+      "トランザクションID"
     ],
     "answer": 1,
     "explanation": "別途SELECTなしで挿入/更新/削除されたデータを返す。"
@@ -847,12 +847,12 @@
   {
     "id": 66,
     "category": "SQL Advanced",
-    "question": "Stored procedure vs function:",
+    "question": "ストアドプロシージャと関数の違いは何か。",
     "options": [
-      "Must return value",
-      "Cannot contain SQL",
-      "Can return multiple result sets",
-      "No parameters"
+      "戻り値必須",
+      "SQLを含められない",
+      "複数の結果セットを返せる",
+      "パラメータなし"
     ],
     "answer": 2,
     "explanation": "ストアドプロシージャは複数の結果セットと出力パラメータを返せる。"
@@ -860,12 +860,12 @@
   {
     "id": 67,
     "category": "SQL Advanced",
-    "question": "SNAPSHOT isolation provides:",
+    "question": "SNAPSHOT分離が提供するものは何か。",
     "options": [
-      "Blocked reads",
-      "Consistent view from transaction start",
-      "Dirty reads",
-      "Phantom reads"
+      "読み取りのブロック",
+      "トランザクション開始時の整合性のあるビュー",
+      "ダーティリード",
+      "ファントムリード"
     ],
     "answer": 1,
     "explanation": "行バージョニングによりダーティ読み取り/非反復可能読み取り/ファントム読み取りを防止。ライトスキューを許容。"
@@ -873,12 +873,12 @@
   {
     "id": 68,
     "category": "SQL Advanced",
-    "question": "FULL OUTER JOIN returns:",
+    "question": "FULL OUTER JOINが返すものは何か。",
     "options": [
-      "Only matching rows",
-      "All left rows",
-      "All rows from both with NULLs",
-      "All right rows"
+      "一致する行のみ",
+      "左のすべての行",
+      "両方のすべての行（一致しない場合はNULL）",
+      "右のすべての行"
     ],
     "answer": 2,
     "explanation": "両方のテーブルのすべての行。マッチしない側はNULLでパディング。"
@@ -886,12 +886,12 @@
   {
     "id": 69,
     "category": "SQL Advanced",
-    "question": "GROUPING() function used with:",
+    "question": "GROUPING()関数が使用される場面はどこか。",
     "options": [
-      "Regular GROUP BY",
+      "通常のGROUP BY",
       "CUBE/ROLLUP/GROUPING SETS",
-      "Window functions",
-      "Subqueries"
+      "ウィンドウ関数",
+      "サブクエリ"
     ],
     "answer": 1,
     "explanation": "通常行とスーパー集計行を区別する。スーパー集計では1を返す。"
@@ -899,12 +899,12 @@
   {
     "id": 70,
     "category": "SQL Advanced",
-    "question": "FOREIGN KEY ensures:",
+    "question": "外部キーが保証するものは何か。",
     "options": [
-      "Uniqueness",
-      "Referential integrity",
-      "Non-null",
-      "Default values"
+      "一意性",
+      "参照整合性",
+      "非NULL",
+      "デフォルト値"
     ],
     "answer": 1,
     "explanation": "参照値が参照先テーブルに存在することを要求する。"
@@ -912,12 +912,12 @@
   {
     "id": 71,
     "category": "Database Design",
-    "question": "Weak entity type:",
+    "question": "弱エンティティ型とは何か。",
     "options": [
-      "Has no attributes",
-      "Depends on strong entity for identification",
-      "Has composite key",
-      "Is optional"
+      "属性を持たない",
+      "識別に強エンティティに依存",
+      "複合キーを持つ",
+      "省略可能"
     ],
     "answer": 1,
     "explanation": "弱いエンティティは主キーに十分な属性を持たず、識別所有者に依存する。"
@@ -925,12 +925,12 @@
   {
     "id": 72,
     "category": "Database Design",
-    "question": "Ternary relationship involves:",
+    "question": "3項関係が含むものは何か。",
     "options": [
-      "Three attributes",
-      "Three entity types",
-      "Three weak entities",
-      "Three primary keys"
+      "3つの属性",
+      "3つのエンティティ型",
+      "3つの弱エンティティ",
+      "3つの主キー"
     ],
     "answer": 1,
     "explanation": "3つのエンティティタイプ。常に2項関係に分解できるとは限らない。"
@@ -938,12 +938,12 @@
   {
     "id": 73,
     "category": "Database Design",
-    "question": "Cardinality constraints specify:",
+    "question": "カーディナリティ制約が指定するものは何か。",
     "options": [
-      "Max attribute count",
-      "Entity participation count in relationships",
-      "Database size",
-      "Table count"
+      "最大属性数",
+      "関係におけるエンティティ参加数",
+      "データベースサイズ",
+      "テーブル数"
     ],
     "answer": 1,
     "explanation": "1:1、1:N、M:Nは関係における参加数を指定する。"
@@ -951,12 +951,12 @@
   {
     "id": 74,
     "category": "Database Design",
-    "question": "Denormalization improves:",
+    "question": "非正規化が改善するものは何か。",
     "options": [
-      "NF compliance",
-      "Read performance at cost of redundancy",
-      "Storage efficiency",
-      "Dependency elimination"
+      "正規形準拠",
+      "冗長性を犠牲に読み取り性能を向上",
+      "ストレージ効率",
+      "従属の排除"
     ],
     "answer": 1,
     "explanation": "冗長性を導入して結合を削減し、読み取りを向上させる。"
@@ -964,12 +964,12 @@
   {
     "id": 75,
     "category": "Database Design",
-    "question": "Identifying relationship:",
+    "question": "識別関係とは何か。",
     "options": [
-      "Both weak entities",
-      "Weak entity key includes strong entity key",
-      "Only foreign keys",
-      "Surrogate key"
+      "両方が弱エンティティ",
+      "弱エンティティキーが強エンティティキーを含む",
+      "外部キーのみ",
+      "代理キー"
     ],
     "answer": 1,
     "explanation": "弱いエンティティの主キーに識別所有者の主キーが含まれ、複合キーとなる。"
@@ -977,12 +977,12 @@
   {
     "id": 76,
     "category": "Database Design",
-    "question": "Surrogate key is:",
+    "question": "代理キーとは何か。",
     "options": [
-      "Foreign key",
-      "Artificially generated unique identifier",
-      "Composite PK",
-      "Secondary index"
+      "外部キー",
+      "人工的に生成された一意識別子",
+      "複合主キー",
+      "セカンダリインデックス"
     ],
     "answer": 1,
     "explanation": "システム生成の一意ID(自動採番)。業務的な意味を持たない。"
@@ -990,12 +990,12 @@
   {
     "id": 77,
     "category": "Database Design",
-    "question": "Horizontal partitioning splits by:",
+    "question": "水平パーティショニングが分割する基準は何か。",
     "options": [
-      "Columns",
-      "Rows based on partition key",
-      "Tables",
-      "Data types"
+      "列",
+      "パーティションキーに基づく行",
+      "テーブル",
+      "データ型"
     ],
     "answer": 1,
     "explanation": "シャーディングはキーで行を分割。各パーティションは同じ列、異なる行。"
@@ -1003,12 +1003,12 @@
   {
     "id": 78,
     "category": "Database Design",
-    "question": "Vertical partitioning advantage:",
+    "question": "垂直パーティショニングの利点は何か。",
     "options": [
-      "Easier joins",
-      "Faster full scans",
-      "Reduced I/O accessing only needed columns",
-      "Simplified schema"
+      "結合が容易",
+      "フルスキャンが高速",
+      "必要な列のみアクセスしI/O削減",
+      "スキーマが簡素化"
     ],
     "answer": 2,
     "explanation": "必要な列のみにアクセスでき、I/Oを削減する。"
@@ -1016,12 +1016,12 @@
   {
     "id": 79,
     "category": "Database Design",
-    "question": "ER diagram diamond represents:",
+    "question": "ER図のダイヤモンドが表すものは何か。",
     "options": [
-      "Entity",
-      "Attribute",
-      "Relationship",
-      "Primary key"
+      "エンティティ",
+      "属性",
+      "リレーションシップ",
+      "主キー"
     ],
     "answer": 2,
     "explanation": "Chen記法: ダイアモンド=関係、長方形=エンティティ、楕円=属性。"
@@ -1029,12 +1029,12 @@
   {
     "id": 80,
     "category": "Database Design",
-    "question": "Supertype/subtype models:",
+    "question": "スーパータイプ/サブタイプがモデル化するものは何か。",
     "options": [
-      "One-to-many",
-      "Specialization/generalization hierarchies",
-      "Self-referencing",
-      "Cross-table joins"
+      "1対多",
+      "特化/汎化階層",
+      "自己参照",
+      "テーブル間結合"
     ],
     "answer": 1,
     "explanation": "共通属性はスーパータイプに、固有属性はサブタイプに(Employee→Manager/Developer)。"
@@ -1042,12 +1042,12 @@
   {
     "id": 81,
     "category": "Database Design",
-    "question": "Single table inheritance stores:",
+    "question": "単一テーブル継承がデータをどう格納するか。",
     "options": [
-      "Separate tables",
-      "All types in one table with discriminator",
-      "No subtypes",
-      "Only common attrs"
+      "別々のテーブル",
+      "すべてのタイプを1テーブルに識別子付きで格納",
+      "サブタイプなし",
+      "共通属性のみ"
     ],
     "answer": 1,
     "explanation": "タイプ識別子とNULL可能なサブタイプ固有列を持つ1つのテーブル。"
@@ -1055,12 +1055,12 @@
   {
     "id": 82,
     "category": "Database Design",
-    "question": "Recursive relationship connects:",
+    "question": "再帰的関係が接続するものは何か。",
     "options": [
-      "Two entities",
-      "Entity to itself",
-      "Three entities",
-      "Weak to strong"
+      "2つのエンティティ",
+      "エンティティ自身への接続",
+      "3つのエンティティ",
+      "弱から強"
     ],
     "answer": 1,
     "explanation": "自己参照: Employeeテーブル内の従業員-管理者関係。"
@@ -1068,12 +1068,12 @@
   {
     "id": 83,
     "category": "Database Design",
-    "question": "Conceptual design produces:",
+    "question": "概念設計が生成するものは何か。",
     "options": [
-      "SQL statements",
-      "DBMS-independent ER model",
-      "Physical specs",
-      "Index definitions"
+      "SQL文",
+      "DBMSに依存しないERモデル",
+      "物理仕様",
+      "インデックス定義"
     ],
     "answer": 1,
     "explanation": "実装詳細のないERモデル。"
@@ -1081,12 +1081,12 @@
   {
     "id": 84,
     "category": "Database Design",
-    "question": "Physical design includes:",
+    "question": "物理設計に含まれるものは何か。",
     "options": [
-      "Entity definitions",
-      "Data types, indexes, storage",
-      "Normalization",
-      "ER diagrams"
+      "エンティティ定義",
+      "データ型、インデックス、ストレージ",
+      "正規化",
+      "ER図"
     ],
     "answer": 1,
     "explanation": "実装: データ型、インデックス作成、ファイル編成、ストレージ。"
@@ -1094,12 +1094,12 @@
   {
     "id": 85,
     "category": "Database Design",
-    "question": "Composite attribute:",
+    "question": "複合属性とは何か。",
     "options": [
-      "Multiple values",
-      "Composed of sub-attributes",
-      "Foreign key",
-      "Derived attr"
+      "複数の値",
+      "下位属性で構成",
+      "外部キー",
+      "導出属性"
     ],
     "answer": 1,
     "explanation": "例: Address = Street+City+Zip。サブ属性が列になる。"
@@ -1107,12 +1107,12 @@
   {
     "id": 86,
     "category": "Database Design",
-    "question": "Range partitioning suits:",
+    "question": "範囲パーティショニングが適している場面はどれか。",
     "options": [
-      "Uniform distribution",
-      "Range-based query filters",
-      "Equality conditions",
-      "Small tables"
+      "均一分布",
+      "範囲ベースのクエリフィルタ",
+      "等価条件",
+      "小さいテーブル"
     ],
     "answer": 1,
     "explanation": "日付範囲、ID範囲、順次値クエリに最適。"
@@ -1120,12 +1120,12 @@
   {
     "id": 87,
     "category": "Database Design",
-    "question": "Derived attribute:",
+    "question": "導出属性とは何か。",
     "options": [
-      "From another table",
-      "Computed from other attrs",
-      "PK component",
-      "Always unique"
+      "別テーブルからの値",
+      "他の属性から計算",
+      "主キーの構成要素",
+      "常に一意"
     ],
     "answer": 1,
     "explanation": "例: 生年月日からの年齢計算。冗長性を避けるため格納しない。"
@@ -1133,12 +1133,12 @@
   {
     "id": 88,
     "category": "Database Design",
-    "question": "Total participation means:",
+    "question": "全参加とは何を意味するか。",
     "options": [
-      "Every entity must participate",
-      "Max one per relationship",
-      "Optional",
-      "Unlimited"
+      "すべてのエンティティが必ず参加",
+      "関係につき最大1つ",
+      "任意",
+      "無制限"
     ],
     "answer": 0,
     "explanation": "すべてのインスタンスが少なくとも1つの関係に参加する必要がある。"
@@ -1146,12 +1146,12 @@
   {
     "id": 89,
     "category": "Database Design",
-    "question": "Hash partitioning distributes by:",
+    "question": "ハッシュパーティショニングが分配する基準は何か。",
     "options": [
-      "Ranges",
-      "Hash function on partition key",
-      "Manual",
-      "Date"
+      "範囲",
+      "パーティションキーでのハッシュ関数",
+      "手動",
+      "日付"
     ],
     "answer": 1,
     "explanation": "ハッシュ関数で均等に分散。スキューを防止するが、範囲クエリには不向き。"
@@ -1159,11 +1159,11 @@
   {
     "id": 90,
     "category": "Database Design",
-    "question": "Multivalued attribute requires:",
+    "question": "多値属性が必要とするものは何か。",
     "options": [
-      "Composite key",
-      "Separate table",
-      "CHECK constraint",
+      "複合キー",
+      "別テーブル",
+      "CHECK制約",
       "DEFAULT"
     ],
     "answer": 1,
@@ -1172,12 +1172,12 @@
   {
     "id": 91,
     "category": "Database Design",
-    "question": "N:M relationship requires:",
+    "question": "多対多（N:M）関係に必要なものは何か。",
     "options": [
-      "Foreign key",
-      "Associative entity (junction table)",
-      "UNIQUE constraint",
-      "Composite attr"
+      "外部キー",
+      "結合エンティティ（中間テーブル）",
+      "UNIQUE制約",
+      "複合属性"
     ],
     "answer": 1,
     "explanation": "両方のエンティティへの外部キーを持つ結合テーブルが必要。"
@@ -1185,12 +1185,12 @@
   {
     "id": 92,
     "category": "Database Design",
-    "question": "Logical design transforms into:",
+    "question": "論理設計が変換先となるものは何か。",
     "options": [
-      "Physical layout",
-      "Relational schema",
-      "Application code",
-      "Network protocol"
+      "物理レイアウト",
+      "リレーショナルスキーマ",
+      "アプリケーションコード",
+      "ネットワークプロトコル"
     ],
     "answer": 1,
     "explanation": "エンティティがテーブルに、関係が外部キーになる。"
@@ -1198,12 +1198,12 @@
   {
     "id": 93,
     "category": "Database Design",
-    "question": "Fan-out trap occurs when:",
+    "question": "ファンアウトトラップが発生する条件はどれか。",
     "options": [
-      "Too many joins",
-      "Paths between entities lose information",
-      "Too many FKs",
-      "Index too large"
+      "結合が多すぎる",
+      "エンティティ間の経路で情報が欠落",
+      "外部キーが多すぎる",
+      "インデックスが大きすぎる"
     ],
     "answer": 1,
     "explanation": "独立した1:Nパスはクエリ時に情報を失う可能性がある。"
@@ -1211,12 +1211,12 @@
   {
     "id": 94,
     "category": "Database Design",
-    "question": "Pre-aggregation stores:",
+    "question": "事前集計が格納するものは何か。",
     "options": [
-      "Merged tables",
-      "Pre-computed aggregations",
-      "Duplicate columns",
-      "Reference tables"
+      "マージされたテーブル",
+      "事前計算済み集計値",
+      "重複列",
+      "参照テーブル"
     ],
     "answer": 1,
     "explanation": "GROUP BYクエリを回避するための専用テーブルに合計/カウントを格納。"
@@ -1224,12 +1224,12 @@
   {
     "id": 95,
     "category": "Database Design",
-    "question": "Choosing primary keys: which phase?",
+    "question": "主キーの選択はどの設計フェーズで行うか。",
     "options": [
-      "Requirements",
-      "Conceptual",
-      "Logical",
-      "Physical"
+      "要件定義",
+      "概念設計",
+      "論理設計",
+      "物理設計"
     ],
     "answer": 2,
     "explanation": "ERモデルをリレーショナルテーブルに変換するプロセスの一部。"
@@ -1237,12 +1237,12 @@
   {
     "id": 96,
     "category": "Database Design",
-    "question": "List partitioning assigns by:",
+    "question": "リストパーティショニングが割り当てる基準は何か。",
     "options": [
-      "Hash",
-      "Explicit value list",
-      "Ranges",
-      "Random"
+      "ハッシュ",
+      "明示的な値リスト",
+      "範囲",
+      "ランダム"
     ],
     "answer": 1,
     "explanation": "事前定義された値リストで行を割り当てる。カテゴリデータに適している。"
@@ -1250,12 +1250,12 @@
   {
     "id": 97,
     "category": "Database Design",
-    "question": "Chasm trap:",
+    "question": "カズムトラップとは何か。",
     "options": [
-      "Too many NULLs",
-      "Optional relationships hide missing paths",
-      "Duplicate rows",
-      "Missing FKs"
+      "NULLが多すぎる",
+      "オプション関係が欠落経路を隠す",
+      "重複行",
+      "外部キーの欠落"
     ],
     "answer": 1,
     "explanation": "オプショナルな関係により、一部のエンティティ間にパスが存在しない。"
@@ -1263,12 +1263,12 @@
   {
     "id": 98,
     "category": "Database Design",
-    "question": "Data dictionary stores:",
+    "question": "データディクショナリが格納するものは何か。",
     "options": [
-      "Encrypted data",
-      "Metadata about DB structure",
-      "Backup data",
-      "Optimization"
+      "暗号化データ",
+      "DB構造のメタデータ",
+      "バックアップデータ",
+      "最適化"
     ],
     "answer": 1,
     "explanation": "テーブル定義、列型、制約、インデックス。"
@@ -1276,12 +1276,12 @@
   {
     "id": 99,
     "category": "Database Design",
-    "question": "Temporal data uses:",
+    "question": "履歴データが使用する手法は何か。",
     "options": [
-      "Timestamp only",
-      "SCD patterns",
-      "5NF",
-      "Denormalization"
+      "タイムスタンプのみ",
+      "SCDパターン",
+      "第5正規形",
+      "非正規化"
     ],
     "answer": 1,
     "explanation": "SCD Type 1: 上書き、Type 2: 新行バージョン、Type 3: 列追加。"
@@ -1289,12 +1289,12 @@
   {
     "id": 100,
     "category": "Database Design",
-    "question": "Bridge table resolves:",
+    "question": "ブリッジテーブルが解決するものは何か。",
     "options": [
-      "Facts",
-      "M:N between facts and dimensions",
-      "Indexes",
-      "Partitions"
+      "ファクト",
+      "ファクトとディメンションの多対多",
+      "インデックス",
+      "パーティション"
     ],
     "answer": 1,
     "explanation": "ディメンション間の多対多を解決する(多値ディメンション)。"
@@ -1302,12 +1302,12 @@
   {
     "id": 101,
     "category": "Transaction Management",
-    "question": "ACID Atomicity ensures:",
+    "question": "ACIDの原子性が保証するものは何か。",
     "options": [
-      "Simultaneous transactions",
-      "All-or-nothing transactions",
-      "Consistency",
-      "Isolation"
+      "同時トランザクション",
+      "全か無かのトランザクション",
+      "一貫性",
+      "独立性"
     ],
     "answer": 1,
     "explanation": "全操作が完了するか全く完了しない。失敗時はトランザクション全体がロールバック。"
@@ -1315,12 +1315,12 @@
   {
     "id": 102,
     "category": "Transaction Management",
-    "question": "Dirty read occurs when:",
+    "question": "ダーティリードが発生する条件はどれか。",
     "options": [
-      "Reading own uncommitted",
-      "Reading uncommitted from another tx",
-      "Reading deleted data",
-      "Reading corrupted blocks"
+      "自身の未コミットデータを読み取り",
+      "他のトランザクションの未コミットデータを読み取り",
+      "削除されたデータを読み取り",
+      "破損ブロックを読み取り"
     ],
     "answer": 1,
     "explanation": "トランザクションがロールバックする可能性のある別トランザクションの未コミットデータを読み取る。"
@@ -1328,7 +1328,7 @@
   {
     "id": 103,
     "category": "Transaction Management",
-    "question": "Prevents dirty reads, allows non-repeatable:",
+    "question": "ダーティリードを防ぎ、非リピータブルリードを許容する分離レベルはどれか。",
     "options": [
       "READ UNCOMMITTED",
       "READ COMMITTED",
@@ -1341,12 +1341,12 @@
   {
     "id": 104,
     "category": "Transaction Management",
-    "question": "Deadlock occurs when:",
+    "question": "デッドロックが発生する条件はどれか。",
     "options": [
-      "Tx runs forever",
-      "Txs wait for each other's locks",
-      "Log full",
-      "Tx aborted"
+      "トランザクションが永遠に実行",
+      "トランザクションが互いのロックを待機",
+      "ログが一杯",
+      "トランザクションが中断"
     ],
     "answer": 1,
     "explanation": "循環: 各トランザクションが別のトランザクションが必要とするロックを保持し、全員が永遠に待機。"
@@ -1354,12 +1354,12 @@
   {
     "id": 105,
     "category": "Transaction Management",
-    "question": "MVCC improves concurrency by:",
+    "question": "MVCCが並行性を改善する仕組みは何か。",
     "options": [
-      "Locking all rows",
-      "Multiple row versions",
-      "Serializing txs",
-      "Preventing concurrent access"
+      "すべての行をロック",
+      "複数の行バージョン",
+      "トランザクションを直列化",
+      "同時アクセスを防止"
     ],
     "answer": 1,
     "explanation": "複数バージョンによりリーダーがライターをブロックしない。各トランザクションは一貫性のあるスナップショットを見る。"
@@ -1367,12 +1367,12 @@
   {
     "id": 106,
     "category": "Transaction Management",
-    "question": "Phantom read:",
+    "question": "ファントムリードとは何か。",
     "options": [
-      "Read row disappears",
-      "Re-executed query sees new committed rows",
-      "Data duplicated",
-      "Unexpected NULL"
+      "読み取った行が消える",
+      "再実行で新しくコミットされた行が見える",
+      "データが重複",
+      "予期しないNULL"
     ],
     "answer": 1,
     "explanation": "範囲クエリが別トランザクションの新規行挿入により異なる行を返す。"
@@ -1380,12 +1380,12 @@
   {
     "id": 107,
     "category": "Transaction Management",
-    "question": "WAL requires:",
+    "question": "WAL（先行書き込みログ）が要求するものは何か。",
     "options": [
-      "Data before log",
-      "Log to stable storage before DB modification",
-      "Logging all queries",
-      "Remote logs"
+      "ログ前のデータ",
+      "DB変更前にログを安定ストレージに書き込み",
+      "すべてのクエリをログ記録",
+      "リモートログ"
     ],
     "answer": 1,
     "explanation": "ログレコードをまず安定ストレージに書き込み、クラッシュリカバリを保証する。"
@@ -1393,12 +1393,12 @@
   {
     "id": 108,
     "category": "Transaction Management",
-    "question": "Shared lock allows:",
+    "question": "共有ロックが許可するものは何か。",
     "options": [
-      "No concurrent access",
-      "Multiple readers no writers",
-      "Only one reader",
-      "Lock holder only"
+      "同時アクセスなし",
+      "複数リーダー、ライターなし",
+      "リーダー1人のみ",
+      "ロック保持者のみ"
     ],
     "answer": 1,
     "explanation": "Sロックは複数リーダーを許容するが、排他ロックをブロックする。"
@@ -1406,12 +1406,12 @@
   {
     "id": 109,
     "category": "Transaction Management",
-    "question": "Two-phase locking ensures:",
+    "question": "2相ロックが保証するものは何か。",
     "options": [
-      "Two-step completion",
-      "Conflict serializability",
-      "No deadlocks",
-      "Maximum parallelism"
+      "2ステップ完了",
+      "競合直列化可能性",
+      "デッドロックなし",
+      "最大並行性"
     ],
     "answer": 1,
     "explanation": "成長フェーズ(取得)→縮小フェーズ(解放)。競合直列化可能性を保証する。"
@@ -1419,12 +1419,12 @@
   {
     "id": 110,
     "category": "Transaction Management",
-    "question": "Non-repeatable read:",
+    "question": "非リピータブルリードとは何か。",
     "options": [
-      "Different row count",
-      "Same row different values on re-read",
-      "Query fails",
-      "Wrong table"
+      "行数が異なる",
+      "再読み取りで同じ行の値が異なる",
+      "クエリ失敗",
+      "間違ったテーブル"
     ],
     "answer": 1,
     "explanation": "Tx Aが行を読取り、Bが変更してコミット、Aが再読取りすると異なるデータを見る。"
@@ -1432,12 +1432,12 @@
   {
     "id": 111,
     "category": "Transaction Management",
-    "question": "Wait-die scheme:",
+    "question": "Wait-die方式の説明で正しいものはどれか。",
     "options": [
-      "Aborts older",
-      "Older wait, younger die",
-      "Optimistic",
-      "Timeout"
+      "古いトランザクションを中止",
+      "古いものは待機、新しいものは中止",
+      "楽観的",
+      "タイムアウト"
     ],
     "answer": 1,
     "explanation": "古いトランザクションは待機し、新しいトランザクションは中断される。"
@@ -1445,12 +1445,12 @@
   {
     "id": 112,
     "category": "Transaction Management",
-    "question": "SERIALIZABLE prevents:",
+    "question": "SERIALIZABLEが防ぐものはどれか。",
     "options": [
-      "Dirty reads",
-      "Dirty + non-repeatable",
-      "All three: dirty + non-repeatable + phantom",
-      "All including deadlocks"
+      "ダーティリード",
+      "ダーティリード＋非リピータブルリード",
+      "ダーティリード＋非リピータブルリード＋ファントムリードのすべて",
+      "すべて＋デッドロック"
     ],
     "answer": 2,
     "explanation": "最も厳密な分離レベル。実行を直列化し、すべての異常タイプを防止する。"
@@ -1458,12 +1458,12 @@
   {
     "id": 113,
     "category": "Transaction Management",
-    "question": "Intent lock signals:",
+    "question": "インテントロックが示すものは何か。",
     "options": [
-      "Commit intention",
-      "Intention to lock lower-level items",
-      "DB-level lock",
-      "Row shared lock"
+      "コミット意図",
+      "下位レベル項目のロック意図",
+      "DBレベルロック",
+      "行共有ロック"
     ],
     "answer": 1,
     "explanation": "IS/IXは下位階層レベルでロックする意図を示す。"
@@ -1471,12 +1471,12 @@
   {
     "id": 114,
     "category": "Transaction Management",
-    "question": "Optimistic concurrency assumes:",
+    "question": "楽観的並行性制御の前提は何か。",
     "options": [
-      "Conflicts always",
-      "Conflicts rare, validate at commit",
-      "No concurrent access",
-      "Read-only"
+      "衝突は常にある",
+      "衝突はまれ、コミット時に検証",
+      "同時アクセスなし",
+      "読み取り専用"
     ],
     "answer": 1,
     "explanation": "実行中はロックなし。コミット時に検証し、競合時は中断する。"
@@ -1484,12 +1484,12 @@
   {
     "id": 115,
     "category": "Transaction Management",
-    "question": "SAVEPOINT allows:",
+    "question": "SAVEPOINTが許可する操作は何か。",
     "options": [
-      "New tx",
-      "Rollback to point within tx",
-      "Permanent save",
-      "Partial commit"
+      "新しいトランザクション",
+      "トランザクション内のポイントへロールバック",
+      "永続保存",
+      "部分コミット"
     ],
     "answer": 1,
     "explanation": "ROLLBACK TO SAVEPOINTはその時点以降の変更を取り消す。"
@@ -1497,12 +1497,12 @@
   {
     "id": 116,
     "category": "Transaction Management",
-    "question": "Strict 2PL requires:",
+    "question": "厳密2相ロックが要求する条件は何か。",
     "options": [
-      "All locks simultaneous",
-      "Exclusive locks held until commit/abort",
-      "Only shared locks",
-      "Per-statement release"
+      "すべてのロックを同時取得",
+      "排他ロックをコミット/中止まで保持",
+      "共有ロックのみ",
+      "ステートメントごとに解放"
     ],
     "answer": 1,
     "explanation": "すべての排他ロックをコミット/アボートまで保持。カスケードロールバックを防止。"
@@ -1510,12 +1510,12 @@
   {
     "id": 117,
     "category": "Transaction Management",
-    "question": "Cascading rollback:",
+    "question": "カスケードロールバックとは何か。",
     "options": [
-      "Single rollback",
-      "Aborting one forces dependent txs to rollback",
-      "DB restore",
-      "Deadlock resolution"
+      "単一ロールバック",
+      "1つの中止が依存トランザクションを連鎖ロールバック",
+      "DBリストア",
+      "デッドロック解決"
     ],
     "answer": 1,
     "explanation": "未コミットデータが他者に読まれると、それらもロールバックを余儀なくされる。"
@@ -1523,12 +1523,12 @@
   {
     "id": 118,
     "category": "Transaction Management",
-    "question": "Checkpoint reduces:",
+    "question": "チェックポイントが削減するものは何か。",
     "options": [
-      "Backup size",
-      "Recovery time",
-      "Deadlocks",
-      "Query time"
+      "バックアップサイズ",
+      "リカバリ時間",
+      "デッドロック",
+      "クエリ時間"
     ],
     "answer": 1,
     "explanation": "整合性のある状態を記録。チェックポイント以降のログのみ処理が必要。"
@@ -1536,12 +1536,12 @@
   {
     "id": 119,
     "category": "Transaction Management",
-    "question": "Wound-wait scheme:",
+    "question": "Wound-wait方式の説明で正しいものはどれか。",
     "options": [
-      "Aborts older",
-      "Older preempts younger",
-      "Waits for all",
-      "Timeout"
+      "古いトランザクションを中止",
+      "古いものが若いものを先制",
+      "すべてを待機",
+      "タイムアウト"
     ],
     "answer": 1,
     "explanation": "古いトランザクションが同じロックを競合する若いトランザクションを中止する。"
@@ -1549,12 +1549,12 @@
   {
     "id": 120,
     "category": "Transaction Management",
-    "question": "Undo/redo recovery uses:",
+    "question": "Undo/Redoリカバリが使用するものは何か。",
     "options": [
-      "Undo only",
-      "Both before-image and after-image",
-      "Physical logging",
-      "Checkpoint only"
+      "UNDOのみ",
+      "変更前イメージと変更後イメージの両方",
+      "物理ログ",
+      "チェックポイントのみ"
     ],
     "answer": 1,
     "explanation": "前イメージで未コミットを取り消し、後イメージでコミット済みを再適用。"
@@ -1562,12 +1562,12 @@
   {
     "id": 121,
     "category": "Transaction Management",
-    "question": "Non-repeatable vs phantom:",
+    "question": "非リピータブルリードとファントムリードの違いは何か。",
     "options": [
-      "Same thing",
-      "Non-repeatable: existing row changes; phantom: new rows",
-      "Phantoms need indexes",
-      "Non-repeatable more serious"
+      "同じ",
+      "非リピータブルは既存行の変更、ファントムは新規行の出現",
+      "ファントムにはインデックスが必要",
+      "非リピータブルの方が深刻"
     ],
     "answer": 1,
     "explanation": "非反復可能読み取り: 同じ行で異なるデータ。ファントム: 異なる行セット。"
@@ -1575,12 +1575,12 @@
   {
     "id": 122,
     "category": "Transaction Management",
-    "question": "ARIES algorithm uses:",
+    "question": "ARIESアルゴリズムが使用する方式はどれか。",
     "options": [
-      "Undo only",
-      "Redo only",
-      "Three passes: analysis, redo, undo",
-      "Shadow paging"
+      "UNDOのみ",
+      "REDOのみ",
+      "3パス：分析、REDO、UNDO",
+      "シャドウページング"
     ],
     "answer": 2,
     "explanation": "分析(アクティブTx検出)→再実行(コミット済み再適用)→取り消し(未コミット巻き戻し)。"
@@ -1588,12 +1588,12 @@
   {
     "id": 123,
     "category": "Transaction Management",
-    "question": "Update lock prevents:",
+    "question": "更新ロックが防ぐものは何か。",
     "options": [
-      "Row locking",
-      "Conversion deadlock S<->X",
-      "Table locking",
-      "Index locking"
+      "行ロック",
+      "S→X変換デッドロック",
+      "テーブルロック",
+      "インデックスロック"
     ],
     "answer": 1,
     "explanation": "UロックはSと互換でXにアップグレード可能。S→Xデッドロックを防止。"
@@ -1601,12 +1601,12 @@
   {
     "id": 124,
     "category": "Transaction Management",
-    "question": "ACID Durability ensures:",
+    "question": "ACIDの永続性が保証するものは何か。",
     "options": [
-      "Atomicity",
-      "Consistency",
-      "Isolation",
-      "Changes survive failures"
+      "原子性",
+      "一貫性",
+      "独立性",
+      "変更が障害後も維持される"
     ],
     "answer": 3,
     "explanation": "WALと安定ストレージへの強制書き込みによりコミット済み変更を永続化。"
@@ -1614,12 +1614,12 @@
   {
     "id": 125,
     "category": "Transaction Management",
-    "question": "Snapshot isolation allows:",
+    "question": "SNAPSHOT分離が許可・防止するものは何か。",
     "options": [
-      "All anomalies",
-      "Dirty/non-repeatable/phantom prevented, write skew possible",
-      "Only dirty reads",
-      "All including deadlocks"
+      "すべての異常",
+      "ダーティ/非リピータブル/ファントム防止、書き込みスキュー可能",
+      "ダーティリードのみ",
+      "すべて＋デッドロック"
     ],
     "answer": 1,
     "explanation": "読み取り異常を防止するが、非競合更新によるライトスキューが可能。"
@@ -1627,12 +1627,12 @@
   {
     "id": 126,
     "category": "Query Optimization",
-    "question": "Query plan generated by:",
+    "question": "クエリ実行計画を生成するものは何か。",
     "options": [
-      "Storage engine",
-      "Query optimizer",
-      "Tx manager",
-      "Log manager"
+      "ストレージエンジン",
+      "クエリオプティマイザ",
+      "トランザクションマネージャ",
+      "ログマネージャ"
     ],
     "answer": 1,
     "explanation": "オプティマイザが代替案を評価し、最低コストを選択する。"
@@ -1640,12 +1640,12 @@
   {
     "id": 127,
     "category": "Query Optimization",
-    "question": "Cost-based optimization uses:",
+    "question": "コストベース最適化が使用するものは何か。",
     "options": [
-      "SQL syntax",
-      "I/O, CPU, memory costs",
-      "Table names",
-      "Column count"
+      "SQL構文",
+      "I/O、CPU、メモリコスト",
+      "テーブル名",
+      "列数"
     ],
     "answer": 1,
     "explanation": "統計に基づくI/O、CPU、メモリコストの推定。"
@@ -1653,12 +1653,12 @@
   {
     "id": 128,
     "category": "Query Optimization",
-    "question": "Hash join best when:",
+    "question": "ハッシュ結合が最適な条件はどれか。",
     "options": [
-      "Both small",
-      "Smaller input fits in memory",
-      "Both sorted",
-      "One indexed"
+      "両方が小さい",
+      "小さい方の入力がメモリに収まる",
+      "両方がソート済み",
+      "一方がインデックス付き"
     ],
     "answer": 1,
     "explanation": "小さい方の入力をメモリにハッシュテーブルとして構築し、大きい方で探査。"
@@ -1666,10 +1666,10 @@
   {
     "id": 129,
     "category": "Query Optimization",
-    "question": "Nested-loop join complexity:",
+    "question": "ネステッドループ結合の計算量はどれか。",
     "options": [
       "O(N+M)",
-      "O(N*M)",
+      "O(N×M)",
       "O(N log N)",
       "O(N+M log M)"
     ],
@@ -1679,12 +1679,12 @@
   {
     "id": 130,
     "category": "Query Optimization",
-    "question": "Merge join requires:",
+    "question": "マージ結合が要求する条件は何か。",
     "options": [
-      "No prerequisites",
-      "Both inputs sorted on join key",
-      "Hash table",
-      "One indexed"
+      "前提条件なし",
+      "両方の入力が結合キーでソート済み",
+      "ハッシュテーブル",
+      "一方がインデックス付き"
     ],
     "answer": 1,
     "explanation": "両方が結合キーでソート済み必要。同時スキャン。O(N+M)。"
@@ -1692,12 +1692,12 @@
   {
     "id": 131,
     "category": "Query Optimization",
-    "question": "Predicate pushdown:",
+    "question": "述語プッシュダウンとは何か。",
     "options": [
-      "Adds tables",
-      "Moves filters closer to data sources",
-      "Changes isolation",
-      "Modifies types"
+      "テーブル追加",
+      "フィルタをデータソースに近づける",
+      "分離レベル変更",
+      "型変更"
     ],
     "answer": 1,
     "explanation": "実行パイプラインの早期に処理行数を削減する。"
@@ -1705,12 +1705,12 @@
   {
     "id": 132,
     "category": "Query Optimization",
-    "question": "Most important optimizer stats:",
+    "question": "オプティマイザ統計で最も重要なものは何か。",
     "options": [
-      "Table names",
-      "Row counts and distribution",
-      "Data types",
-      "Access patterns"
+      "テーブル名",
+      "行数と分布",
+      "データ型",
+      "アクセスパターン"
     ],
     "answer": 1,
     "explanation": "カーディナリティとヒストグラムで正確な推定を可能にする。"
@@ -1718,12 +1718,12 @@
   {
     "id": 133,
     "category": "Query Optimization",
-    "question": "Index scan preferred when:",
+    "question": "インデックススキャンが推奨される条件はどれか。",
     "options": [
-      "Table small",
-      "Small fraction of rows, index selective",
-      "All columns needed",
-      "Index large"
+      "テーブルが小さい",
+      "少数の行のみ、インデックスが選択性が高い",
+      "すべての列が必要",
+      "インデックスが大きい"
     ],
     "answer": 1,
     "explanation": "高選択度(少数行)はインデックス favor。高い割合はテーブルスキャン favor。"
@@ -1731,12 +1731,12 @@
   {
     "id": 134,
     "category": "Query Optimization",
-    "question": "Covering index eliminates:",
+    "question": "カバリングインデックスが排除するものは何か。",
     "options": [
-      "Sorting",
-      "Table access/bookmark lookups",
-      "Joining",
-      "Filtering"
+      "ソート",
+      "テーブルアクセス/ブックマークルックアップ",
+      "結合",
+      "フィルタリング"
     ],
     "answer": 1,
     "explanation": "すべてのクエリ列がインデックスに含まれ、テーブルアクセス不要。"
@@ -1744,12 +1744,12 @@
   {
     "id": 135,
     "category": "Query Optimization",
-    "question": "Which join produces sorted output?",
+    "question": "ソート済み出力を生成する結合方式はどれか。",
     "options": [
-      "Nested-loop",
-      "Hash",
-      "Merge",
-      "Cross"
+      "ネステッドループ",
+      "ハッシュ",
+      "マージ",
+      "クロス"
     ],
     "answer": 2,
     "explanation": "マージ結合は結合キーでソート済みの出力を生成する。"
@@ -1757,12 +1757,12 @@
   {
     "id": 136,
     "category": "Query Optimization",
-    "question": "Selectivity = ",
+    "question": "選択性とは何か。",
     "options": [
-      "Query speed",
-      "Matching rows / total rows",
-      "Columns selected",
-      "Accuracy"
+      "クエリ速度",
+      "一致行数 / 総行数",
+      "選択列数",
+      "精度"
     ],
     "answer": 1,
     "explanation": "低い値はインデックス favor、高い値はテーブルスキャン favor。"
@@ -1770,12 +1770,12 @@
   {
     "id": 137,
     "category": "Query Optimization",
-    "question": "Left-deep tree:",
+    "question": "左深さツリーとは何か。",
     "options": [
-      "All at once",
-      "Largest on left",
-      "Join new table to existing result",
-      "All indexed"
+      "すべて一度に",
+      "最大を左に",
+      "既存結果に新テーブルを結合",
+      "すべてインデックス付き"
     ],
     "answer": 2,
     "explanation": "各ステップで1つの新しいテーブルを結合。パイプライン処理を可能にする。"
@@ -1783,12 +1783,12 @@
   {
     "id": 138,
     "category": "Query Optimization",
-    "question": "Histograms estimate:",
+    "question": "ヒストグラムが推定するものは何か。",
     "options": [
-      "Execution time",
-      "Data distribution and selectivity",
-      "Memory",
-      "Network"
+      "実行時間",
+      "データ分布と選択性",
+      "メモリ",
+      "ネットワーク"
     ],
     "answer": 1,
     "explanation": "値範囲と頻度で選択度推定を改善する。"
@@ -1796,12 +1796,12 @@
   {
     "id": 139,
     "category": "Query Optimization",
-    "question": "Subquery unnesting:",
+    "question": "サブクエリのネスト解除とは何か。",
     "options": [
-      "Predicate pushdown",
-      "Correlated subquery into join",
-      "Index selection",
-      "Join reorder"
+      "述語プッシュダウン",
+      "相関サブクエリを結合に変換",
+      "インデックス選択",
+      "結合順序変更"
     ],
     "answer": 1,
     "explanation": "相関サブクエリにより効率的な結合戦略を可能にする。"
@@ -1809,11 +1809,11 @@
   {
     "id": 140,
     "category": "Query Optimization",
-    "question": "Full scan preferred when:",
+    "question": "フルスキャンが推奨される条件はどれか。",
     "options": [
-      "Few rows needed",
-      "Table small or most rows needed",
-      "Many indexes",
+      "少数行が必要",
+      "テーブルが小さいか大部分の行が必要",
+      "多くのインデックス",
       "GROUP BY"
     ],
     "answer": 1,
@@ -1822,12 +1822,12 @@
   {
     "id": 141,
     "category": "Query Optimization",
-    "question": "EXPLAIN shows:",
+    "question": "EXPLAINが表示するものは何か。",
     "options": [
-      "Results",
-      "Execution plan",
-      "Definitions",
-      "Errors"
+      "結果",
+      "実行計画",
+      "定義",
+      "エラー"
     ],
     "answer": 1,
     "explanation": "結合方法、アクセスパス、推定コストを実行せずに表示する。"
@@ -1835,12 +1835,12 @@
   {
     "id": 142,
     "category": "Query Optimization",
-    "question": "Parallel query divides by:",
+    "question": "並列クエリが分割する基準は何か。",
     "options": [
-      "Data partitioning across cores",
-      "Sequential",
-      "Connections",
-      "Caching"
+      "データをコア間でパーティショニング",
+      "シーケンシャル",
+      "接続",
+      "キャッシュ"
     ],
     "answer": 0,
     "explanation": "スキャン、結合、集計をコア/ノードに分割。"
@@ -1848,12 +1848,12 @@
   {
     "id": 143,
     "category": "Query Optimization",
-    "question": "Selinger optimizer uses:",
+    "question": "セリンジャーオプティマイザが使用する手法は何か。",
     "options": [
-      "Rules",
-      "Dynamic programming for join ordering",
-      "Random",
-      "Fixed orders"
+      "ルール",
+      "結合順序の動的計画法",
+      "ランダム",
+      "固定順序"
     ],
     "answer": 1,
     "explanation": "結合順序を探索し、興味深い順序ごとに最安値を保持する。"
@@ -1861,12 +1861,12 @@
   {
     "id": 144,
     "category": "Query Optimization",
-    "question": "Bitmap index best for:",
+    "question": "ビットマップインデックスが最適な場面はどれか。",
     "options": [
-      "High-cardinality",
-      "Low-cardinality concurrent queries",
-      "Primary keys",
-      "Foreign keys"
+      "高カーディナリティ",
+      "低カーディナリティの同時クエリ",
+      "主キー",
+      "外部キー"
     ],
     "answer": 1,
     "explanation": "値ごとにビット、行ごとにビット。効率的なビット単位AND/OR。"
@@ -1874,12 +1874,12 @@
   {
     "id": 145,
     "category": "Query Optimization",
-    "question": "View merging:",
+    "question": "ビューマージとは何か。",
     "options": [
-      "Combines views",
-      "Expands view into query",
-      "Materializes",
-      "Removes"
+      "ビューを結合",
+      "ビューをクエリに展開",
+      "マテリアライズ",
+      "削除"
     ],
     "answer": 1,
     "explanation": "ビュー参照を定義に置き換え、全体最適化を可能にする。"
@@ -1887,12 +1887,12 @@
   {
     "id": 146,
     "category": "Query Optimization",
-    "question": "Bloom filter in hash join:",
+    "question": "ハッシュ結合におけるブルームフィルタの役割は何か。",
     "options": [
-      "Nested-loop variant",
-      "Filters non-matching probe rows",
-      "Merge variant",
-      "Cross join"
+      "ネステッドループの変種",
+      "一致しないプローブ行をフィルタ",
+      "マージの変種",
+      "クロス結合"
     ],
     "answer": 1,
     "explanation": "ハッシュテーブルにマッチしない探査行を高速に除外する。"
@@ -1900,12 +1900,12 @@
   {
     "id": 147,
     "category": "Query Optimization",
-    "question": "Index-only scan requires:",
+    "question": "インデックスオンリースキャンが要求する条件は何か。",
     "options": [
-      "No index",
-      "Index with all query columns",
-      "Single index",
-      "Clustered"
+      "インデックスなし",
+      "すべてのクエリ列を含むインデックス",
+      "単一インデックス",
+      "クラスタ化"
     ],
     "answer": 1,
     "explanation": "SELECT/WHERE/JOIN/ORDER BYのすべての列がインデックスに含まれる。"
@@ -1913,12 +1913,12 @@
   {
     "id": 148,
     "category": "Query Optimization",
-    "question": "Rule-based uses:",
+    "question": "ルールベース最適化が使用するものは何か。",
     "options": [
-      "Statistics",
-      "Fixed heuristics",
-      "Cost estimation",
-      "Machine learning"
+      "統計",
+      "固定ヒューリスティクス",
+      "コスト推定",
+      "機械学習"
     ],
     "answer": 1,
     "explanation": "統計的コスト推定のない固定ルール。"
@@ -1926,12 +1926,12 @@
   {
     "id": 149,
     "category": "Query Optimization",
-    "question": "Cardinality estimator predicts:",
+    "question": "カーディナリティ推定器が予測するものは何か。",
     "options": [
-      "Bandwidth",
-      "Row count per operator",
-      "Memory",
-      "CPU cycles"
+      "帯域幅",
+      "演算子ごとの行数",
+      "メモリ",
+      "CPUサイクル"
     ],
     "answer": 1,
     "explanation": "統計を使用して演算子ごとの行数を予測する。"
@@ -1939,12 +1939,12 @@
   {
     "id": 150,
     "category": "Query Optimization",
-    "question": "OR expansion transforms to:",
+    "question": "OR展開が変換先となるものは何か。",
     "options": [
-      "UNION branches",
-      "Subquery",
-      "Index elimination",
-      "Table elimination"
+      "UNION分岐",
+      "サブクエリ",
+      "インデックス削除",
+      "テーブル削除"
     ],
     "answer": 0,
     "explanation": "OR→UNION ALLで各分岐が最適なインデックスを使用可能にする。"
@@ -1952,12 +1952,12 @@
   {
     "id": 151,
     "category": "Indexing",
-    "question": "B-tree O(log N) for:",
+    "question": "B-treeがO(log N)で実行できる操作はどれか。",
     "options": [
-      "Only search",
-      "Search, insert, delete",
-      "Only insert",
-      "Only scan"
+      "検索のみ",
+      "検索、挿入、削除",
+      "挿入のみ",
+      "スキャンのみ"
     ],
     "answer": 1,
     "explanation": "分割/マージでバランスを保ち、一貫した対数性能。"
@@ -1965,12 +1965,12 @@
   {
     "id": 152,
     "category": "Indexing",
-    "question": "B+tree main feature:",
+    "question": "B+treeの主な特徴は何か。",
     "options": [
-      "Slower",
-      "Data only in linked leaf nodes",
-      "Less data",
-      "No deletes"
+      "遅い",
+      "データはリンクされたリーフノードにのみ格納",
+      "データ量が少ない",
+      "削除不可"
     ],
     "answer": 1,
     "explanation": "リーフがリンクされ、内部ノードはナビゲーションのみ。効率的な範囲スキャン。"
@@ -1978,12 +1978,12 @@
   {
     "id": 153,
     "category": "Indexing",
-    "question": "Fill factor determines:",
+    "question": "フィルファクタが決定するものは何か。",
     "options": [
-      "Max key length",
-      "Initial page fill level",
-      "Index levels",
-      "Sort order"
+      "最大キー長",
+      "初期ページ充填率",
+      "インデックスレベル",
+      "ソート順序"
     ],
     "answer": 1,
     "explanation": "ページの充填率。低い=より多くの空き領域=分割が少ない。"
@@ -1991,12 +1991,12 @@
   {
     "id": 154,
     "category": "Indexing",
-    "question": "Composite (A,B,C) searches on:",
+    "question": "複合インデックス(A,B,C)で検索可能な組み合わせはどれか。",
     "options": [
-      "Only A",
-      "A, A+B, or A+B+C",
-      "Only C",
-      "B,A any order"
+      "Aのみ",
+      "A、A+B、またはA+B+C",
+      "Cのみ",
+      "B,A 任意の順序"
     ],
     "answer": 1,
     "explanation": "左前置詞ルール。(A)、(A,B)、(A,B,C)が効率的。"
@@ -2004,12 +2004,12 @@
   {
     "id": 155,
     "category": "Indexing",
-    "question": "Hash index best for:",
+    "question": "ハッシュインデックスが最適な場面はどれか。",
     "options": [
-      "Range queries",
-      "Equality only",
-      "Sorting",
-      "Full-text"
+      "範囲クエリ",
+      "等価検索のみ",
+      "ソート",
+      "全文検索"
     ],
     "answer": 1,
     "explanation": "ハッシュはキーをバケットにマップ。完全一致のみに最適。"
@@ -2017,12 +2017,12 @@
   {
     "id": 156,
     "category": "Indexing",
-    "question": "Clustered index determines:",
+    "question": "クラスタ化インデックスが決定するものは何か。",
     "options": [
-      "Query usage",
-      "Physical data order",
-      "Max size",
-      "Index count"
+      "クエリ用途",
+      "物理データ順序",
+      "最大サイズ",
+      "インデックス数"
     ],
     "answer": 1,
     "explanation": "キーで物理ソート。テーブルごとに1つ(データ=リーフレベル)。"
@@ -2030,12 +2030,12 @@
   {
     "id": 157,
     "category": "Indexing",
-    "question": "Bitmap index uses:",
+    "question": "ビットマップインデックスが使用する仕組みは何か。",
     "options": [
-      "B-tree variant",
-      "Bitmaps per value, each bit = row",
-      "Hash",
-      "Composite"
+      "B-treeの変種",
+      "値ごとのビットマップ、各ビット＝行",
+      "ハッシュ",
+      "複合"
     ],
     "answer": 1,
     "explanation": "低カーディナリティに最適。効率的なビット単位AND/OR。"
@@ -2043,12 +2043,12 @@
   {
     "id": 158,
     "category": "Indexing",
-    "question": "Index rebuild:",
+    "question": "インデックス再構築の目的は何か。",
     "options": [
-      "Deletes table",
-      "Recreates reducing fragmentation",
-      "Updates stats",
-      "Adds columns"
+      "テーブル削除",
+      "再作成してフラグメンテーション削減",
+      "統計更新",
+      "列追加"
     ],
     "answer": 1,
     "explanation": "削除して再作成し、フラグメンテーションを除去。"
@@ -2056,10 +2056,10 @@
   {
     "id": 159,
     "category": "Indexing",
-    "question": "Left-prefix for (city,last_name,first_name):",
+    "question": "(city,last_name,first_name)の左端プレフィクスとして有効な組み合わせはどれか。",
     "options": [
       "last_name",
-      "city, city+last_name, all three",
+      "city、city+last_name、3列すべて",
       "first_name",
       "last_name+first_name"
     ],
@@ -2069,12 +2069,12 @@
   {
     "id": 160,
     "category": "Indexing",
-    "question": "Non-clustered stores:",
+    "question": "非クラスタ化インデックスが格納するものは何か。",
     "options": [
-      "Actual data",
-      "Keys + row locators",
-      "Sorted copy",
-      "FK refs"
+      "実際のデータ",
+      "キー＋行ロケータ",
+      "ソート済みコピー",
+      "外部キー参照"
     ],
     "answer": 1,
     "explanation": "実際のデータへのポインタ。テーブルごとに複数許容。"
@@ -2082,12 +2082,12 @@
   {
     "id": 161,
     "category": "Indexing",
-    "question": "Index selectivity = ",
+    "question": "インデックス選択性とは何か。",
     "options": [
-      "Speed",
-      "Distinct values / total rows",
-      "Levels",
-      "Size"
+      "速度",
+      "個別値数 / 総行数",
+      "レベル数",
+      "サイズ"
     ],
     "answer": 1,
     "explanation": "高い=より効果的。一意=1.0(最大)。"
@@ -2095,12 +2095,12 @@
   {
     "id": 162,
     "category": "Indexing",
-    "question": "Auto-maintained indexes:",
+    "question": "自動保守されるインデックスはどれか。",
     "options": [
-      "Manual",
-      "PK and unique constraint",
-      "Temporary",
-      "Archive"
+      "手動",
+      "主キーと一意制約",
+      "一時的",
+      "アーカイブ"
     ],
     "answer": 1,
     "explanation": "DML操作時に自動作成・更新。"
@@ -2108,12 +2108,12 @@
   {
     "id": 163,
     "category": "Indexing",
-    "question": "Functional index indexes:",
+    "question": "関数インデックスがインデックス化するものは何か。",
     "options": [
-      "Table function",
-      "Expression result",
-      "Stored procedure",
-      "View"
+      "テーブル関数",
+      "式の結果",
+      "ストアドプロシージャ",
+      "ビュー"
     ],
     "answer": 1,
     "explanation": "例: LOWER(name)。効率的な式クエリを可能にする。"
@@ -2121,12 +2121,12 @@
   {
     "id": 164,
     "category": "Indexing",
-    "question": "Fragmentation caused by:",
+    "question": "フラグメンテーションの原因は何か。",
     "options": [
-      "Reads",
-      "Page splits in nearly full pages",
-      "Optimization",
-      "Rollbacks"
+      "読み取り",
+      "ほぼ満ページでのページ分割",
+      "最適化",
+      "ロールバック"
     ],
     "answer": 1,
     "explanation": "ギャップと非連続なページ順序を作成する。"
@@ -2134,12 +2134,12 @@
   {
     "id": 165,
     "category": "Indexing",
-    "question": "Partial index includes:",
+    "question": "部分インデックスに含まれる行はどれか。",
     "options": [
-      "First N rows",
-      "Rows matching WHERE condition",
-      "Indexed columns",
-      "PK values"
+      "最初のN行",
+      "WHERE条件に一致する行",
+      "インデックス列",
+      "主キー値"
     ],
     "answer": 1,
     "explanation": "マッチ行のみをインデックス化。サイズとメンテナンスを削減。"
@@ -2147,12 +2147,12 @@
   {
     "id": 166,
     "category": "Indexing",
-    "question": "Best for ORDER BY LIMIT:",
+    "question": "ORDER BY LIMITに最適なインデックスはどれか。",
     "options": [
-      "Hash",
-      "B+tree on ORDER BY columns",
-      "Bitmap",
-      "Full-text"
+      "ハッシュ",
+      "ORDER BY列のB+tree",
+      "ビットマップ",
+      "全文検索"
     ],
     "answer": 1,
     "explanation": "ソート済みリーフが直接ソート済み取得を可能にする。"
@@ -2160,12 +2160,12 @@
   {
     "id": 167,
     "category": "Indexing",
-    "question": "Covering index avoids:",
+    "question": "カバリングインデックスが回避するものは何か。",
     "options": [
-      "Buffer pool",
-      "Table access",
-      "Joins",
-      "Transactions"
+      "バッファプール",
+      "テーブルアクセス",
+      "結合",
+      "トランザクション"
     ],
     "answer": 1,
     "explanation": "すべてのクエリ列がインデックスに=テーブルアクセス不要。"
@@ -2173,12 +2173,12 @@
   {
     "id": 168,
     "category": "Indexing",
-    "question": "Too many indexes degrade:",
+    "question": "インデックスが多すぎると劣化するものは何か。",
     "options": [
-      "Reads",
-      "Writes (DML)",
-      "Planning",
-      "Backup"
+      "読み取り",
+      "書き込み（DML）",
+      "プランニング",
+      "バックアップ"
     ],
     "answer": 1,
     "explanation": "各インデックスがINSERT/UPDATE/DELETEで更新される。"
@@ -2186,12 +2186,12 @@
   {
     "id": 169,
     "category": "Indexing",
-    "question": "GiST is:",
+    "question": "GiSTとは何か。",
     "options": [
-      "B-tree variant",
-      "Generalized index infrastructure",
-      "Graph index",
-      "Geographic only"
+      "B-treeの変種",
+      "汎用インデックスインフラ",
+      "グラフインデックス",
+      "地理データのみ"
     ],
     "answer": 1,
     "explanation": "各種タイプとカスタムアクセスメソッド用のバランスツリー。"
@@ -2199,12 +2199,12 @@
   {
     "id": 170,
     "category": "Indexing",
-    "question": "B+tree logarithmic depth due to:",
+    "question": "B+treeが対数の深さになる理由は何か。",
     "options": [
-      "Fan-out 2",
-      "All leaves at same depth",
-      "Internal data",
-      "Sequential keys"
+      "ファンアウト2",
+      "すべてのリーフが同じ深さ",
+      "内部データ",
+      "順次キー"
     ],
     "answer": 1,
     "explanation": "自己平衡化により順序に関係なくO(log N)を保証。"
@@ -2212,12 +2212,12 @@
   {
     "id": 171,
     "category": "Distributed Database",
-    "question": "CAP theorem: at most:",
+    "question": "CAP定理：同時に満たせるのは最大いくつか。",
     "options": [
-      "All three",
-      "Two of: C, A, P",
-      "One",
-      "C and A"
+      "3つすべて",
+      "C、A、Pのうち2つ",
+      "1つ",
+      "CとA"
     ],
     "answer": 1,
     "explanation": "パーティション時、CかAを選択。Pは分散で必須。"
@@ -2225,12 +2225,12 @@
   {
     "id": 172,
     "category": "Distributed Database",
-    "question": "Two-phase commit phases:",
+    "question": "2相コミットのフェーズはどれか。",
     "options": [
-      "Prepare and Execute",
-      "Voting and Commit",
-      "Lock and Unlock",
-      "Read and Write"
+      "準備と実行",
+      "投票とコミット",
+      "ロックとアンロック",
+      "読み取りと書き込み"
     ],
     "answer": 1,
     "explanation": "フェーズ1: 全員が賛成票? フェーズ2: コミットまたはアボート。"
@@ -2238,12 +2238,12 @@
   {
     "id": 173,
     "category": "Distributed Database",
-    "question": "Eventual consistency:",
+    "question": "結果整合性とは何か。",
     "options": [
-      "Immediately consistent",
-      "Replicas converge when updates stop",
-      "Never consistent",
-      "Primary only"
+      "即時整合性",
+      "更新停止時にレプリカが収束",
+      "整合性なし",
+      "プライマリのみ"
     ],
     "answer": 1,
     "explanation": "更新中の一時的乖離、更新停止時の収束。"
@@ -2251,12 +2251,12 @@
   {
     "id": 174,
     "category": "Distributed Database",
-    "question": "Sharding distributes:",
+    "question": "シャーディングが分散するものは何か。",
     "options": [
-      "Duplicates",
-      "Rows across DB instances",
-      "Backups",
-      "Compression"
+      "重複",
+      "DBインスタンス間で行を分散",
+      "バックアップ",
+      "圧縮"
     ],
     "answer": 1,
     "explanation": "シャードキーでインスタンス間に行を分散。水平スケーリング。"
@@ -2264,12 +2264,12 @@
   {
     "id": 175,
     "category": "Distributed Database",
-    "question": "Synchronous replication acknowledges:",
+    "question": "同期レプリケーションが確認するものは何か。",
     "options": [
-      "Primary done",
-      "All replicas confirm",
-      "One replica",
-      "Client confirms"
+      "プライマリ完了",
+      "すべてのレプリカが確認",
+      "1つのレプリカ",
+      "クライアント確認"
     ],
     "answer": 1,
     "explanation": "強い一貫性だが書き込みレイテンシが高い。"
@@ -2277,12 +2277,12 @@
   {
     "id": 176,
     "category": "Distributed Database",
-    "question": "Split-brain:",
+    "question": "スプリットブレインとは何か。",
     "options": [
-      "Partitioning",
-      "Network partition with two primaries",
-      "Optimization",
-      "Compression"
+      "パーティショニング",
+      "ネットワーク分断で2つのプライマリが発生",
+      "最適化",
+      "圧縮"
     ],
     "answer": 1,
     "explanation": "両方がプライマリとして振る舞い、競合を発生させる。"
@@ -2290,12 +2290,12 @@
   {
     "id": 177,
     "category": "Distributed Database",
-    "question": "Quorum requires:",
+    "question": "クオラムが要求するものは何か。",
     "options": [
-      "Timeout",
-      "Majority agreement",
-      "Backup",
-      "Optimization"
+      "タイムアウト",
+      "過半数の同意",
+      "バックアップ",
+      "最適化"
     ],
     "answer": 1,
     "explanation": "過半数が同意する必要。W+R>Nで一貫性を確保。"
@@ -2303,12 +2303,12 @@
   {
     "id": 178,
     "category": "Distributed Database",
-    "question": "Paxos/Raft ensure:",
+    "question": "Paxos/Raftが保証するものは何か。",
     "options": [
-      "Performance",
-      "Agreement despite failures",
-      "Compression",
-      "Optimization"
+      "パフォーマンス",
+      "障害時の合意",
+      "圧縮",
+      "最適化"
     ],
     "answer": 1,
     "explanation": "障害時でも安全性(同じ値)と活性化(終了)を保証。"
@@ -2316,12 +2316,12 @@
   {
     "id": 179,
     "category": "Distributed Database",
-    "question": "Strongest consistency:",
+    "question": "最も強い整合性モデルはどれか。",
     "options": [
-      "Eventual",
-      "Causal",
-      "Linearizability",
-      "Read-your-writes"
+      "結果整合性",
+      "因果整合性",
+      "線形化可能性",
+      "読み取り自身書き込み"
     ],
     "answer": 2,
     "explanation": "操作がリアルタイム順序でアトミックに見える。"
@@ -2329,12 +2329,12 @@
   {
     "id": 180,
     "category": "Distributed Database",
-    "question": "Distributed deadlock involves:",
+    "question": "分散デッドロックの特徴は何か。",
     "options": [
-      "Easier detection",
-      "Txs at different sites",
-      "Cannot happen",
-      "Read locks"
+      "検出が容易",
+      "異なるサイトのトランザクション",
+      "発生不可",
+      "読み取りロック"
     ],
     "answer": 1,
     "explanation": "中央コーディネータがない。グローバル情報交換が必要。"
@@ -2342,12 +2342,12 @@
   {
     "id": 181,
     "category": "Distributed Database",
-    "question": "Async replication primary acks:",
+    "question": "非同期レプリケーションでプライマリが応答するタイミングはいつか。",
     "options": [
-      "After sync",
-      "Immediately",
-      "After quorum",
-      "Never"
+      "同期後",
+      "即座",
+      "クオラム後",
+      "永不応答"
     ],
     "answer": 1,
     "explanation": "低レイテンシ、高可用性、データ損失リスク。"
@@ -2355,12 +2355,12 @@
   {
     "id": 182,
     "category": "Distributed Database",
-    "question": "Consistent hashing advantage:",
+    "question": "コンシステントハッシュの利点は何か。",
     "options": [
-      "Central lookup",
-      "Minimal remapping on node change",
-      "Even only",
-      "No failures"
+      "中央検索",
+      "ノード変更時の最小再マッピング",
+      "偶数のみ",
+      "障害なし"
     ],
     "answer": 1,
     "explanation": "ハッシュリング: ノード追加は直近のキーにのみ影響。"
@@ -2368,12 +2368,12 @@
   {
     "id": 183,
     "category": "Distributed Database",
-    "question": "Vector clocks track:",
+    "question": "ベクトルクロックが追跡するものは何か。",
     "options": [
-      "Performance",
-      "Causality between events",
-      "Time sync",
-      "Compression"
+      "パフォーマンス",
+      "イベント間の因果関係",
+      "時刻同期",
+      "圧縮"
     ],
     "answer": 1,
     "explanation": "タイムスタンプベクトルで因果順序を決定。"
@@ -2381,12 +2381,12 @@
   {
     "id": 184,
     "category": "Distributed Database",
-    "question": "Distributed tx needs:",
+    "question": "分散トランザクションに必要なプロトコルは何か。",
     "options": [
-      "Single commit",
+      "単一コミット",
       "2PL + 2PC",
-      "No protocol",
-      "Three-phase"
+      "プロトコル不要",
+      "3フェーズ"
     ],
     "answer": 1,
     "explanation": "ローカル2PL + グローバル2PCで全サイトコミットまたはアボート。"
@@ -2394,12 +2394,12 @@
   {
     "id": 185,
     "category": "Distributed Database",
-    "question": "Read-your-writes:",
+    "question": "読み取り自身書き込みとは何か。",
     "options": [
-      "One writer",
-      "Client sees own writes",
-      "All same data",
-      "Writes invisible"
+      "ライター1人",
+      "クライアントが自身の書き込みを見る",
+      "すべて同じデータ",
+      "書き込みが不可視"
     ],
     "answer": 1,
     "explanation": "書き込み後、同じクライアントの後続読み取りでその書き込みを見る。"
@@ -2407,12 +2407,12 @@
   {
     "id": 186,
     "category": "Distributed Database",
-    "question": "Multi-master allows:",
+    "question": "マルチマスタが許可するものは何か。",
     "options": [
-      "Primary only",
-      "All nodes accept writes",
-      "No replication",
-      "Reads only"
+      "プライマリのみ",
+      "すべてのノードが書き込み受付",
+      "レプリケーションなし",
+      "読み取りのみ"
     ],
     "answer": 1,
     "explanation": "同時書き込み用の競合解決を持つアクティブ-アクティブ。"
@@ -2420,12 +2420,12 @@
   {
     "id": 187,
     "category": "Distributed Database",
-    "question": "W+R>N ensures:",
+    "question": "W+R>Nが保証するものは何か。",
     "options": [
-      "Availability",
-      "Read sees latest write",
-      "Throughput",
-      "Encryption"
+      "可用性",
+      "読み取りが最新書き込みを見る",
+      "スループット",
+      "暗号化"
     ],
     "answer": 1,
     "explanation": "少なくとも1つの読み取りノードが最新の書き込みを持つ。"
@@ -2433,12 +2433,12 @@
   {
     "id": 188,
     "category": "Distributed Database",
-    "question": "Distributed query handles:",
+    "question": "分散クエリが処理する方式はどれか。",
     "options": [
-      "Local only",
-      "Decomposition, transfer, assembly",
-      "Security",
-      "Indexing"
+      "ローカルのみ",
+      "分解、転送、組み立て",
+      "セキュリティ",
+      "インデックス"
     ],
     "answer": 1,
     "explanation": "クエリ分解、局所化、最適化、組み立て。"
@@ -2446,12 +2446,12 @@
   {
     "id": 189,
     "category": "Distributed Database",
-    "question": "Vertical fragmentation:",
+    "question": "垂直フラグメンテーションが分散するものは何か。",
     "options": [
-      "Rows",
-      "Columns across sites",
-      "Tables",
-      "Backups"
+      "行",
+      "サイト間で列を分散",
+      "テーブル",
+      "バックアップ"
     ],
     "answer": 1,
     "explanation": "異なるサイトが異なる列サブセットを取得。"
@@ -2459,12 +2459,12 @@
   {
     "id": 190,
     "category": "Distributed Database",
-    "question": "Three-phase commit adds:",
+    "question": "3相コミットが追加するものは何か。",
     "options": [
-      "Nothing",
-      "Pre-commit to reduce blocking",
-      "Extra logging",
-      "Participants"
+      "なし",
+      "事前コミットでブロッキング削減",
+      "追加ログ",
+      "参加者"
     ],
     "answer": 1,
     "explanation": "prepareとcommitの間にpre-commit。ブロックを削減。"
@@ -2472,11 +2472,11 @@
   {
     "id": 191,
     "category": "NoSQL & NewSQL",
-    "question": "Document store best for:",
+    "question": "ドキュメントストアが最適なデータはどれか。",
     "options": [
-      "Strict data",
-      "Semi-structured varying schemas",
-      "Relational queries",
+      "厳密なデータ",
+      "半構造化の多様スキーマ",
+      "リレーショナルクエリ",
       "OLAP"
     ],
     "answer": 1,
@@ -2485,12 +2485,12 @@
   {
     "id": 192,
     "category": "NoSQL & NewSQL",
-    "question": "BASE stands for:",
+    "question": "BASEの意味はどれか。",
     "options": [
-      "Basic Available, Soft state, Eventual consistency",
-      "Broad Access, Secure, Encrypted",
-      "Binary, Standard, Efficient",
-      "Backup, Archive, Storage"
+      "Basically Available、Soft state、Eventual consistency",
+      "Broad Access、Secure、Encrypted",
+      "Binary、Standard、Efficient",
+      "Backup、Archive、Storage"
     ],
     "answer": 0,
     "explanation": "ACIDの対極。一貫性より可用性を優先。"
@@ -2498,12 +2498,12 @@
   {
     "id": 193,
     "category": "NoSQL & NewSQL",
-    "question": "Key-value optimized for:",
+    "question": "キーバリューストアが最適化されている操作はどれか。",
     "options": [
-      "Complex joins",
-      "Simple get/put by key",
-      "Full-text",
-      "Graph"
+      "複雑な結合",
+      "キーによるシンプルな取得/格納",
+      "全文検索",
+      "グラフ"
     ],
     "answer": 1,
     "explanation": "O(1)アクセス。Redis、DynamoDB。高スループット。"
@@ -2511,12 +2511,12 @@
   {
     "id": 194,
     "category": "NoSQL & NewSQL",
-    "question": "Graph DBs excel at:",
+    "question": "グラフDBが得意な処理は何か。",
     "options": [
-      "Batch",
-      "Complex relationship traversals",
+      "バッチ",
+      "複雑なリレーションシップ走査",
       "CRUD",
-      "Time-series"
+      "時系列"
     ],
     "answer": 1,
     "explanation": "ノード、エッジ、プロパティ。ソーシャルネットワーク、不正検出。"
@@ -2524,11 +2524,11 @@
   {
     "id": 195,
     "category": "NoSQL & NewSQL",
-    "question": "Column-family optimized for:",
+    "question": "カラムファミリが最適化されている場面はどれか。",
     "options": [
-      "Transactions",
-      "High write throughput, time-series",
-      "Joins",
+      "トランザクション",
+      "高書き込みスループット、時系列",
+      "結合",
       "ACID"
     ],
     "answer": 1,
@@ -2537,12 +2537,12 @@
   {
     "id": 196,
     "category": "NoSQL & NewSQL",
-    "question": "NewSQL provides:",
+    "question": "NewSQLが提供するものは何か。",
     "options": [
       "NoSQL with SQL",
-      "SQL+ACID with horizontal scaling",
-      "Read scale",
-      "No tx"
+      "SQL+ACIDで水平スケーリング",
+      "読み取りスケール",
+      "トランザクションなし"
     ],
     "answer": 1,
     "explanation": "CockroachDB、Spanner。スケール+ACIDのための分散合意。"
@@ -2550,12 +2550,12 @@
   {
     "id": 197,
     "category": "NoSQL & NewSQL",
-    "question": "Many NoSQL favor CAP:",
+    "question": "多くのNoSQLがCAPで優先するものはどれか。",
     "options": [
-      "C over A",
-      "A+P during partitions",
+      "CをAより優先",
+      "分断時にA+Pを優先",
       "P+C",
-      "C+A (CA)"
+      "C+A（CA）"
     ],
     "answer": 1,
     "explanation": "AP: 継続稼働、一時的非整合性を許容。"
@@ -2563,12 +2563,12 @@
   {
     "id": 198,
     "category": "NoSQL & NewSQL",
-    "question": "Polyglot persistence:",
+    "question": "ポリグロット永続性とは何か。",
     "options": [
-      "Multiple languages",
-      "Different DB tech for different uses",
-      "Countries",
-      "Charsets"
+      "複数言語",
+      "用途ごとに異なるDB技術",
+      "国",
+      "文字セット"
     ],
     "answer": 1,
     "explanation": "1つのアプリケーション内で用途ごとに最適なDB。"
@@ -2576,12 +2576,12 @@
   {
     "id": 199,
     "category": "NoSQL & NewSQL",
-    "question": "Cassandra tunes consistency via:",
+    "question": "Cassandraが整合性を調整する仕組みは何か。",
     "options": [
       "TCP",
-      "Consistency level (ONE, QUORUM, ALL)",
-      "SQL isolation",
-      "Config"
+      "整合性レベル（ONE、QUORUM、ALL）",
+      "SQL分離レベル",
+      "設定"
     ],
     "answer": 1,
     "explanation": "操作ごとに異なるトレードオフ: ONE、QUORUM、ALL。"
@@ -2589,12 +2589,12 @@
   {
     "id": 200,
     "category": "NoSQL & NewSQL",
-    "question": "Causal consistency ensures:",
+    "question": "因果整合性が保証するものは何か。",
     "options": [
-      "Eventual",
-      "Causal ops in order",
-      "Linearizable",
-      "Read-your-writes"
+      "結果整合性",
+      "因果関係のある操作を順序通り",
+      "線形化可能",
+      "読み取り自身書き込み"
     ],
     "answer": 1,
     "explanation": "AがBの前にある場合、全員がAをBの前に見る。イベントualより強い。"
@@ -2602,12 +2602,12 @@
   {
     "id": 201,
     "category": "NoSQL & NewSQL",
-    "question": "NewSQL uses:",
+    "question": "NewSQLが使用する技術は何か。",
     "options": [
       "2PL",
-      "Consensus (Raft/Paxos) with deterministic clocks",
-      "No support",
-      "Simple locks"
+      "Raft/Paxos合意と確定論的クロック",
+      "サポートなし",
+      "シンプルロック"
     ],
     "answer": 1,
     "explanation": "Spanner: TrueTime+Paxos。CockroachDB: HLC+Raft。"
@@ -2615,12 +2615,12 @@
   {
     "id": 202,
     "category": "NoSQL & NewSQL",
-    "question": "Time-series DB optimized for:",
+    "question": "時系列DBが最適化されているデータはどれか。",
     "options": [
-      "Joins",
-      "High-volume timestamped data",
-      "Graph",
-      "Documents"
+      "結合",
+      "高ボリュームのタイムスタンプ付きデータ",
+      "グラフ",
+      "ドキュメント"
     ],
     "answer": 1,
     "explanation": "InfluxDB、TimescaleDB。カラム型、圧縮、範囲クエリ。"
@@ -2628,12 +2628,12 @@
   {
     "id": 203,
     "category": "NoSQL & NewSQL",
-    "question": "NoSQL disadvantage:",
+    "question": "NoSQLの欠点はどれか。",
     "options": [
-      "Slower",
-      "Limited query, no standard language",
-      "Cannot scale",
-      "No indexing"
+      "遅い",
+      "クエリが限定的、標準言語なし",
+      "スケール不可",
+      "インデックスなし"
     ],
     "answer": 1,
     "explanation": "クエリ柔軟性が低く、SQL標準がなく、ACIDが弱い。"
@@ -2641,12 +2641,12 @@
   {
     "id": 204,
     "category": "NoSQL & NewSQL",
-    "question": "MapReduce:",
+    "question": "MapReduceとは何か。",
     "options": [
-      "Transaction mgmt",
-      "Distributed batch processing",
-      "Index creation",
-      "Schema design"
+      "トランザクション管理",
+      "分散バッチ処理",
+      "インデックス作成",
+      "スキーマ設計"
     ],
     "answer": 1,
     "explanation": "Map(並列) + Reduce(集約)。Hadoopフレームワーク。"
@@ -2654,12 +2654,12 @@
   {
     "id": 205,
     "category": "NoSQL & NewSQL",
-    "question": "Column-family stores by:",
+    "question": "カラムファミリがデータを格納する方式は何か。",
     "options": [
-      "Rows",
-      "Column groups (column-oriented)",
+      "行",
+      "カラムグループ（カラム指向）",
       "B-tree",
-      "Hash"
+      "ハッシュ"
     ],
     "answer": 1,
     "explanation": "列をグループ化し、列ごとに格納。効率的な圧縮。"
@@ -2667,12 +2667,12 @@
   {
     "id": 206,
     "category": "Data Governance & Security",
-    "question": "Data classification by:",
+    "question": "データ分類の基準は何か。",
     "options": [
-      "File size",
-      "Sensitivity level",
-      "Creation date",
-      "DB type"
+      "ファイルサイズ",
+      "機密性レベル",
+      "作成日",
+      "DB種別"
     ],
     "answer": 1,
     "explanation": "公開、内部、機密、制限。管理措置を決定する。"
@@ -2680,12 +2680,12 @@
   {
     "id": 207,
     "category": "Data Governance & Security",
-    "question": "Encryption at rest protects:",
+    "question": "保管時暗号化が保護するものは何か。",
     "options": [
-      "Network",
-      "Stored data",
-      "Memory",
-      "Backup only"
+      "ネットワーク",
+      "格納データ",
+      "メモリ",
+      "バックアップのみ"
     ],
     "answer": 1,
     "explanation": "ディスク上のAES-256。メディア盗難から保護。"
@@ -2693,12 +2693,12 @@
   {
     "id": 208,
     "category": "Data Governance & Security",
-    "question": "GDPR data minimization:",
+    "question": "GDPRデータ最小化の原則とは何か。",
     "options": [
-      "Store everything",
-      "Collect only necessary data",
-      "Delete daily",
-      "Encrypt all"
+      "すべて保存",
+      "必要なデータのみ収集",
+      "毎日削除",
+      "すべて暗号化"
     ],
     "answer": 1,
     "explanation": "指定目的に必要なデータのみ。"
@@ -2706,12 +2706,12 @@
   {
     "id": 209,
     "category": "Data Governance & Security",
-    "question": "Row-Level Security:",
+    "question": "行レベルセキュリティとは何か。",
     "options": [
-      "Admin only",
-      "Different rows visible per user",
-      "One per table",
-      "All visible"
+      "管理者のみ",
+      "ユーザーごとに異なる行が表示",
+      "テーブルに1つ",
+      "すべて表示"
     ],
     "answer": 1,
     "explanation": "セキュリティ述語がロールごとに行アクセスを制限。"
@@ -2719,12 +2719,12 @@
   {
     "id": 210,
     "category": "Data Governance & Security",
-    "question": "Audit trail records:",
+    "question": "監査証跡が記録するものは何か。",
     "options": [
-      "Failed queries",
-      "All access and modifications",
-      "Schema only",
-      "Logins only"
+      "失敗したクエリ",
+      "すべてのアクセスと変更",
+      "スキーマのみ",
+      "ログインのみ"
     ],
     "answer": 1,
     "explanation": "誰が、何を、いつ、どこで。コンプライアンスに不可欠。"
@@ -2732,12 +2732,12 @@
   {
     "id": 211,
     "category": "Data Governance & Security",
-    "question": "TLS/SSL protects:",
+    "question": "TLS/SSLが保護するものは何か。",
     "options": [
-      "Disk",
-      "Network transmission",
-      "Memory",
-      "Backup"
+      "ディスク",
+      "ネットワーク転送",
+      "メモリ",
+      "バックアップ"
     ],
     "answer": 1,
     "explanation": "クライアント-サーバー暗号化で盗聴を防止。"
@@ -2745,12 +2745,12 @@
   {
     "id": 212,
     "category": "Data Governance & Security",
-    "question": "GDPR right to erasure:",
+    "question": "GDPR忘れられる権利とは何か。",
     "options": [
-      "Keep forever",
-      "Delete on request when no legal basis",
-      "Encrypt only",
-      "Anonymize"
+      "永続保存",
+      "法的根拠がない場合、要求に応じて削除",
+      "暗号化のみ",
+      "匿名化"
     ],
     "answer": 1,
     "explanation": "法的保持義務がない場合、個人の削除リクエスト。"
@@ -2758,12 +2758,12 @@
   {
     "id": 213,
     "category": "Data Governance & Security",
-    "question": "Dynamic data masking:",
+    "question": "動的データマスキングとは何か。",
     "options": [
-      "Alters storage",
-      "Obscures results without changing storage",
-      "Removes data",
-      "Encrypts"
+      "ストレージ変更",
+      "ストレージを変更せず結果を難読化",
+      "データ削除",
+      "暗号化"
     ],
     "answer": 1,
     "explanation": "リアルタイムマスキング。格納データは変更なし。"
@@ -2771,12 +2771,12 @@
   {
     "id": 214,
     "category": "Data Governance & Security",
-    "question": "RBAC assigns to:",
+    "question": "RBACが権限を割り当てる対象は何か。",
     "options": [
-      "Individuals",
-      "Roles then assigned to users",
-      "Tables",
-      "IPs"
+      "個人",
+      "ロールに割り当て、ロールをユーザーに付与",
+      "テーブル",
+      "IPアドレス"
     ],
     "answer": 1,
     "explanation": "ユーザーはロールメンバーシップを通じて権限を継承。管理を簡素化。"
@@ -2784,12 +2784,12 @@
   {
     "id": 215,
     "category": "Data Governance & Security",
-    "question": "Data retention defines:",
+    "question": "データ保持ポリシーが定義するものは何か。",
     "options": [
-      "Speed",
-      "How long to keep data",
-      "Access",
-      "Backup"
+      "速度",
+      "データの保持期間",
+      "アクセス",
+      "バックアップ"
     ],
     "answer": 1,
     "explanation": "規制要件とプライバシーとストレージコストのバランス。"
@@ -2797,12 +2797,12 @@
   {
     "id": 216,
     "category": "Data Governance & Security",
-    "question": "SQL injection prevention:",
+    "question": "SQLインジェクション対策として有効なものはどれか。",
     "options": [
-      "Passwords",
-      "Parameterized queries",
-      "Encryption",
-      "Hardware"
+      "パスワード",
+      "プリペアドステートメント",
+      "暗号化",
+      "ハードウェア"
     ],
     "answer": 1,
     "explanation": "準備済みステートメントでコードとデータを分離。"
@@ -2810,12 +2810,12 @@
   {
     "id": 217,
     "category": "Data Governance & Security",
-    "question": "Tokenization replaces with:",
+    "question": "トークン化が置き換えるものは何か。",
     "options": [
-      "Encrypted",
-      "Non-sensitive surrogate tokens",
-      "Random numbers",
-      "Deleted values"
+      "暗号化",
+      "非機密の代理トークン",
+      "乱数",
+      "削除済み値"
     ],
     "answer": 1,
     "explanation": "トークン保管庫がトークンをマップ。元データとの数学的関係はない。"
@@ -2823,12 +2823,12 @@
   {
     "id": 218,
     "category": "Data Governance & Security",
-    "question": "Least privilege:",
+    "question": "最小権限の原則とは何か。",
     "options": [
-      "Admin access",
-      "Minimum permissions for task",
-      "Same for all",
-      "DBA only"
+      "管理者アクセス",
+      "タスクに必要な最小権限",
+      "全員同じ",
+      "DBAのみ"
     ],
     "answer": 1,
     "explanation": "攻撃面と潜在的損害を削減。"
@@ -2836,12 +2836,12 @@
   {
     "id": 219,
     "category": "Data Governance & Security",
-    "question": "Non-production masking:",
+    "question": "非本番環境マスキングとは何か。",
     "options": [
-      "Not needed",
-      "Realistic fake data for testing",
-      "Delete all",
-      "Prod encryption"
+      "不要",
+      "テスト用の現実的な偽データ",
+      "すべて削除",
+      "本番暗号化"
     ],
     "answer": 1,
     "explanation": "開発/テスト環境用の架空だが現実的なデータ。"
@@ -2849,12 +2849,12 @@
   {
     "id": 220,
     "category": "Data Governance & Security",
-    "question": "TDE encrypts:",
+    "question": "TDEが暗号化するものは何か。",
     "options": [
-      "Backups",
-      "Database files/pages automatically",
-      "Network",
-      "Application"
+      "バックアップ",
+      "データベースファイル/ページを自動暗号化",
+      "ネットワーク",
+      "アプリケーション"
     ],
     "answer": 1,
     "explanation": "自動ページ/ファイルレベル。アプリに透過的。OSレベルの保護。"
@@ -2862,12 +2862,12 @@
   {
     "id": 221,
     "category": "Backup & Recovery",
-    "question": "Full backup copies:",
+    "question": "フルバックアップがコピーするものは何か。",
     "options": [
-      "Changed only",
-      "Entire database",
-      "Metadata",
-      "Log only"
+      "変更分のみ",
+      "データベース全体",
+      "メタデータ",
+      "ログのみ"
     ],
     "answer": 1,
     "explanation": "完全なデータベースコピー。バックアップ戦略の基盤。"
@@ -2875,12 +2875,12 @@
   {
     "id": 222,
     "category": "Backup & Recovery",
-    "question": "Incremental copies:",
+    "question": "増分バックアップがコピーするものは何か。",
     "options": [
-      "Since last full",
-      "Since last backup (any)",
-      "All from beginning",
-      "Schema"
+      "最後のフルバックアップ以降",
+      "最後のバックアップ（いずれか）以降",
+      "最初からすべて",
+      "スキーマ"
     ],
     "answer": 1,
     "explanation": "最後のバックアップ以降の変更のみ。高速/小さいが、フル+全増分が必要。"
@@ -2888,12 +2888,12 @@
   {
     "id": 223,
     "category": "Backup & Recovery",
-    "question": "Differential copies:",
+    "question": "差分バックアップがコピーするものは何か。",
     "options": [
-      "Since last full",
-      "All data",
-      "Since last differential",
-      "Log only"
+      "最後のフルバックアップ以降",
+      "すべてのデータ",
+      "最後の差分バックアップ以降",
+      "ログのみ"
     ],
     "answer": 0,
     "explanation": "最後のフルバックアップ以降。時間とともに増大するが、フル+最新のみで済む。"
@@ -2901,12 +2901,12 @@
   {
     "id": 224,
     "category": "Backup & Recovery",
-    "question": "RPO defines:",
+    "question": "RPOが定義するものは何か。",
     "options": [
-      "Max downtime",
-      "Max data loss in time",
-      "Backup schedule",
-      "HW replacement"
+      "最大ダウンタイム",
+      "最大データ損失時間",
+      "バックアップスケジュール",
+      "ハードウェア交換"
     ],
     "answer": 1,
     "explanation": "最大許容データ損失。バックアップ頻度を決定。"
@@ -2914,12 +2914,12 @@
   {
     "id": 225,
     "category": "Backup & Recovery",
-    "question": "RTO defines:",
+    "question": "RTOが定義するものは何か。",
     "options": [
-      "Max data loss",
-      "Max restore time",
-      "Backup type",
-      "Frequency"
+      "最大データ損失",
+      "最大リストア時間",
+      "バックアップ種別",
+      "頻度"
     ],
     "answer": 1,
     "explanation": "障害後にシステムがオンラインに戻るまでの最大時間。"
@@ -2927,12 +2927,12 @@
   {
     "id": 226,
     "category": "Backup & Recovery",
-    "question": "Point-in-time recovery uses:",
+    "question": "ポイントインタイムリカバリが使用するものは何か。",
     "options": [
-      "Current time",
-      "Transaction logs for any moment",
-      "Backup times",
-      "Random state"
+      "現在時刻",
+      "任意の時点のトランザクションログ",
+      "バックアップ時刻",
+      "ランダム状態"
     ],
     "answer": 1,
     "explanation": "ログバックアップでフルバックアップ間の任意の時点への復元を可能にする。"
@@ -2940,12 +2940,12 @@
   {
     "id": 227,
     "category": "Backup & Recovery",
-    "question": "Hot backup:",
+    "question": "ホットバックアップとは何か。",
     "options": [
-      "DB offline",
-      "DB online and active",
-      "Peak hours",
-      "Auto by OS"
+      "DBオフライン",
+      "DBオンライン稼働中",
+      "ピーク時",
+      "OS自動"
     ],
     "answer": 1,
     "explanation": "稼働中。ログ/スナップショットで整合性のあるビューが必要。"
@@ -2953,12 +2953,12 @@
   {
     "id": 228,
     "category": "Backup & Recovery",
-    "question": "Cold backup:",
+    "question": "コールドバックアップとは何か。",
     "options": [
-      "During operations",
-      "DB offline/shutdown",
-      "NoSQL only",
-      "Auto hourly"
+      "稼働中",
+      "DBオフライン/シャットダウン",
+      "NoSQLのみ",
+      "毎時自動"
     ],
     "answer": 1,
     "explanation": "オフライン。整合性が保証(変更なし)。ダウンタイムが必要。"
@@ -2966,12 +2966,12 @@
   {
     "id": 229,
     "category": "Backup & Recovery",
-    "question": "Transaction log backups enable:",
+    "question": "トランザクションログバックアップが可能にするものは何か。",
     "options": [
-      "Storage reduction",
-      "PITR between full backups",
-      "Query speed",
-      "Schema migration"
+      "ストレージ削減",
+      "フルバックアップ間のポイントインタイムリカバリ",
+      "クエリ速度",
+      "スキーマ移行"
     ],
     "answer": 1,
     "explanation": "任意の時点への復元のための変更をキャプチャ。"
@@ -2979,12 +2979,12 @@
   {
     "id": 230,
     "category": "Backup & Recovery",
-    "question": "Restore order (full+diff+logs):",
+    "question": "リストア順序（フル+差分+ログ）として正しいものはどれか。",
     "options": [
-      "Log,diff,full",
-      "Full, latest diff, logs after diff",
-      "Diff,full,log",
-      "Full,log,diff"
+      "ログ、差分、フル",
+      "フル、最新差分、差分以降のログ",
+      "差分、フル、ログ",
+      "フル、ログ、差分"
     ],
     "answer": 1,
     "explanation": "フルバックアップ→最新差分→差分以降のトランザクションログ。"
@@ -2992,12 +2992,12 @@
   {
     "id": 231,
     "category": "Backup & Recovery",
-    "question": "Snapshot backup uses:",
+    "question": "スナップショットバックアップが使用する技術は何か。",
     "options": [
-      "Traditional copy",
-      "Storage instant copy-on-write",
-      "Compression",
-      "Network"
+      "従来のコピー",
+      "ストレージのインスタントコピーオンライト",
+      "圧縮",
+      "ネットワーク"
     ],
     "answer": 1,
     "explanation": "ストレージシステムによるインスタント コピー・オン・ライト。最小限の性能影響。"
@@ -3005,12 +3005,12 @@
   {
     "id": 232,
     "category": "Backup & Recovery",
-    "question": "Checksum verification ensures:",
+    "question": "チェックサム検証が保証するものは何か。",
     "options": [
-      "Speed",
-      "Backup not corrupted",
-      "Encryption",
-      "Less storage"
+      "速度",
+      "バックアップが破損していない",
+      "暗号化",
+      "ストレージ削減"
     ],
     "answer": 1,
     "explanation": "破損を検出。未検証バックアップは信頼できない。"
@@ -3018,12 +3018,12 @@
   {
     "id": 233,
     "category": "Backup & Recovery",
-    "question": "3-2-1 rule:",
+    "question": "バックアップの3-2-1ルールとは何か。",
     "options": [
-      "3 copies, 2 media, 1 offsite",
-      "3 full, 2 types, 1 weekly",
-      "3 encryptions, 2 servers",
-      "3 DBs, 2 backups"
+      "3コピー、2メディア、1オフサイト",
+      "3フル、2種別、1週次",
+      "3暗号化、2サーバー",
+      "3DB、2バックアップ"
     ],
     "answer": 0,
     "explanation": "3部のコピー、2種類のメディア、1箇所オフサイト/クラウド。"
@@ -3031,12 +3031,12 @@
   {
     "id": 234,
     "category": "Backup & Recovery",
-    "question": "Log shipping:",
+    "question": "ログシッピングとは何か。",
     "options": [
-      "Physical movement",
-      "Auto send logs to standby",
-      "Manual export",
-      "Old deletion"
+      "物理移動",
+      "スタンバイへログを自動送信",
+      "手動エクスポート",
+      "古いログ削除"
     ],
     "answer": 1,
     "explanation": "スタンバイをほぼ同期してフェイルオーバー用に維持。"
@@ -3044,12 +3044,12 @@
   {
     "id": 235,
     "category": "Backup & Recovery",
-    "question": "SIMPLE recovery model:",
+    "question": "SIMPLE復旧モデルの特徴はどれか。",
     "options": [
-      "Supports PITR",
-      "Auto-truncates log after checkpoint",
-      "Keeps all logs",
-      "Supports shipping"
+      "PITR対応",
+      "チェックポイント後にログを自動切り捨て",
+      "すべてのログ保持",
+      "ログシッピング対応"
     ],
     "answer": 1,
     "explanation": "PITRやログ出荷なし。フル/差分のみ。"
@@ -3057,12 +3057,12 @@
   {
     "id": 236,
     "category": "Backup & Recovery",
-    "question": "Standby in HA:",
+    "question": "高可用性スタンバイの説明で正しいものはどれか。",
     "options": [
-      "Read-only queries",
-      "Synchronized, can failover",
-      "Development",
-      "Always offline"
+      "読み取り専用クエリ",
+      "同期済み、フェイルオーバー可能",
+      "開発用途",
+      "常にオフライン"
     ],
     "answer": 1,
     "explanation": "継続的に同期されるレプリカ。高速フェイルオーバー。"
@@ -3070,12 +3070,12 @@
   {
     "id": 237,
     "category": "Backup & Recovery",
-    "question": "Backup verification:",
+    "question": "バックアップ検証とは何か。",
     "options": [
-      "Secure storage",
-      "Testing restores successfully",
-      "Compression",
-      "Scheduling"
+      "セキュアストレージ",
+      "リストアテストで正常に復旧できる",
+      "圧縮",
+      "スケジューリング"
     ],
     "answer": 1,
     "explanation": "定期的なリストアテストでバックアップが実際に機能することを確認。"
@@ -3083,12 +3083,12 @@
   {
     "id": 238,
     "category": "Backup & Recovery",
-    "question": "WAL recovery:",
+    "question": "WALリカバリの方式はどれか。",
     "options": [
-      "Redo only",
-      "Redo committed + undo uncommitted",
-      "Undo only",
-      "Full restore"
+      "REDOのみ",
+      "コミット済みをREDO、未コミットをUNDO",
+      "UNDOのみ",
+      "フルリストア"
     ],
     "answer": 1,
     "explanation": "コミット済み変更を再実行し、未コミット変更を取り消して整合性を確保。"
@@ -3096,12 +3096,12 @@
   {
     "id": 239,
     "category": "Backup & Recovery",
-    "question": "RPO 15 min = max backup interval:",
+    "question": "RPO15分の場合の最大バックアップ間隔はどれか。",
     "options": [
-      "1 hour",
-      "15 min or less",
-      "5 min",
-      "30 min"
+      "1時間",
+      "15分以下",
+      "5分",
+      "30分"
     ],
     "answer": 1,
     "explanation": "間隔はRPO以下でなければならない。"
@@ -3109,12 +3109,12 @@
   {
     "id": 240,
     "category": "Backup & Recovery",
-    "question": "Corrupted unrestoreable backup:",
+    "question": "破損したリストア不可バックアップが示す教訓は何か。",
     "options": [
-      "Normal",
-      "Need for verification",
-      "Inevitable",
-      "Security"
+      "正常",
+      "検証の必要性",
+      "不可避",
+      "セキュリティ"
     ],
     "answer": 1,
     "explanation": "未検証バックアップは必要時に役に立たない可能性がある。"
@@ -3122,12 +3122,12 @@
   {
     "id": 241,
     "category": "Backup & Recovery",
-    "question": "Best RTO minimization:",
+    "question": "RTO最小化に最適な方法はどれか。",
     "options": [
-      "Full backup",
-      "Auto failover (replication)",
-      "Incremental",
-      "Cold standby"
+      "フルバックアップ",
+      "自動フェイルオーバー（レプリケーション）",
+      "増分バックアップ",
+      "コールドスタンバイ"
     ],
     "answer": 1,
     "explanation": "同期レプリケーション付きホットスタンバイ=ほぼゼロRTO。"
@@ -3135,12 +3135,12 @@
   {
     "id": 242,
     "category": "Backup & Recovery",
-    "question": "Recovery plan includes:",
+    "question": "リカバリ計画に含まれるべきものは何か。",
     "options": [
-      "Backup only",
-      "Roles, procedures, communication",
-      "Hardware only",
-      "Data only"
+      "バックアップのみ",
+      "役割、手順、連絡手段",
+      "ハードウェアのみ",
+      "データのみ"
     ],
     "answer": 1,
     "explanation": "包括的: 役割、手順、通信、テスト。"
@@ -3148,12 +3148,12 @@
   {
     "id": 243,
     "category": "Backup & Recovery",
-    "question": "GFS rotation manages:",
+    "question": "世代ファイル管理（GFS）が管理するものは何か。",
     "options": [
       "CPU",
-      "Daily/weekly/monthly cycles",
-      "Encryption",
-      "Bandwidth"
+      "日次/週次/月次サイクル",
+      "暗号化",
+      "帯域幅"
     ],
     "answer": 1,
     "explanation": "日次(息子)、週次(父)、月次(祖父)。"
@@ -3161,12 +3161,12 @@
   {
     "id": 244,
     "category": "Backup & Recovery",
-    "question": "Crash recovery after power failure:",
+    "question": "停電後のクラッシュリカバリ方法はどれか。",
     "options": [
-      "Full restore",
-      "Transaction log redo/undo",
-      "Cold backup",
-      "Manual"
+      "フルリストア",
+      "トランザクションログのREDO/UNDO",
+      "コールドバックアップ",
+      "手動"
     ],
     "answer": 1,
     "explanation": "ログによるコミット済み再実行と未コミット取り消し。"
@@ -3174,12 +3174,12 @@
   {
     "id": 245,
     "category": "Backup & Recovery",
-    "question": "Online vs archived redo log:",
+    "question": "オンラインREDOログとアーカイブREDOログの違いは何か。",
     "options": [
-      "Identical",
-      "Online=active, archived=saved copies",
-      "Archived larger",
-      "Online optional"
+      "同じ",
+      "オンライン＝アクティブ、アーカイブ＝保存済みコピー",
+      "アーカイブの方が大きい",
+      "オンラインは任意"
     ],
     "answer": 1,
     "explanation": "オンライン=現在使用中、アーカイブ=保存済みコピー。"
@@ -3187,12 +3187,12 @@
   {
     "id": 246,
     "category": "Backup & Recovery",
-    "question": "Incremental vs differential restore:",
+    "question": "増分リストアと差分リストアの違いは何か。",
     "options": [
-      "Incremental faster",
-      "Incremental slower (needs all)",
-      "Always faster",
-      "Always slower"
+      "増分の方が高速",
+      "増分の方が遅い（全増分が必要）",
+      "常に高速",
+      "常に低速"
     ],
     "answer": 1,
     "explanation": "増分はフル+全増分が必要。差分はフル+最新のみ。"
@@ -3200,12 +3200,12 @@
   {
     "id": 247,
     "category": "Backup & Recovery",
-    "question": "Database mirroring:",
+    "question": "データベースミラーリングとは何か。",
     "options": [
-      "Archiving",
-      "Real-time redundancy with failover",
-      "Optimization",
-      "Compression"
+      "アーカイブ",
+      "フェイルオーバー付きのリアルタイム冗長化",
+      "最適化",
+      "圧縮"
     ],
     "answer": 1,
     "explanation": "リアルタイムコピー。自動(高安全性)または手動(高パフォーマンス)フェイルオーバー。"
@@ -3213,11 +3213,11 @@
   {
     "id": 248,
     "category": "Backup & Recovery",
-    "question": "GFS scheme manages:",
+    "question": "GFS方式が管理するものは何か。",
     "options": [
-      "Access",
-      "Daily/weekly/monthly backup cycles",
-      "Three copies",
+      "アクセス",
+      "日次/週次/月次バックアップサイクル",
+      "3コピー",
       "NoSQL"
     ],
     "answer": 1,
@@ -3226,12 +3226,12 @@
   {
     "id": 249,
     "category": "Backup & Recovery",
-    "question": "Recover from accidental DROP TABLE:",
+    "question": "誤ったDROP TABLEからのリカバリ方法はどれか。",
     "options": [
-      "Recreate",
-      "PITR before deletion",
-      "Full restore",
-      "No recovery"
+      "再作成",
+      "削除前のポイントインタイムリカバリ",
+      "フルリストア",
+      "リカバリ不可"
     ],
     "answer": 1,
     "explanation": "最も効率的な人的エラー回復方法。"
@@ -3239,12 +3239,12 @@
   {
     "id": 250,
     "category": "Backup & Recovery",
-    "question": "Backup window is:",
+    "question": "バックアップウィンドウとは何か。",
     "options": [
-      "Software",
-      "Time for backups without impact",
-      "Encryption",
-      "Retention"
+      "ソフトウェア",
+      "影響なしでバックアップ可能な時間",
+      "暗号化",
+      "保持期間"
     ],
     "answer": 1,
     "explanation": "スケジュールされた時間。実行可能なバックアップ種別を決定。"

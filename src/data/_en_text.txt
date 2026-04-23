@@ -1,0 +1,1250 @@
+Which relational algebra operation combines tuples from two relations satisfying a predicate?
+  Selection
+  Projection
+  Join
+  Division
+Cartesian product of relations with m and n tuples produces:
+  m+n tuples
+  m*n tuples
+  max(m,n)
+  min(m,n)
+DIVISION operation answers which query type?
+  OR conditions
+  EXISTS queries
+  For-all queries
+  Aggregations
+FD A->B is trivial if:
+  A is a candidate key
+  B is subset of A
+  A is subset of B
+  A and B disjoint
+Which NF eliminates transitive dependencies?
+  1NF
+  2NF
+  3NF
+  BCNF
+BCNF is stricter than 3NF because it requires:
+  All attrs must be prime
+  Every determinant to be a superkey
+  No MVDs allowed
+  Single-valued only
+Which NF addresses multi-valued dependencies?
+  3NF
+  BCNF
+  4NF
+  5NF
+5NF (Project-Join NF) concerns:
+  MVDs
+  FDs
+  Join dependencies
+  Transitive deps
+Closure F+ of FDs is:
+  Minimal set equivalent to F
+  All FDs derivable via Armstrong axioms
+  FDs in current DB state
+  Subset of F in BCNF
+Armstrong transitivity: A->B, B->C then:
+  A->C
+  C->A
+  A->B and A->C
+  B->A and C->B
+R(A,B,C) with FDs A->B, B->C violates which NF?
+  1NF only
+  2NF
+  3NF
+  BCNF
+EXISTS in tuple relational calculus is:
+  Universal quantification
+  Existential quantification
+  Negation
+  Aggregation
+A prime attribute is:
+  Part of any candidate key
+  First attr of primary key
+  Always unique
+  Cannot be NULL
+Lossless-join ensures:
+  Dependency preservation
+  Original recoverable by join
+  Minimal redundancy
+  Attribute preservation
+Natural join eliminates:
+  Left duplicates
+  Duplicate join column
+  All NULLs
+  Non-matching tuples
+Candidate key is minimal because:
+  Fewest attributes
+  No proper subset is superkey
+  Only non-nulls
+  Chosen primary key
+Outer join includes:
+  Nothing extra
+  Unmatched tuples with NULLs
+  No duplicates
+  Sorted results
+R(A,B,C,D) with FDs {AB->C,C->D,D->A}: candidate keys?
+  1
+  2
+  3
+  4
+Armstrong augmentation: A->B implies:
+  A->BC
+  AC->BC
+  AB->C
+  B->A
+2NF requires:
+  Atomic values
+  No partial dependency on candidate keys
+  No transitive deps
+  Every determinant superkey
+Semi-join returns:
+  All R tuples
+  R tuples matching S
+  S tuples matching R
+  R intersect S
+1NF requires:
+  Unique values
+  Atomic values
+  Dependence on entire key
+  Primary key
+Attribute closure A+ is:
+  All attrs dependent on A
+  All FDs A determines
+  Superkey containing A
+  Candidate keys with A
+BCNF requires for non-trivial FD X->Y:
+  Y is prime
+  X is superkey
+  Y not subset X
+  X is candidate key
+Dependency preservation means:
+  All FDs checkable on decomposed relations
+  All data preserved
+  No redundancy
+  Faster queries
+MVD A->>B means:
+  B functionally determined by A
+  B values independent of C per A
+  A determines B and C
+  B,C same cardinality per A
+Correct NF hierarchy:
+  BCNF=>4NF=>3NF
+  5NF=>4NF=>BCNF=>3NF
+  3NF=>BCNF=>4NF
+  4NF=>5NF=>BCNF
+Rename operation resolves:
+  Performance issues
+  Naming conflicts
+  Sorting problems
+  Duplicate rows
+Domain calculus {<x,y>|R(x) AND S(y)} produces:
+  Intersection
+  Cartesian product
+  Natural join
+  Union
+Armstrong reflexivity: B subset of A implies:
+  A->B
+  B->A
+  A+B->A
+  A->A union B
+CUBE in GROUP BY generates:
+  All column combinations
+  Hierarchical subtotals
+  Grand total only
+  Specified levels
+ROW_NUMBER() vs RANK() difference:
+  Identical
+  RANK gives ties same rank and skips numbers
+  ROW_NUMBER not window function
+  RANK cannot ORDER BY
+In recursive CTE, anchor and recursive combined by:
+  UNION
+  UNION ALL
+  JOIN
+  INTERSECT
+LAG() returns:
+  Next row value
+  Previous row value
+  Difference from previous
+  Current row position
+EXISTS returns TRUE when:
+  Subquery returns count
+  Subquery returns at least one row
+  All rows match
+  Column exists
+Which set operation removes duplicates?
+  UNION ALL
+  INTERSECT ALL
+  UNION
+  EXCEPT ALL
+Correlated subquery re-evaluates:
+  Once only
+  For each outer query row
+  After outer completes
+  When optimizer decides
+(rank-1)/(N-1) is calculated by:
+  ROW_NUMBER
+  RANK
+  PERCENT_RANK
+  CUME_DIST
+FILTER clause in aggregates:
+  Sorts input
+  Conditionally includes rows
+  Filters final result
+  Removes NULLs
+MERGE statement can:
+  Only INSERT
+  Only UPDATE
+  INSERT, UPDATE, DELETE based on match
+  SELECT and INSERT only
+OVER() clause specifies:
+  Table to query
+  Partitioning and ordering for window
+  Filter condition
+  Join condition
+Which clause filters BEFORE GROUP BY?
+  HAVING
+  WHERE
+  QUALIFY
+  FILTER
+Materialized view vs regular view:
+  Cannot be queried
+  Result stored on disk
+  No joins supported
+  Always current
+ROLLUP produces:
+  All combinations
+  Hierarchical subtotals and grand total
+  Grand total only
+  Cross-tabulation
+NTILE(n) divides rows into:
+  n equal parts
+  n columns
+  n subqueries
+  n tables
+Rows in first query NOT in second:
+  INTERSECT
+  UNION
+  EXCEPT (MINUS)
+  DIFFERENCE
+LATERAL join allows:
+  Cross-DB queries
+  Subquery to reference preceding FROM columns
+  Recursive queries
+  Parallel execution
+Default frame with ORDER BY:
+  ROWS UNBOUNDED to CURRENT ROW
+  RANGE UNBOUNDED to CURRENT ROW
+  ROWS UNBOUNDED both
+  RANGE UNBOUNDED both
+Removes all rows, resets identity with minimal logging?
+  DELETE FROM
+  DROP TABLE
+  TRUNCATE TABLE
+  REMOVE TABLE
+WITH CHECK OPTION enforces:
+  Performance
+  Inserts/updates satisfy view WHERE clause
+  View updatable
+  Referential integrity
+WITH clause (CTE) provides:
+  Transaction boundary
+  Named temporary result set
+  Security context
+  Connection pooling
+FIRST_VALUE() returns:
+  First column
+  Value from first row of window frame
+  First row number
+  Minimum value
+Prevents phantoms, allows non-repeatable reads:
+  READ UNCOMMITTED
+  READ COMMITTED
+  REPEATABLE READ
+  SERIALIZABLE
+Deterministic SQL function:
+  Always returns NULL
+  Same result for same input
+  Modifies data
+  Used in triggers
+Window frame boundary defined by:
+  PARTITION BY
+  ORDER BY
+  ROWS/RANGE BETWEEN...AND...
+  GROUP BY
+GRANT WITH GRANT OPTION allows:
+  Creating tables
+  Grantee to grant privileges to others
+  Revoking privileges
+  System access
+SQL trigger is:
+  Manual stored procedure
+  Auto-executed on table event
+  Constraint
+  Index type
+= ANY tests:
+  No values
+  Any value in subquery result
+  All values
+  First value
+Recursive CTE must include:
+  Two anchors
+  UNION ALL between anchor and recursive
+  LIMIT
+  ORDER BY
+GROUPING SETS allows:
+  All CUBE combos
+  Multiple GROUP BY groupings in one query
+  Creating grouping columns
+  Rollup hierarchies
+COALESCE() returns:
+  First non-NULL argument
+  Last non-NULL
+  NULL if any NULL
+  Average of non-NULLs
+Covering index includes:
+  Only primary key
+  All columns needed by query
+  All table columns
+  Only foreign keys
+SELECT FOR UPDATE prevents:
+  Reads
+  Concurrent modification of selected rows
+  All queries
+  FK checks
+DENSE_RANK vs RANK:
+  Different sorting
+  DENSE_RANK does not skip ranks after ties
+  Numeric only
+  Requires partition
+RETURNING clause returns:
+  Affected row count
+  The modified data
+  Status code
+  Transaction ID
+Stored procedure vs function:
+  Must return value
+  Cannot contain SQL
+  Can return multiple result sets
+  No parameters
+SNAPSHOT isolation provides:
+  Blocked reads
+  Consistent view from transaction start
+  Dirty reads
+  Phantom reads
+FULL OUTER JOIN returns:
+  Only matching rows
+  All left rows
+  All rows from both with NULLs
+  All right rows
+GROUPING() function used with:
+  Regular GROUP BY
+  CUBE/ROLLUP/GROUPING SETS
+  Window functions
+  Subqueries
+FOREIGN KEY ensures:
+  Uniqueness
+  Referential integrity
+  Non-null
+  Default values
+Weak entity type:
+  Has no attributes
+  Depends on strong entity for identification
+  Has composite key
+  Is optional
+Ternary relationship involves:
+  Three attributes
+  Three entity types
+  Three weak entities
+  Three primary keys
+Cardinality constraints specify:
+  Max attribute count
+  Entity participation count in relationships
+  Database size
+  Table count
+Denormalization improves:
+  NF compliance
+  Read performance at cost of redundancy
+  Storage efficiency
+  Dependency elimination
+Identifying relationship:
+  Both weak entities
+  Weak entity key includes strong entity key
+  Only foreign keys
+  Surrogate key
+Surrogate key is:
+  Foreign key
+  Artificially generated unique identifier
+  Composite PK
+  Secondary index
+Horizontal partitioning splits by:
+  Columns
+  Rows based on partition key
+  Tables
+  Data types
+Vertical partitioning advantage:
+  Easier joins
+  Faster full scans
+  Reduced I/O accessing only needed columns
+  Simplified schema
+ER diagram diamond represents:
+  Entity
+  Attribute
+  Relationship
+  Primary key
+Supertype/subtype models:
+  One-to-many
+  Specialization/generalization hierarchies
+  Self-referencing
+  Cross-table joins
+Single table inheritance stores:
+  Separate tables
+  All types in one table with discriminator
+  No subtypes
+  Only common attrs
+Recursive relationship connects:
+  Two entities
+  Entity to itself
+  Three entities
+  Weak to strong
+Conceptual design produces:
+  SQL statements
+  DBMS-independent ER model
+  Physical specs
+  Index definitions
+Physical design includes:
+  Entity definitions
+  Data types, indexes, storage
+  Normalization
+  ER diagrams
+Composite attribute:
+  Multiple values
+  Composed of sub-attributes
+  Foreign key
+  Derived attr
+Range partitioning suits:
+  Uniform distribution
+  Range-based query filters
+  Equality conditions
+  Small tables
+Derived attribute:
+  From another table
+  Computed from other attrs
+  PK component
+  Always unique
+Total participation means:
+  Every entity must participate
+  Max one per relationship
+  Optional
+  Unlimited
+Hash partitioning distributes by:
+  Ranges
+  Hash function on partition key
+  Manual
+  Date
+Multivalued attribute requires:
+  Composite key
+  Separate table
+  CHECK constraint
+  DEFAULT
+N:M relationship requires:
+  Foreign key
+  Associative entity (junction table)
+  UNIQUE constraint
+  Composite attr
+Logical design transforms into:
+  Physical layout
+  Relational schema
+  Application code
+  Network protocol
+Fan-out trap occurs when:
+  Too many joins
+  Paths between entities lose information
+  Too many FKs
+  Index too large
+Pre-aggregation stores:
+  Merged tables
+  Pre-computed aggregations
+  Duplicate columns
+  Reference tables
+Choosing primary keys: which phase?
+  Requirements
+  Conceptual
+  Logical
+  Physical
+List partitioning assigns by:
+  Hash
+  Explicit value list
+  Ranges
+  Random
+Chasm trap:
+  Too many NULLs
+  Optional relationships hide missing paths
+  Duplicate rows
+  Missing FKs
+Data dictionary stores:
+  Encrypted data
+  Metadata about DB structure
+  Backup data
+  Optimization
+Temporal data uses:
+  Timestamp only
+  SCD patterns
+  5NF
+  Denormalization
+Bridge table resolves:
+  Facts
+  M:N between facts and dimensions
+  Indexes
+  Partitions
+ACID Atomicity ensures:
+  Simultaneous transactions
+  All-or-nothing transactions
+  Consistency
+  Isolation
+Dirty read occurs when:
+  Reading own uncommitted
+  Reading uncommitted from another tx
+  Reading deleted data
+  Reading corrupted blocks
+Prevents dirty reads, allows non-repeatable:
+  READ UNCOMMITTED
+  READ COMMITTED
+  REPEATABLE READ
+  SERIALIZABLE
+Deadlock occurs when:
+  Tx runs forever
+  Txs wait for each other's locks
+  Log full
+  Tx aborted
+MVCC improves concurrency by:
+  Locking all rows
+  Multiple row versions
+  Serializing txs
+  Preventing concurrent access
+Phantom read:
+  Read row disappears
+  Re-executed query sees new committed rows
+  Data duplicated
+  Unexpected NULL
+WAL requires:
+  Data before log
+  Log to stable storage before DB modification
+  Logging all queries
+  Remote logs
+Shared lock allows:
+  No concurrent access
+  Multiple readers no writers
+  Only one reader
+  Lock holder only
+Two-phase locking ensures:
+  Two-step completion
+  Conflict serializability
+  No deadlocks
+  Maximum parallelism
+Non-repeatable read:
+  Different row count
+  Same row different values on re-read
+  Query fails
+  Wrong table
+Wait-die scheme:
+  Aborts older
+  Older wait, younger die
+  Optimistic
+  Timeout
+SERIALIZABLE prevents:
+  Dirty reads
+  Dirty + non-repeatable
+  All three: dirty + non-repeatable + phantom
+  All including deadlocks
+Intent lock signals:
+  Commit intention
+  Intention to lock lower-level items
+  DB-level lock
+  Row shared lock
+Optimistic concurrency assumes:
+  Conflicts always
+  Conflicts rare, validate at commit
+  No concurrent access
+  Read-only
+SAVEPOINT allows:
+  New tx
+  Rollback to point within tx
+  Permanent save
+  Partial commit
+Strict 2PL requires:
+  All locks simultaneous
+  Exclusive locks held until commit/abort
+  Only shared locks
+  Per-statement release
+Cascading rollback:
+  Single rollback
+  Aborting one forces dependent txs to rollback
+  DB restore
+  Deadlock resolution
+Checkpoint reduces:
+  Backup size
+  Recovery time
+  Deadlocks
+  Query time
+Wound-wait scheme:
+  Aborts older
+  Older preempts younger
+  Waits for all
+  Timeout
+Undo/redo recovery uses:
+  Undo only
+  Both before-image and after-image
+  Physical logging
+  Checkpoint only
+Non-repeatable vs phantom:
+  Same thing
+  Non-repeatable: existing row changes; phantom: new rows
+  Phantoms need indexes
+  Non-repeatable more serious
+ARIES algorithm uses:
+  Undo only
+  Redo only
+  Three passes: analysis, redo, undo
+  Shadow paging
+Update lock prevents:
+  Row locking
+  Conversion deadlock S<->X
+  Table locking
+  Index locking
+ACID Durability ensures:
+  Atomicity
+  Consistency
+  Isolation
+  Changes survive failures
+Snapshot isolation allows:
+  All anomalies
+  Dirty/non-repeatable/phantom prevented, write skew possible
+  Only dirty reads
+  All including deadlocks
+Query plan generated by:
+  Storage engine
+  Query optimizer
+  Tx manager
+  Log manager
+Cost-based optimization uses:
+  SQL syntax
+  I/O, CPU, memory costs
+  Table names
+  Column count
+Hash join best when:
+  Both small
+  Smaller input fits in memory
+  Both sorted
+  One indexed
+Nested-loop join complexity:
+  O(N+M)
+  O(N*M)
+  O(N log N)
+  O(N+M log M)
+Merge join requires:
+  No prerequisites
+  Both inputs sorted on join key
+  Hash table
+  One indexed
+Predicate pushdown:
+  Adds tables
+  Moves filters closer to data sources
+  Changes isolation
+  Modifies types
+Most important optimizer stats:
+  Table names
+  Row counts and distribution
+  Data types
+  Access patterns
+Index scan preferred when:
+  Table small
+  Small fraction of rows, index selective
+  All columns needed
+  Index large
+Covering index eliminates:
+  Sorting
+  Table access/bookmark lookups
+  Joining
+  Filtering
+Which join produces sorted output?
+  Nested-loop
+  Hash
+  Merge
+  Cross
+Selectivity = 
+  Query speed
+  Matching rows / total rows
+  Columns selected
+  Accuracy
+Left-deep tree:
+  All at once
+  Largest on left
+  Join new table to existing result
+  All indexed
+Histograms estimate:
+  Execution time
+  Data distribution and selectivity
+  Memory
+  Network
+Subquery unnesting:
+  Predicate pushdown
+  Correlated subquery into join
+  Index selection
+  Join reorder
+Full scan preferred when:
+  Few rows needed
+  Table small or most rows needed
+  Many indexes
+  GROUP BY
+EXPLAIN shows:
+  Results
+  Execution plan
+  Definitions
+  Errors
+Parallel query divides by:
+  Data partitioning across cores
+  Sequential
+  Connections
+  Caching
+Selinger optimizer uses:
+  Rules
+  Dynamic programming for join ordering
+  Random
+  Fixed orders
+Bitmap index best for:
+  High-cardinality
+  Low-cardinality concurrent queries
+  Primary keys
+  Foreign keys
+View merging:
+  Combines views
+  Expands view into query
+  Materializes
+  Removes
+Bloom filter in hash join:
+  Nested-loop variant
+  Filters non-matching probe rows
+  Merge variant
+  Cross join
+Index-only scan requires:
+  No index
+  Index with all query columns
+  Single index
+  Clustered
+Rule-based uses:
+  Statistics
+  Fixed heuristics
+  Cost estimation
+  Machine learning
+Cardinality estimator predicts:
+  Bandwidth
+  Row count per operator
+  Memory
+  CPU cycles
+OR expansion transforms to:
+  UNION branches
+  Subquery
+  Index elimination
+  Table elimination
+B-tree O(log N) for:
+  Only search
+  Search, insert, delete
+  Only insert
+  Only scan
+B+tree main feature:
+  Slower
+  Data only in linked leaf nodes
+  Less data
+  No deletes
+Fill factor determines:
+  Max key length
+  Initial page fill level
+  Index levels
+  Sort order
+Composite (A,B,C) searches on:
+  Only A
+  A, A+B, or A+B+C
+  Only C
+  B,A any order
+Hash index best for:
+  Range queries
+  Equality only
+  Sorting
+  Full-text
+Clustered index determines:
+  Query usage
+  Physical data order
+  Max size
+  Index count
+Bitmap index uses:
+  B-tree variant
+  Bitmaps per value, each bit = row
+  Hash
+  Composite
+Index rebuild:
+  Deletes table
+  Recreates reducing fragmentation
+  Updates stats
+  Adds columns
+Left-prefix for (city,last_name,first_name):
+  last_name
+  city, city+last_name, all three
+  first_name
+  last_name+first_name
+Non-clustered stores:
+  Actual data
+  Keys + row locators
+  Sorted copy
+  FK refs
+Index selectivity = 
+  Speed
+  Distinct values / total rows
+  Levels
+  Size
+Auto-maintained indexes:
+  Manual
+  PK and unique constraint
+  Temporary
+  Archive
+Functional index indexes:
+  Table function
+  Expression result
+  Stored procedure
+  View
+Fragmentation caused by:
+  Reads
+  Page splits in nearly full pages
+  Optimization
+  Rollbacks
+Partial index includes:
+  First N rows
+  Rows matching WHERE condition
+  Indexed columns
+  PK values
+Best for ORDER BY LIMIT:
+  Hash
+  B+tree on ORDER BY columns
+  Bitmap
+  Full-text
+Covering index avoids:
+  Buffer pool
+  Table access
+  Joins
+  Transactions
+Too many indexes degrade:
+  Reads
+  Writes (DML)
+  Planning
+  Backup
+GiST is:
+  B-tree variant
+  Generalized index infrastructure
+  Graph index
+  Geographic only
+B+tree logarithmic depth due to:
+  Fan-out 2
+  All leaves at same depth
+  Internal data
+  Sequential keys
+CAP theorem: at most:
+  All three
+  Two of: C, A, P
+  One
+  C and A
+Two-phase commit phases:
+  Prepare and Execute
+  Voting and Commit
+  Lock and Unlock
+  Read and Write
+Eventual consistency:
+  Immediately consistent
+  Replicas converge when updates stop
+  Never consistent
+  Primary only
+Sharding distributes:
+  Duplicates
+  Rows across DB instances
+  Backups
+  Compression
+Synchronous replication acknowledges:
+  Primary done
+  All replicas confirm
+  One replica
+  Client confirms
+Split-brain:
+  Partitioning
+  Network partition with two primaries
+  Optimization
+  Compression
+Quorum requires:
+  Timeout
+  Majority agreement
+  Backup
+  Optimization
+Paxos/Raft ensure:
+  Performance
+  Agreement despite failures
+  Compression
+  Optimization
+Strongest consistency:
+  Eventual
+  Causal
+  Linearizability
+  Read-your-writes
+Distributed deadlock involves:
+  Easier detection
+  Txs at different sites
+  Cannot happen
+  Read locks
+Async replication primary acks:
+  After sync
+  Immediately
+  After quorum
+  Never
+Consistent hashing advantage:
+  Central lookup
+  Minimal remapping on node change
+  Even only
+  No failures
+Vector clocks track:
+  Performance
+  Causality between events
+  Time sync
+  Compression
+Distributed tx needs:
+  Single commit
+  2PL + 2PC
+  No protocol
+  Three-phase
+Read-your-writes:
+  One writer
+  Client sees own writes
+  All same data
+  Writes invisible
+Multi-master allows:
+  Primary only
+  All nodes accept writes
+  No replication
+  Reads only
+W+R>N ensures:
+  Availability
+  Read sees latest write
+  Throughput
+  Encryption
+Distributed query handles:
+  Local only
+  Decomposition, transfer, assembly
+  Security
+  Indexing
+Vertical fragmentation:
+  Rows
+  Columns across sites
+  Tables
+  Backups
+Three-phase commit adds:
+  Nothing
+  Pre-commit to reduce blocking
+  Extra logging
+  Participants
+Document store best for:
+  Strict data
+  Semi-structured varying schemas
+  Relational queries
+  OLAP
+BASE stands for:
+  Basic Available, Soft state, Eventual consistency
+  Broad Access, Secure, Encrypted
+  Binary, Standard, Efficient
+  Backup, Archive, Storage
+Key-value optimized for:
+  Complex joins
+  Simple get/put by key
+  Full-text
+  Graph
+Graph DBs excel at:
+  Batch
+  Complex relationship traversals
+  CRUD
+  Time-series
+Column-family optimized for:
+  Transactions
+  High write throughput, time-series
+  Joins
+  ACID
+NewSQL provides:
+  NoSQL with SQL
+  SQL+ACID with horizontal scaling
+  Read scale
+  No tx
+Many NoSQL favor CAP:
+  C over A
+  A+P during partitions
+  P+C
+  C+A (CA)
+Polyglot persistence:
+  Multiple languages
+  Different DB tech for different uses
+  Countries
+  Charsets
+Cassandra tunes consistency via:
+  TCP
+  Consistency level (ONE, QUORUM, ALL)
+  SQL isolation
+  Config
+Causal consistency ensures:
+  Eventual
+  Causal ops in order
+  Linearizable
+  Read-your-writes
+NewSQL uses:
+  2PL
+  Consensus (Raft/Paxos) with deterministic clocks
+  No support
+  Simple locks
+Time-series DB optimized for:
+  Joins
+  High-volume timestamped data
+  Graph
+  Documents
+NoSQL disadvantage:
+  Slower
+  Limited query, no standard language
+  Cannot scale
+  No indexing
+MapReduce:
+  Transaction mgmt
+  Distributed batch processing
+  Index creation
+  Schema design
+Column-family stores by:
+  Rows
+  Column groups (column-oriented)
+  B-tree
+  Hash
+Data classification by:
+  File size
+  Sensitivity level
+  Creation date
+  DB type
+Encryption at rest protects:
+  Network
+  Stored data
+  Memory
+  Backup only
+GDPR data minimization:
+  Store everything
+  Collect only necessary data
+  Delete daily
+  Encrypt all
+Row-Level Security:
+  Admin only
+  Different rows visible per user
+  One per table
+  All visible
+Audit trail records:
+  Failed queries
+  All access and modifications
+  Schema only
+  Logins only
+TLS/SSL protects:
+  Disk
+  Network transmission
+  Memory
+  Backup
+GDPR right to erasure:
+  Keep forever
+  Delete on request when no legal basis
+  Encrypt only
+  Anonymize
+Dynamic data masking:
+  Alters storage
+  Obscures results without changing storage
+  Removes data
+  Encrypts
+RBAC assigns to:
+  Individuals
+  Roles then assigned to users
+  Tables
+  IPs
+Data retention defines:
+  Speed
+  How long to keep data
+  Access
+  Backup
+SQL injection prevention:
+  Passwords
+  Parameterized queries
+  Encryption
+  Hardware
+Tokenization replaces with:
+  Encrypted
+  Non-sensitive surrogate tokens
+  Random numbers
+  Deleted values
+Least privilege:
+  Admin access
+  Minimum permissions for task
+  Same for all
+  DBA only
+Non-production masking:
+  Not needed
+  Realistic fake data for testing
+  Delete all
+  Prod encryption
+TDE encrypts:
+  Backups
+  Database files/pages automatically
+  Network
+  Application
+Full backup copies:
+  Changed only
+  Entire database
+  Metadata
+  Log only
+Incremental copies:
+  Since last full
+  Since last backup (any)
+  All from beginning
+  Schema
+Differential copies:
+  Since last full
+  All data
+  Since last differential
+  Log only
+RPO defines:
+  Max downtime
+  Max data loss in time
+  Backup schedule
+  HW replacement
+RTO defines:
+  Max data loss
+  Max restore time
+  Backup type
+  Frequency
+Point-in-time recovery uses:
+  Current time
+  Transaction logs for any moment
+  Backup times
+  Random state
+Hot backup:
+  DB offline
+  DB online and active
+  Peak hours
+  Auto by OS
+Cold backup:
+  During operations
+  DB offline/shutdown
+  NoSQL only
+  Auto hourly
+Transaction log backups enable:
+  Storage reduction
+  PITR between full backups
+  Query speed
+  Schema migration
+Restore order (full+diff+logs):
+  Log,diff,full
+  Full, latest diff, logs after diff
+  Diff,full,log
+  Full,log,diff
+Snapshot backup uses:
+  Traditional copy
+  Storage instant copy-on-write
+  Compression
+  Network
+Checksum verification ensures:
+  Speed
+  Backup not corrupted
+  Encryption
+  Less storage
+3-2-1 rule:
+  3 copies, 2 media, 1 offsite
+  3 full, 2 types, 1 weekly
+  3 encryptions, 2 servers
+  3 DBs, 2 backups
+Log shipping:
+  Physical movement
+  Auto send logs to standby
+  Manual export
+  Old deletion
+SIMPLE recovery model:
+  Supports PITR
+  Auto-truncates log after checkpoint
+  Keeps all logs
+  Supports shipping
+Standby in HA:
+  Read-only queries
+  Synchronized, can failover
+  Development
+  Always offline
+Backup verification:
+  Secure storage
+  Testing restores successfully
+  Compression
+  Scheduling
+WAL recovery:
+  Redo only
+  Redo committed + undo uncommitted
+  Undo only
+  Full restore
+RPO 15 min = max backup interval:
+  1 hour
+  15 min or less
+  5 min
+  30 min
+Corrupted unrestoreable backup:
+  Normal
+  Need for verification
+  Inevitable
+  Security
+Best RTO minimization:
+  Full backup
+  Auto failover (replication)
+  Incremental
+  Cold standby
+Recovery plan includes:
+  Backup only
+  Roles, procedures, communication
+  Hardware only
+  Data only
+GFS rotation manages:
+  CPU
+  Daily/weekly/monthly cycles
+  Encryption
+  Bandwidth
+Crash recovery after power failure:
+  Full restore
+  Transaction log redo/undo
+  Cold backup
+  Manual
+Online vs archived redo log:
+  Identical
+  Online=active, archived=saved copies
+  Archived larger
+  Online optional
+Incremental vs differential restore:
+  Incremental faster
+  Incremental slower (needs all)
+  Always faster
+  Always slower
+Database mirroring:
+  Archiving
+  Real-time redundancy with failover
+  Optimization
+  Compression
+GFS scheme manages:
+  Access
+  Daily/weekly/monthly backup cycles
+  Three copies
+  NoSQL
+Recover from accidental DROP TABLE:
+  Recreate
+  PITR before deletion
+  Full restore
+  No recovery
+Backup window is:
+  Software
+  Time for backups without impact
+  Encryption
+  Retention
